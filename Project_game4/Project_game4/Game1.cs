@@ -1,6 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
+using System;
+
+using Microsoft.VisualBasic;
 
 namespace Project_game4
 {
@@ -11,11 +15,27 @@ namespace Project_game4
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Menu menu;
+        SpriteFont Font;
+        Texture2D rect;
+
+        int ButtonWith;
+        int ButtonHeight;
         
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+
+            this.ButtonWith = 200;
+            this.ButtonHeight = 30;
+
+
+            
+           
+            
         }
 
         /// <summary>
@@ -27,6 +47,13 @@ namespace Project_game4
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferWidth = Convert.ToInt32(GraphicsDevice.DisplayMode.Width * 0.9f);
+            graphics.PreferredBackBufferHeight = Convert.ToInt32(GraphicsDevice.DisplayMode.Height * 0.9f);
+            graphics.ApplyChanges();
+            Window.AllowUserResizing = true;
+            this.IsMouseVisible = true;
+            base.Initialize();
 
             base.Initialize();
         }
@@ -39,8 +66,16 @@ namespace Project_game4
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Font = Content.Load<SpriteFont>("FONT");
+
 
             // TODO: use this.Content to load your game content here
+            rect = new Texture2D(graphics.GraphicsDevice, this.ButtonWith, this.ButtonHeight);
+            Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            rect.SetData(data);
+
+            menu = new Project_game4.Menu(graphics, this.rect, Font);
         }
 
         /// <summary>
@@ -61,7 +96,7 @@ namespace Project_game4
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            menu.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -75,6 +110,9 @@ namespace Project_game4
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            spriteBatch.Begin();
+            menu.Draw(spriteBatch);
+            spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
