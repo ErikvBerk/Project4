@@ -100,6 +100,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "project 4 android.dll" comes first in this list. */
 		"project 4 android.dll",
 		"MonoGame.Framework.dll",
+		"project 4 algemeen.exe",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

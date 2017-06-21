@@ -38,25 +38,32 @@ namespace project_4_algemeen
     public class button
     {
         public int X, Y, width, heigth;
-        public bool visible;
         Texture2D texture;
-        Color Color;
-        public button(int x, int y, int width, int heigth, Texture2D texture)
+        Color Color, hoverColor, CurrentColor;
+        Action Action;
+        public bool visible;
+        public button(int x, int y, int width, int heigth, Color color, Color hovercolor, Action action)
         {
             this.X = x;
             this.Y = y;
             this.width = width;
             this.heigth = heigth;
+            this.Color = color;
+            this.hoverColor = hovercolor;
+            this.Action = action;
+            this.CurrentColor = this.Color;
             visible = true;
-            this.texture = texture;
-            this.Color = Color.White;
+        }
+        public void createTexture(GraphicsDeviceManager graphics)
+        {
+            this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width / 2), (int)(this.heigth / 2));
+            Color[] data = new Color[(int)(this.width / 2) * (int)(this.heigth / 2)];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            this.texture.SetData(data);
         }
         public void onclick()
         {
-            if (this.visible)
-                this.visible = false;
-            else
-                this.visible = true;
+            this.Action(visible);
         }
         public void update()
         {
@@ -67,19 +74,18 @@ namespace project_4_algemeen
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
                     onclick();
+                    this.CurrentColor = this.hoverColor;
                 }
             }
             else
             {
-                this.Color = Color.White;
+                this.CurrentColor = this.Color;
             }
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if (this.visible)
-            {
-                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.Color);
-            }
+            if(visible)
+                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);
         }
     }
 }

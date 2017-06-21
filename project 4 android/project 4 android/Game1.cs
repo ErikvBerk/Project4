@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using System;
+using project_4_algemeen;
 
 namespace project_4_android
 {
@@ -48,22 +49,26 @@ namespace project_4_android
         /// </summary>
         button test1, test2, test3, test4;
         androidButtonAdapter adapterTest1, adapterTest2, adapterTest3, adapterTest4;
+        public static void hi()
+        {
+
+        }
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-            Texture2D rect = new Texture2D(graphics.GraphicsDevice, (int)(screen_width / 2), (int)(screen_height / 2));
-            Color[] data = new Color[(int)(screen_width / 2) * (int)(screen_height / 2)];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
-            rect.SetData(data);
-            test1 = new button(0, 0, (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test2 = new button((int)(screen_width / 2), (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test3 = new button(0, (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test4 = new button((int)(screen_width / 2), 0, (int)(screen_width / 2), (int)(screen_height / 2), rect);
+            // TODO: use this.Content to load your game content here=
+            test1 = new button(0, 0, (int)(screen_width / 2), (int)(screen_height / 2), Color.White, Color.LightGray, () => hi());
+            test2 = new button((int)(screen_width / 2), (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), Color.White, Color.LightGray, () => hi());
+            test3 = new button(0, (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), Color.White, Color.LightGray, () => hi());
+            test4 = new button((int)(screen_width / 2), 0, (int)(screen_width / 2), (int)(screen_height / 2), Color.White, Color.LightGray, () => hi());
             test3.visible = false;
             test4.visible = false;
+            test1.createTexture(graphics);
+            test2.createTexture(graphics);
+            test3.createTexture(graphics);
+            test4.createTexture(graphics);
             adapterTest1 = new androidButtonAdapter(test1);
             adapterTest2 = new androidButtonAdapter(test2);
             adapterTest3 = new androidButtonAdapter(test3);
