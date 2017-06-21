@@ -96,39 +96,7 @@ namespace Project_game4
             }
 
 
-
-
-
-            //if (this.isClicked == true)
-            //    {
-            //        this.clicked = true;
-            //    }
-            //    else if (this.clicked)
-            //    {
-            //        if (!(this.hasBeenClicked))
-            //        {
-            //            //execute Action
-            //            this.hasBeenClicked = true;
-            //        }
-            //        else if (this.hasBeenClicked)
-            //        {
-            //            //info.Hide();
-            //            this.hasBeenClicked = false;
-            //        }
-            //        this.clicked = false;
-
-            //        if (this.isHovered == true || this.hasBeenClicked == true) //Changes color depending on hover or click
-            //        {
-            //            this.Color = Color.LightGreen;
-            //        }
-            //        else
-            //        {
-            //            this.Color = Color.Green;
-            //        }
-            //    }
-
-
-            }
+        }
 
             
             
