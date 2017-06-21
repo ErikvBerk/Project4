@@ -27,8 +27,9 @@ namespace Project_game4
 
             Play = new Button("Play", rect, 100, 200, this.Font,200,30,Color.Red);
         }
-        public void Update(float dt)
+        public void Update()
         {
+            Play.Update();
             
         }
         public void Draw(SpriteBatch spritebatch)
