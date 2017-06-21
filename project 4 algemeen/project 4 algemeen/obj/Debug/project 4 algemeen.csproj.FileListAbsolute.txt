@@ -15,5 +15,3 @@ C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.exe
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.pdb
-C:\Users\erikv\Downloads\Project4-master\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.exe
-C:\Users\erikv\Downloads\Project4-master\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.pdb

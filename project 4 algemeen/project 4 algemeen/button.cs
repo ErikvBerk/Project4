@@ -56,25 +56,25 @@ namespace project_4_algemeen
         }
         public void createTexture(GraphicsDeviceManager graphics)
         {
-            this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width / 2), (int)(this.heigth / 2));
-            Color[] data = new Color[(int)(this.width / 2) * (int)(this.heigth / 2)];
+            this.texture = new Texture2D(graphics.GraphicsDevice, this.width, this.heigth);
+            Color[] data = new Color[this.width * this.heigth];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
         }
         public void onclick()
         {
-            this.Action(visible);
+            this.Action();
         }
         public void update()
         {
             var mousestate = Mouse.GetState();
             if (mousestate.X >= this.X && mousestate.X < this.X + this.width && mousestate.Y >= this.Y && mousestate.Y < this.Y + this.heigth)
             {
-                this.Color = Color.LightGray;
+                this.CurrentColor = this.hoverColor;
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
-                    onclick();
                     this.CurrentColor = this.hoverColor;
+                    onclick();
                 }
             }
             else
