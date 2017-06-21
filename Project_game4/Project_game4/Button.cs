@@ -20,9 +20,13 @@ namespace Project_game4
         public bool isClicked;
         public bool isHovered;
         public bool isClickable;
+        public bool hasBeenClicked;
+        public bool Clicked;
         Vector2 Position;
-        public Color color;
+        public Color Color;
         SpriteFont font;
+        
+        
 
         public int ButtonX
         {
@@ -51,35 +55,96 @@ namespace Project_game4
             this.Position = new Vector2(this.buttonX, this.buttonY);
             this.font = font;
             this.isClickable = true;
-            this.color = color;
+            this.Color = color;
         }
 
-        public void Update(float dt)
+        public void Update()
         {
             var mouseState = Mouse.GetState();
 
+
             if (mouseState.X >= buttonX && mouseState.X < (buttonX + buttonWidth) && mouseState.Y >= buttonY && mouseState.Y < (buttonY + buttonHeigth))
             {
-                isHovered = true;
-                if (isClickable)
-                    isClicked = mouseState.LeftButton == ButtonState.Pressed;
-            }
+                this.isHovered = true;
+                this.Color = Color.Green;
+
+                Console.WriteLine("Hover works");
+
+
+                Clicked = mouseState.LeftButton == ButtonState.Pressed;
+
+                if (this.Clicked == true)
+                {                    
+                    this.Color = Color.Green;           
+                    this.hasBeenClicked = true;
+
+                    Console.WriteLine("Clicked works");
+
+                }
+                    if (hasBeenClicked == true)
+                    {
+                    //Execute Action here
+                    Console.WriteLine("hasBeenClicked works");
+
+                    }
+                }
             else
             {
-                isHovered = false;
-                isClicked = false;
+                this.isHovered = false;
+                this.Clicked = false;
+                this.Color = Color.Red;
             }
-        }
+
+
+
+
+
+            //if (this.isClicked == true)
+            //    {
+            //        this.clicked = true;
+            //    }
+            //    else if (this.clicked)
+            //    {
+            //        if (!(this.hasBeenClicked))
+            //        {
+            //            //execute Action
+            //            this.hasBeenClicked = true;
+            //        }
+            //        else if (this.hasBeenClicked)
+            //        {
+            //            //info.Hide();
+            //            this.hasBeenClicked = false;
+            //        }
+            //        this.clicked = false;
+
+            //        if (this.isHovered == true || this.hasBeenClicked == true) //Changes color depending on hover or click
+            //        {
+            //            this.Color = Color.LightGreen;
+            //        }
+            //        else
+            //        {
+            //            this.Color = Color.Green;
+            //        }
+            //    }
+
+
+            }
+
+            
+            
+            
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             if (isHovered)
-                spriteBatch.Draw(this.Texture, this.Position, this.color);
+                spriteBatch.Draw(this.Texture, this.Position, this.Color);
             else
-                spriteBatch.Draw(this.Texture, this.Position, this.color);
+                spriteBatch.Draw(this.Texture, this.Position, this.Color);
 
-            spriteBatch.DrawString(this.font, this.Name, new Vector2(this.buttonX + 5, this.buttonY + 7), Color.Black);
-            spriteBatch.Draw(Texture, Position,color);
             
+            spriteBatch.Draw(Texture, Position,Color);
+            spriteBatch.DrawString(this.font, this.Name, new Vector2(this.buttonX + 5, this.buttonY + 7), Color.Black);
+
         }
         
     }

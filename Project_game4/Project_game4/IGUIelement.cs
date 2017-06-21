@@ -12,6 +12,6 @@ namespace Project_game4
     interface IGUIelement
     {
         void Draw(SpriteBatch spritebatch);
-        void Update(float dt);
+        void Update();
     }
 }
