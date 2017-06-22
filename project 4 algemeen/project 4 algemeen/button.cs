@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using project_4_algemeen;
+
 
 namespace project_4_algemeen
 {
@@ -30,6 +32,10 @@ namespace project_4_algemeen
                 }
             }
         }
+        public void draw(SpriteBatch spritebatch)
+        {
+            this.button.draw(spritebatch);
+        }
     }
     public class button
     {
@@ -38,14 +44,10 @@ namespace project_4_algemeen
         Color Color, hoverColor, CurrentColor;
         Action Action;
         public bool visible;
+        String Text;
         SpriteFont Font;
-        string Text;
-        float TextSize;
-        public button()
-        {
-
-        }
-        public button(int x, int y, int width, int heigth, string text, SpriteFont font, float textsize, Color color, Color hovercolor, Action action, GraphicsDeviceManager graphics)
+        
+        public button(int x, int y, int width, int heigth,String text,SpriteFont font, Color color, Color hovercolor, Action action, GraphicsDeviceManager graphics)
         {
             this.X = x;
             this.Y = y;
@@ -55,16 +57,16 @@ namespace project_4_algemeen
             this.hoverColor = hovercolor;
             this.Action = action;
             this.CurrentColor = this.Color;
-            this.Font = font;
-            this.Text = text;
-            this.TextSize = textsize;
-            createTexture(graphics);
             visible = true;
+            this.Text = text;
+            this.Font = font;
+
+            createTexture(graphics);
         }
         public void createTexture(GraphicsDeviceManager graphics)
         {
-            this.texture = new Texture2D(graphics.GraphicsDevice, this.width, this.heigth);
-            Color[] data = new Color[this.width * this.heigth];
+            this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width), (int)(this.heigth));
+            Color[] data = new Color[(int)(this.width) * (int)(this.heigth)];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
         }
@@ -75,13 +77,15 @@ namespace project_4_algemeen
         public void update()
         {
             var mousestate = Mouse.GetState();
-            if (mousestate.X >= this.X && mousestate.X < this.X + this.width && mousestate.Y >= this.Y && mousestate.Y < this.Y + this.heigth)
+            
+            if (mousestate.X >= this.X && mousestate.X < (this.X + this.width) && mousestate.Y >= this.Y && mousestate.Y < (this.Y + this.heigth))
             {
-                this.CurrentColor = this.hoverColor;
+                this.CurrentColor = hoverColor;
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
-                    this.CurrentColor = this.hoverColor;
+                    
                     onclick();
+                    this.CurrentColor = this.hoverColor;
                 }
             }
             else
@@ -91,12 +95,9 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if (visible)
-            {
+            if(visible)
                 spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);
-                spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black, 0.0f, new Vector2(0, 0), TextSize, new SpriteEffects(), 0.0f);
-            }
-
+            spritebatch.DrawString(Font, Text, new Vector2(this.X,this.Y),Color.Black);
         }
     }
 }
