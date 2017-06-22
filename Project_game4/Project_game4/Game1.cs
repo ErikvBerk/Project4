@@ -17,23 +17,16 @@ namespace Project_game4
         SpriteBatch spriteBatch;
         Menu menu;
         SpriteFont Font;
-        Texture2D rect;
-
-        int ButtonWith;
-        int ButtonHeight;
+        
+		double screen_width;
+		double screen_height;
+        
         
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-
-
-            this.ButtonWith = 200;
-            this.ButtonHeight = 30;
-
-
-            
+            Content.RootDirectory = "Content";           
            
             
         }
@@ -53,6 +46,8 @@ namespace Project_game4
             graphics.ApplyChanges();
             Window.AllowUserResizing = true;
             this.IsMouseVisible = true;
+			screen_width = graphics.PreferredBackBufferWidth;
+			screen_height = graphics.PreferredBackBufferHeight;
             base.Initialize();
 
             base.Initialize();
@@ -70,12 +65,12 @@ namespace Project_game4
 
 
             // TODO: use this.Content to load your game content here
-            rect = new Texture2D(graphics.GraphicsDevice, this.ButtonWith, this.ButtonHeight);
-            Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
-            rect.SetData(data);
+            //rect = new Texture2D(graphics.GraphicsDevice, this.ButtonWith, this.ButtonHeight);
+            //Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
+            //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            //rect.SetData(data);
 
-            menu = new Project_game4.Menu(graphics, this.rect, Font);
+            menu = new Project_game4.Menu(graphics, Font,screen_width,screen_height);
         }
 
         /// <summary>
