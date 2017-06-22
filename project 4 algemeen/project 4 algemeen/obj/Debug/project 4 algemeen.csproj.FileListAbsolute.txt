@@ -36,3 +36,22 @@ C:\Users\erikv\OneDrive\Documents\GitHub\Project4\project 4 algemeen\project 4 a
 C:\Users\erikv\OneDrive\Documents\GitHub\Project4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
 C:\Users\erikv\OneDrive\Documents\GitHub\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.exe
 C:\Users\erikv\OneDrive\Documents\GitHub\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.exe
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.pdb
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.exe
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
+C:\Users\erikv\Desktop\Proj4\Project1\Project4-Niet-master\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
