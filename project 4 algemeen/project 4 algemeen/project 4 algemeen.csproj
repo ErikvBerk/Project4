@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="button.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Instructies.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 
 using Microsoft.VisualBasic;
+using project_4_algemeen;
 
 namespace Project_game4
 {
@@ -13,13 +14,13 @@ namespace Project_game4
     /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Menu menu;
+        public gameElement Current = new Menu();
         SpriteFont Font;
         
-		double screen_width;
-		double screen_height;
+		public double screen_width;
+		public double screen_height;
         
         
 
@@ -30,7 +31,7 @@ namespace Project_game4
            
             
         }
-
+        public float relativeSize;
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -43,6 +44,7 @@ namespace Project_game4
             graphics.IsFullScreen = false;
             graphics.PreferredBackBufferWidth = Convert.ToInt32(GraphicsDevice.DisplayMode.Width * 0.9f);
             graphics.PreferredBackBufferHeight = Convert.ToInt32(GraphicsDevice.DisplayMode.Height * 0.9f);
+            relativeSize = 1;
             graphics.ApplyChanges();
             Window.AllowUserResizing = true;
             this.IsMouseVisible = true;
@@ -70,9 +72,14 @@ namespace Project_game4
             //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             //rect.SetData(data);
 
-            menu = new Project_game4.Menu(graphics, Font,screen_width,screen_height);
+            Current = new Menu(graphics, Font,screen_width,screen_height,relativeSize,exit(this));
+            //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
+            //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
         }
-
+        private void exit(project_4_algemeen.Game1 game1)
+        {
+            Exit();
+        }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
@@ -91,7 +98,7 @@ namespace Project_game4
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            menu.Update();
+            Current.update(this);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -106,7 +113,7 @@ namespace Project_game4
             GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             spriteBatch.Begin();
-            menu.Draw(spriteBatch);
+            Current.draw(spriteBatch);
             spriteBatch.End();
             // TODO: Add your drawing code here
 

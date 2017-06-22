@@ -8,50 +8,57 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace project_4_algemeen
 {
-    public class Instructies
+    public class Instructies : gameElement
     {
         GraphicsDeviceManager graphics;
-        public button next, prev, exit, ret;
+        public List<button> Buttons = new List<button>();
         public Instructies()
         {
 
         }
-        public Instructies(int screen_width, int screen_height, SpriteFont font, float relativeSize, Action Exit, GraphicsDeviceManager graphics)
+        public Instructies(double screen_width, double screen_height, SpriteFont font, float relativeSize, Action<Game1> Exit, GraphicsDeviceManager graphics)
         {
             this.graphics = graphics;
 
-            next = new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, () => hi5(), graphics);
-            prev = new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, () => hi6(), graphics);
-            exit = new button((int)(screen_width - (screen_width / 6)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "exit", font, relativeSize, Color.White, Color.LightGray, () => Exit(), graphics);
-            ret = new button((int)(screen_width - (screen_width / 3)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "return", font, relativeSize, Color.White, Color.LightGray, () => hi7(), graphics);
+            Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, (game1) => hi5(game1), graphics));
+            Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, (game1) => hi6(game1), graphics));
+            Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "exit", font, relativeSize, Color.White, Color.LightGray, (game1) => Exit(game1), graphics));
+            Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "return", font, relativeSize, Color.White, Color.LightGray, (game1) => hi7(game1), graphics));
         }
 
-        public void update()
+        public void update(Game1 game1)
         {
-            next.update();
-            prev.update();
-            exit.update();
-            ret.update();
+            foreach (button b in Buttons)
+            {
+                b.update(game1);
+            }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void draw(SpriteBatch spritebatch)
         {
-            next.draw(spriteBatch);
-            prev.draw(spriteBatch);
-            exit.draw(spriteBatch);
-            ret.draw(spriteBatch);
+            foreach (button b in Buttons)
+            {
+                b.draw(spritebatch);
+            }
         }
-        private void hi5()
+        public List<button> buttons
         {
-            next.visible = !(next.visible);
+            get
+            {
+                return this.Buttons;
+            }
         }
-        private void hi6()
+        private void hi5(Game game1)
         {
-            prev.visible = !(prev.visible);
+
         }
-        private void hi7()
+        private void hi6(Game game1)
         {
-            ret.visible = !(ret.visible);
+
+        }
+        private void hi7(Game game1)
+        {
+
         }
     }
 }
