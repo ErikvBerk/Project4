@@ -62,8 +62,7 @@ namespace Project_game4
         {
             var mouseState = Mouse.GetState();
 
-
-            if (mouseState.X >= buttonX && mouseState.X < (buttonX + buttonWidth) && mouseState.Y >= buttonY && mouseState.Y < (buttonY + buttonHeigth))
+            if((mouseState.X >=buttonX && mouseState.X<= (buttonX+buttonWidth)) && (mouseState.Y >= buttonY && mouseState.Y<(buttonY + buttonHeigth)))          
             {
                 this.isHovered = true;
                 this.Color = Color.Green;
@@ -78,6 +77,7 @@ namespace Project_game4
                     this.Color = Color.Green;           
                     this.hasBeenClicked = true;
 
+                    Console.WriteLine(mouseState.X);
                     Console.WriteLine("Clicked works");
 
                 }

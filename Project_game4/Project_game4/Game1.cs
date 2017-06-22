@@ -108,7 +108,7 @@ namespace Project_game4
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             spriteBatch.Begin();
             menu.Draw(spriteBatch);
@@ -117,5 +117,11 @@ namespace Project_game4
 
             base.Draw(gameTime);
         }
+        public void Quit()
+        {
+            this.Exit();
+        }
     }
+
+    
 }

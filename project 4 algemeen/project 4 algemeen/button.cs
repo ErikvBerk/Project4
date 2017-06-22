@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using project_4_algemeen;
+
 
 namespace project_4_algemeen
 {
@@ -38,48 +40,64 @@ namespace project_4_algemeen
     public class button
     {
         public int X, Y, width, heigth;
-        public bool visible;
         Texture2D texture;
-        Color Color;
-        public button(int x, int y, int width, int heigth, Texture2D texture)
+        Color Color, hoverColor, CurrentColor;
+        Action Action;
+        public bool visible;
+        String Text;
+        SpriteFont Font;
+        
+        public button(int x, int y, int width, int heigth,String text,SpriteFont font, Color color, Color hovercolor, Action action, GraphicsDeviceManager graphics)
         {
             this.X = x;
             this.Y = y;
             this.width = width;
             this.heigth = heigth;
+            this.Color = color;
+            this.hoverColor = hovercolor;
+            this.Action = action;
+            this.CurrentColor = this.Color;
             visible = true;
-            this.texture = texture;
-            this.Color = Color.White;
+            this.Text = text;
+            this.Font = font;
+
+            createTexture(graphics);
+        }
+        public void createTexture(GraphicsDeviceManager graphics)
+        {
+            this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width), (int)(this.heigth));
+            Color[] data = new Color[(int)(this.width) * (int)(this.heigth)];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            this.texture.SetData(data);
         }
         public void onclick()
         {
-            if (this.visible)
-                this.visible = false;
-            else
-                this.visible = true;
+            this.Action();
         }
         public void update()
         {
             var mousestate = Mouse.GetState();
-            if (mousestate.X >= this.X && mousestate.X < this.X + this.width && mousestate.Y >= this.Y && mousestate.Y < this.Y + this.heigth)
+            
+            if (mousestate.X >= this.X && mousestate.X < (this.X + this.width) && mousestate.Y >= this.Y && mousestate.Y < (this.Y + this.heigth))
             {
-                this.Color = Color.LightGray;
+                this.CurrentColor = hoverColor;
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
+                    
                     onclick();
+                    this.CurrentColor = this.hoverColor;
                 }
             }
             else
             {
-                this.Color = Color.White;
+                this.CurrentColor = this.Color;
             }
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if (this.visible)
-            {
-                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.Color);
-            }
+            if(visible)
+                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);
+            spritebatch.DrawString(Font, Text, new Vector2(this.X,this.Y),Color.Black);
         }
     }
 }
