@@ -6,64 +6,66 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Project_game4;
+
+
+using Microsoft.VisualBasic;
+using project_4_algemeen;
 
 namespace Project_game4
 {
-    class Menu : IGUIelement
+    //public interface gameElement
+    //{
+    //    void update(Project_game4.Game1 game1);
+    //    void draw(SpriteBatch spritebatch);
+    //    List<button> buttons { get; }
+    //}
+    public class Menu 
     {
         GraphicsDeviceManager graphics;
-        project_4_algemeen.button Play;
-        project_4_algemeen.button Highscore;
-        project_4_algemeen.button Instructions;
-        project_4_algemeen.button Exit;
-        SpriteBatch spriteBatch;
+        public List<button> list_buttons_menu;
         SpriteFont Font;
-        Texture2D rect;
         double screen_height;
         double screen_width;
+        
 
-        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width)
+        public Menu()
+        {
+
+        }
+        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize,List<button> list_buttons_menu)
         {
             this.graphics = graphics;
             this.Font = Font;
             this.screen_height = screen_height;
             this.screen_width = screen_width;
+            //this.exit = exit;
+            this.list_buttons_menu = list_buttons_menu;
 
-            //oud Play = new Button("Play", rect, 100, 200, this.Font,200,30,Color.Red); (Convert.ToInt32((Math.Ceiling((screen_height*1.00)-(screen_height*0.5)))))
-            Play = new project_4_algemeen.button((Convert.ToInt32((Math.Ceiling(screen_width*0.8)))), (Convert.ToInt32((Math.Ceiling(this.screen_height*0.18)))), (Convert.ToInt32(Math.Ceiling(screen_width*0.4))), (Convert.ToInt32(Math.Ceiling(screen_width*0.1))), "Play!", Font, Color.Khaki, Color.OliveDrab, () => Hi(), graphics);
-            Highscore = new project_4_algemeen.button((Convert.ToInt32((Math.Ceiling(screen_width * 0.8)))), (Convert.ToInt32((Math.Ceiling(this.screen_height * 0.26)))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.4))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.1))), "Highscores!", Font, Color.Khaki, Color.OliveDrab, () => Hi(), graphics);
-            Instructions = new project_4_algemeen.button((Convert.ToInt32((Math.Ceiling(screen_width * 0.8)))), (Convert.ToInt32((Math.Ceiling(this.screen_height * 0.34)))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.4))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.1))), "Instructions!", Font, Color.Khaki, Color.OliveDrab, () => Hi(), graphics);
-            Exit = new project_4_algemeen.button((Convert.ToInt32((Math.Ceiling(screen_width * 0.8)))), (Convert.ToInt32((Math.Ceiling(this.screen_height * 0.42)))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.4))), (Convert.ToInt32(Math.Ceiling(screen_width * 0.1))), "Exit!", Font, Color.Maroon, Color.Red, () => Hi(), graphics);
-
-
-
-            Console.WriteLine(screen_height);
-            Console.WriteLine(screen_width);
+            
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, graphics));
         }
-        public void Update()
+        public void update()
         {
-            Play.update();
-            Highscore.update();
-            Instructions.update();
-            Exit.update();
-
+            foreach (button b in list_buttons_menu) 
+            {
+                b.update();
+            }
         }
-        public void Draw(SpriteBatch spritebatch)
+        public void draw(SpriteBatch spritebatch)
         {
-
-            Play.draw(spritebatch);
-            Highscore.draw(spritebatch);
-            Instructions.draw(spritebatch);
-            Exit.draw(spritebatch);
-            //
-            //rect = new Texture2D(graphics.GraphicsDevice, 200, 30);
-
+            foreach (button b in list_buttons_menu)
+            {
+                b.draw(spritebatch);
+            }
         }
-        public void Hi()
+        public List<button> buttons
         {
-
-        }
-
+            get
+            {
+                return this.list_buttons_menu;
+            }
+        }     
     }
 }

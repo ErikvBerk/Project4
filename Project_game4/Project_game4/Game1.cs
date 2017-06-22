@@ -7,6 +7,9 @@ using System;
 using Microsoft.VisualBasic;
 using project_4_algemeen;
 
+using System.Collections.Generic;
+
+
 namespace Project_game4
 {
     /// <summary>
@@ -16,10 +19,13 @@ namespace Project_game4
     {
         public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public gameElement Current = new Menu();
+        public Menu menu = new Project_game4.Menu();
         SpriteFont Font;
-        
-		public double screen_width;
+       public  string screen_name="Menu";
+        int id;
+        List<button> list_buttons_menu = new List<button>();
+
+        public double screen_width;
 		public double screen_height;
         
         
@@ -71,14 +77,21 @@ namespace Project_game4
             //Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
             //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             //rect.SetData(data);
+            
 
-            Current = new Menu(graphics, Font,screen_width,screen_height,relativeSize,exit(this));
+            //initiate all different classes here , including the ones given to the buttons in other classes
+            menu = new Menu(graphics, Font,screen_width,screen_height,relativeSize, list_buttons_menu);
+            list_buttons_menu.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Test_Play("Test_Play",Font,400,400, graphics), graphics));
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
         }
-        private void exit(project_4_algemeen.Game1 game1)
+        private void exit()
         {
             Exit();
+        }
+        public void change_Screen()
+        {
+
         }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -98,7 +111,19 @@ namespace Project_game4
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            Current.update(this);
+            menu.update();
+            
+            
+            
+
+            if (menu.list_buttons_menu[0].clicked == true) { screen_name = menu.list_buttons_menu[0].Class_call.get_name(); }
+
+            menu.list_buttons_menu[id].update();
+
+
+
+            Console.WriteLine(id);
+            
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -113,7 +138,14 @@ namespace Project_game4
             GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             spriteBatch.Begin();
-            Current.draw(spriteBatch);
+
+            if (screen_name == "Menu")  //checks what the "screen_name"  is to determine which draw function to call
+            {
+                foreach (button BUT in menu.list_buttons_menu) { BUT.draw(spriteBatch); }
+
+            }
+            else if (screen_name == "Test_Play") { list_buttons_menu[0].Class_call.draw(spriteBatch); }
+
             spriteBatch.End();
             // TODO: Add your drawing code here
 
