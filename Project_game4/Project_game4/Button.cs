@@ -50,6 +50,7 @@ namespace Project_game4
         Color Color, hoverColor, CurrentColor;
         public I_Button_classes Class_call;
         public bool visible;
+        public bool clicked=false;
         String Text;
         SpriteFont Font;
         SpriteBatch spritebatch;
@@ -99,7 +100,7 @@ namespace Project_game4
 
                     onclick();
                     this.CurrentColor = this.hoverColor;
-                    
+                    clicked = true;
                     
                 }
             }

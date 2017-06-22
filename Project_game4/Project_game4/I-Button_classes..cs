@@ -18,7 +18,7 @@ using project_4_algemeen;
 
 namespace Project_game4
 {
-    public interface I_Button_classes
+    public interface I_Button_classes   //interface for all gameElement classes to instantiate in the button class.
     {
         
         void draw(SpriteBatch spritebatch);
