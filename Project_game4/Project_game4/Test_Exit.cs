@@ -23,7 +23,7 @@ namespace Project_game4
         int X;
         int Y;
         GraphicsDeviceManager graphics;
-        Action Exit;
+        public Action Exit;
 
         public Test_Exit(Action exit, string name, SpriteFont Font, int X, int Y, GraphicsDeviceManager graphics)
         {
@@ -32,13 +32,14 @@ namespace Project_game4
             this.Font = Font;
             this.X = X;
             this.Y = Y;
-            this.graphics = graphics;            
+            this.graphics = graphics;
+            
         }
 
         public void draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
-            spritebatch.DrawString(Font, this.name, new Vector2(this.X, this.Y), Color.Black);            
+            
+            
         }
 
         public void update()
@@ -50,6 +51,10 @@ namespace Project_game4
         {
             class_name = this.name;
             return class_name;
+        }
+        public void action()
+        {
+            this.Exit();
         }
         
     }

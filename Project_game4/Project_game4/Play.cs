@@ -60,6 +60,10 @@ namespace Project_game4
             return class_name;
 
         }
+        public void action()
+        {
+
+        }
             
 
     }

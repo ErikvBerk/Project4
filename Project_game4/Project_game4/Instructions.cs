@@ -54,5 +54,9 @@ namespace Project_game4
             class_name = this.name;
             return class_name;
         }
+        public void action()
+        {
+
+        }
     }
 }

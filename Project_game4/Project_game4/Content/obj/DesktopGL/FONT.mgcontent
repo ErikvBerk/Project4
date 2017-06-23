@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/FONT.spritefont</SourceFile>
-  <SourceTime>2017-06-23T10:12:47.3682061+02:00</SourceTime>
-  <DestFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/FONT.xnb</DestFile>
-  <DestTime>2017-06-23T10:20:37.5642367+02:00</DestTime>
+  <SourceFile>C:/Users/Erik/Downloads/Project4-niet-master2 (1)/Project4-niet-master2/Project_game4/Project_game4/Content/FONT.spritefont</SourceFile>
+  <SourceTime>2017-06-23T15:56:37.2441624+02:00</SourceTime>
+  <DestFile>C:/Users/Erik/Downloads/Project4-niet-master2 (1)/Project4-niet-master2/Project_game4/Project_game4/Content/bin/DesktopGL/FONT.xnb</DestFile>
+  <DestTime>2017-06-23T15:58:40.8612329+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

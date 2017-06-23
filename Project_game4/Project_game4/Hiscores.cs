@@ -14,7 +14,7 @@ using project_4_algemeen;
 
 namespace Project_game4
 {
-    class Hiscores : I_Button_classes
+    class Highscores : I_Button_classes
     {
         public string name;
         string class_name;
@@ -23,25 +23,37 @@ namespace Project_game4
         int X;
         int Y;
         GraphicsDeviceManager graphics;
+        List<button> list_highscore_buttons;
 
-        public Hiscores(string name, SpriteFont Font, int X, int Y, GraphicsDeviceManager graphics)
+        public Highscores(string name, SpriteFont Font, int X, int Y, GraphicsDeviceManager graphics, List<button> list_highscore_buttons)
         {
             this.name = name;
             this.Font = Font;
             this.X = X;
             this.Y = Y;
             this.graphics = graphics;
+            this.list_highscore_buttons = list_highscore_buttons;
 
+
+            Console.WriteLine("Highscore constructor works");
+
+            //not important creates a texture
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
             Color[] data = new Color[(int)(100) * (int)(100)];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
+            //
         }
 
         public void draw(SpriteBatch spritebatch)
         {
-            spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
-            spritebatch.DrawString(Font, this.name, new Vector2(this.X, this.Y), Color.Black);
+            foreach(button But in list_highscore_buttons)
+            {
+                But.draw(spritebatch);
+            }
+            Console.WriteLine("Highscore Draw works");
+            //spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
+            //spritebatch.DrawString(Font, this.name, new Vector2(this.X, this.Y), Color.Black);
         }
 
         public void update()
@@ -53,6 +65,10 @@ namespace Project_game4
         {
             class_name = this.name;
             return class_name;
+        }
+        public void action()
+        {
+
         }
     }
 }

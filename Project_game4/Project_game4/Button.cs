@@ -115,6 +115,7 @@ namespace Project_game4
             if (visible)
                 spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);  //draws the background color texture
             spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);  //draws the strings on the buttons
+
             
         }
     }

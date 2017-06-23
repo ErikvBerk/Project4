@@ -26,11 +26,14 @@ namespace Project_game4
         SpriteFont Font;
         double screen_height;
         double screen_width;
+        public bool Clicked = false;
+        public string name;
         
 
         public Menu()
         {
-
+            this.Clicked = true;
+            this.name = "Menu";
         }
         public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize,List<button> list_buttons_menu)
         {
@@ -59,6 +62,7 @@ namespace Project_game4
             {
                 b.draw(spritebatch);
             }
+            Console.WriteLine("Menu draw works");
         }
         public List<button> buttons
         {

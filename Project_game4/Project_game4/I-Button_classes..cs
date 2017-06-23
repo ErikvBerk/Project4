@@ -24,5 +24,6 @@ namespace Project_game4
         void draw(SpriteBatch spritebatch);
         void update();
         string get_name();
+        void action();
     }
 }
