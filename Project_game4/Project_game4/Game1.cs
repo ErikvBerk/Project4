@@ -79,17 +79,19 @@ namespace Project_game4
             //Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
             //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             //rect.SetData(data);
-            
+
 
             //initiate all different classes here , including the ones given to the buttons in other classes
+            list_highscore_buttons.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.35), (int)(screen_width * 0.4), (int)(screen_height * 0.1),"Back", Font, relativeSize, Color.Maroon, Color.Red, new Back("Menu"), graphics));
+
+
             menu = new Menu(graphics, Font,screen_width,screen_height,relativeSize, list_buttons_menu);
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.35), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play", Font, 400, 400, graphics), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.48), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Highscore!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores("Highscore", Font, 400, 400, graphics, list_highscore_buttons), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.61), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions", Font, 400, 400, graphics), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.74), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, new Test_Exit(Exit, "Exit", Font, 400, 400, graphics), graphics));
 
-            list_highscore_buttons.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.35), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Back", Font, relativeSize, Color.Maroon, Color.Red, new Back("Menu",400,400,200,200,"Back to menu",Font,30,Color.Black,Color.Red,graphics), graphics));
-            //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
+             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
         }
         public void exit()
@@ -117,25 +119,37 @@ namespace Project_game4
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            
                 Exit();
             menu.update();
 
 
 
             //All menu buttons
-            if (menu.Clicked == true) { screen_name = menu.name; } 
-            else if (menu.list_buttons_menu[0].clicked == true) { screen_name = menu.list_buttons_menu[0].Class_call.get_name(); } // Play
-            else if (menu.list_buttons_menu[1].clicked == true) { screen_name = menu.list_buttons_menu[1].Class_call.get_name(); } // Highscores
+            //if (menu.Clicked == true) { screen_name = menu.name; } 
+            if      (menu.list_buttons_menu[0].clicked == true) { screen_name = menu.list_buttons_menu[0].Class_call.get_name(); } // Play
+
+            else if (menu.list_buttons_menu[1].clicked == true) // Highscores
+            {
+                Console.WriteLine(screen_name);
+                screen_name = menu.list_buttons_menu[1].Class_call.get_name(); 
+                if (list_highscore_buttons[0].clicked == true)
+                {
+                    
+                    screen_name = list_highscore_buttons[0].Class_call.get_name();
+                    Console.WriteLine(screen_name);
+                }
+            } 
             else if (menu.list_buttons_menu[2].clicked == true) { screen_name = menu.list_buttons_menu[2].Class_call.get_name(); } // Instructions
             else if (menu.list_buttons_menu[3].clicked == true) { screen_name = menu.list_buttons_menu[3].Class_call.get_name(); } // Exit
 
 
 
-            // menu.list_buttons_menu[id].update();
+            
 
 
 
-            Console.WriteLine(id);
+           
             
             // TODO: Add your update logic here
 
@@ -154,12 +168,13 @@ namespace Project_game4
 
             if (screen_name == "Menu")  //checks what the "screen_name"  is to determine which draw function to call
             {
-                foreach (button BUT in menu.list_buttons_menu) { BUT.draw(spriteBatch); }
+                menu.draw(spriteBatch);
+                
 
             }
-            else if (screen_name == "Play") { list_buttons_menu[0].Class_call.draw(spriteBatch); } 
-            else if (screen_name == "Highscore") { list_buttons_menu[1].Class_call.draw(spriteBatch); list_highscore_buttons[0].draw(spriteBatch); }
-            else if (screen_name == "Instructions") { list_buttons_menu[2].Class_call.draw(spriteBatch); }
+            else if (screen_name == "Play") { list_buttons_menu[0].Class_call.draw(spriteBatch); } //draws everything of play
+            else if (screen_name == "Highscore") { list_buttons_menu[1].Class_call.draw(spriteBatch); } //draws everything of highscore
+            else if (screen_name == "Instructions") { list_buttons_menu[2].Class_call.draw(spriteBatch); } // draws everything of instructions
             else if (screen_name == "Exit") { list_buttons_menu[3].Class_call.action(); }  // if we make an exit screen , call .action() somewhere else.
 
             spriteBatch.End();
