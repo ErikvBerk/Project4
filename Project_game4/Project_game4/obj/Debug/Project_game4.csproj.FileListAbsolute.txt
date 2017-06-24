@@ -171,3 +171,4 @@ C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\D
 C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
 C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
 C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
+D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb

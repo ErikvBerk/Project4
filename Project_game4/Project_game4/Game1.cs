@@ -20,7 +20,7 @@ namespace Project_game4
         public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Menu menu = new Project_game4.Menu();
-        SpriteFont Font;
+        SpriteFont Font, Big_Font;
         public  string screen_name="Menu";
         int id=0;
         List<button> list_buttons_menu = new List<button>();
@@ -72,6 +72,7 @@ namespace Project_game4
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Font = Content.Load<SpriteFont>("FONT");
+            Big_Font = Content.Load<SpriteFont>("Big_Font");
 
 
             // TODO: use this.Content to load your game content here
@@ -86,7 +87,7 @@ namespace Project_game4
 
 
             menu = new Menu(graphics, Font,screen_width,screen_height,relativeSize, list_buttons_menu);
-            list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.35), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play", Font, 400, 400, graphics), graphics));
+            list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.35), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play", Font, Big_Font, 400, 400, graphics), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.48), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Highscore!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores("Highscore", Font, 400, 400, graphics, list_highscore_buttons), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.61), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions", Font, 400, 400, graphics), graphics));
             list_buttons_menu.Add(new button((int)(screen_width * 0.37), (int)(this.screen_height * 0.74), (int)(screen_width * 0.4), (int)(screen_height * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, new Test_Exit(Exit, "Exit", Font, 400, 400, graphics), graphics));

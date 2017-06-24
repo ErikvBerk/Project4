@@ -22,31 +22,42 @@ namespace Project_game4
     {
         public string name;
         string class_name;
-        SpriteFont Font;
+        SpriteFont Font, Big_Font;
         Texture2D texture;
         int X;
         int Y;
         GraphicsDeviceManager graphics;
+        int currentscore;
+        string currentscorestring = "";
 
-        public Play(string name,SpriteFont Font,int X , int Y ,GraphicsDeviceManager graphics)
+
+        public Play(string name,SpriteFont Font, SpriteFont Big_Font,int X , int Y ,GraphicsDeviceManager graphics)
         {
             this.name = name;
             this.Font = Font;
+            this.Big_Font = Big_Font;
             this.X = X;
             this.Y = Y;
             this.graphics = graphics;
-
+            this.currentscore = 0;
+            
 
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
             Color[] data = new Color[(int)(100) * (int)(100)];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
+
+            CurrentScore();
+            CurrentScoreString();
         }
+        
+        
 
         public void draw(SpriteBatch spritebatch)
         {                    
             spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
-            spritebatch.DrawString(Font, this.name, new Vector2(this.X, this.Y), Color.Black);
+            spritebatch.DrawString(Big_Font, this.name, new Vector2(this.X, this.Y), Color.Black);
+            spritebatch.DrawString(Font, currentscorestring, new Vector2(1700, 15), Color.White);
         }
 
         public void update()
@@ -62,9 +73,21 @@ namespace Project_game4
         }
         public void action()
         {
+            
+        }
 
+        public int CurrentScore()
+        {            
+            currentscore = 0;
+            //code to calculate the score comes here.
+            return currentscore;            
+        }
+
+        public void CurrentScoreString()
+        {           
+           currentscorestring = String.Format("Current score: {0}", currentscore);           
         }
             
 
-    }
+    } 
 }
