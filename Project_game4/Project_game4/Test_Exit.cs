@@ -25,6 +25,19 @@ namespace Project_game4
         GraphicsDeviceManager graphics;
         public Action Exit;
 
+        public List<button> Buttons
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public Test_Exit(Action exit, string name, SpriteFont Font, int X, int Y, GraphicsDeviceManager graphics)
         {
             this.Exit = exit;

@@ -20,15 +20,29 @@ namespace Project_game4
 {
     class Back : I_Button_classes
     {
-        string name;
+        string name="Menu";
         
 
         public Back(string name)
         {
             this.name = name;
-            Console.WriteLine("Back works constructor");
+            
 
         }
+
+        public List<button> Buttons
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void action()
         {
             

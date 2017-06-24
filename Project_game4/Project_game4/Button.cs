@@ -50,7 +50,8 @@ namespace Project_game4
         Color Color, hoverColor, CurrentColor;
         public I_Button_classes Class_call;
         public bool visible;
-        public bool clicked=false;
+        bool clicked=false;
+        public bool HasBeenClicked;
         String Text;
         SpriteFont Font;
         SpriteBatch spritebatch;
@@ -84,9 +85,19 @@ namespace Project_game4
         }
         public void onclick()
         {
-           
-            
 
+            
+            if (clicked==true)
+            {
+                HasBeenClicked = clicked;
+                clicked = false;
+            }
+            else { HasBeenClicked = false; }
+
+        }
+        public void isClicked()
+        {
+            
         }
         public void update()
         {
@@ -98,10 +109,11 @@ namespace Project_game4
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
 
-                    onclick();
+                    
                     this.CurrentColor = this.hoverColor;
                     clicked = true;
-                    
+                    onclick();
+
                 }
             }
             else

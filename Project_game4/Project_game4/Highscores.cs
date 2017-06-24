@@ -16,14 +16,16 @@ namespace Project_game4
 {
     class Highscores : I_Button_classes
     {
-        public string name;
+        public string name="Highscores";
         string class_name;
         SpriteFont Font;
         Texture2D texture;
         int X;
         int Y;
         GraphicsDeviceManager graphics;
-        public List<button> list_highscore_buttons;
+        List<button> list_highscore_buttons;
+
+        
 
         public Highscores(string name, SpriteFont Font, int X, int Y, GraphicsDeviceManager graphics, List<button> list_highscore_buttons)
         {
@@ -44,14 +46,28 @@ namespace Project_game4
             this.texture.SetData(data);
             //
         }
+        public List<button> Buttons
+        {
+            get
+            {
+                return this.list_highscore_buttons;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public void draw(SpriteBatch spritebatch)
         {
-            foreach(button But in list_highscore_buttons)
+            spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
+            spritebatch.DrawString(Font, this.name, new Vector2(this.X, this.Y), Color.Black);
+            foreach (button But in Buttons)
             {
                 But.draw(spritebatch);
             }
-            Console.WriteLine("Highscore Draw works");
+            
             
         }
 

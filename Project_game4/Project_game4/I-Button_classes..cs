@@ -20,10 +20,11 @@ namespace Project_game4
 {
     public interface I_Button_classes   //interface for all gameElement classes to instantiate in the button class.
     {
-        
+
         void draw(SpriteBatch spritebatch);
         void update();
         string get_name();
         void action();
+        List<button> Buttons{get; set; }
     }
 }

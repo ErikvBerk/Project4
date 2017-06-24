@@ -27,7 +27,7 @@ namespace Project_game4
         double screen_height;
         double screen_width;
         public bool Clicked = false;
-        public string name;
+        public string name = "Menu";
         
 
         public Menu()
@@ -62,7 +62,7 @@ namespace Project_game4
             {
                 b.draw(spritebatch);
             }
-            Console.WriteLine("Menu draw works");
+            
         }
         public List<button> buttons
         {

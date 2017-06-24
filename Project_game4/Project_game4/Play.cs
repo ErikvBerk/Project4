@@ -20,7 +20,7 @@ namespace Project_game4
 {
     class Play : I_Button_classes
     {
-        public string name;
+        public string name="Play";
         string class_name;
         SpriteFont Font, Big_Font;
         Texture2D texture;
@@ -29,9 +29,11 @@ namespace Project_game4
         GraphicsDeviceManager graphics;
         int currentscore;
         string currentscorestring = "";
+        List<button> List_Play_Buttons;
 
+        
 
-        public Play(string name,SpriteFont Font, SpriteFont Big_Font,int X , int Y ,GraphicsDeviceManager graphics)
+        public Play(string name,SpriteFont Font, SpriteFont Big_Font,int X , int Y ,GraphicsDeviceManager graphics,List<button> List_Play_Buttons)
         {
             this.name = name;
             this.Font = Font;
@@ -40,24 +42,43 @@ namespace Project_game4
             this.Y = Y;
             this.graphics = graphics;
             this.currentscore = 0;
+            this.List_Play_Buttons = List_Play_Buttons;
             
 
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
             Color[] data = new Color[(int)(100) * (int)(100)];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
+            
 
             CurrentScore();
             CurrentScoreString();
         }
-        
-        
+        public List<button> Buttons
+        {
+            get
+            {
+                return this.List_Play_Buttons;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+
 
         public void draw(SpriteBatch spritebatch)
         {                    
             spritebatch.Draw(texture, new Vector2(100, 200), Color.White);
             spritebatch.DrawString(Big_Font, this.name, new Vector2(this.X, this.Y), Color.Black);
             spritebatch.DrawString(Font, currentscorestring, new Vector2(1700, 15), Color.White);
+
+            foreach(button BUT in Buttons)
+            {
+                BUT.draw(spritebatch);
+            }
         }
 
         public void update()
