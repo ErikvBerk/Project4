@@ -56,6 +56,7 @@ namespace Project_game4
         SpriteFont Font;
         SpriteBatch spritebatch;
         GraphicsDeviceManager graphics;
+        string Class_call_name;
 
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, I_Button_classes Class_call, GraphicsDeviceManager graphics)
         {
@@ -71,10 +72,15 @@ namespace Project_game4
             this.Text = text;
             this.Font = font;
             this.graphics = graphics;
+            this.Class_call_name = get_class_name();
             
 
 
             createTexture(graphics);
+        }
+        public string get_class_name()
+        {
+            return Class_call.get_name();
         }
         public void createTexture(GraphicsDeviceManager graphics) //creates the texture (background) for the buttons
         {
@@ -89,10 +95,10 @@ namespace Project_game4
             
             if (clicked==true)
             {
-                HasBeenClicked = clicked;
+                HasBeenClicked = true;
                 clicked = false;
             }
-            else { HasBeenClicked = false; }
+            
 
         }
         public void isClicked()

@@ -20,14 +20,15 @@ namespace Project_game4
 {
     class Back : I_Button_classes
     {
-        string name="Menu";
-        
+        public string name="";
+        string class_name;
 
         public Back(string name)
         {
-            this.name = name;
+           this.name = name;
             
 
+            Console.WriteLine("Back constructor works");
         }
 
         public List<button> Buttons
@@ -55,7 +56,9 @@ namespace Project_game4
 
         public string get_name()
         {
-            return this.name;
+            class_name = this.name;
+            return class_name;
+            
         }
 
         public void update()

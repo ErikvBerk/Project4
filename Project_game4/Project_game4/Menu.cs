@@ -26,7 +26,7 @@ namespace Project_game4
         SpriteFont Font;
         double screen_height;
         double screen_width;
-        public bool Clicked = false;
+        public bool Clicked = true;
         public string name = "Menu";
         
 
@@ -62,6 +62,7 @@ namespace Project_game4
             {
                 b.draw(spritebatch);
             }
+            Console.WriteLine("Menu draw");
             
         }
         public List<button> buttons
