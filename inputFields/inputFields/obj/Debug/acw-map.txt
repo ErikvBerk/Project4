@@ -1,0 +1,8 @@
+inputFields.MainActivity, inputFields;md5727789fc911a639dfe0b1fd45f8f2cd4.MainActivity
+inputFields.MainActivity, inputFields, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5727789fc911a639dfe0b1fd45f8f2cd4.MainActivity
+inputFields.MainActivity;md5727789fc911a639dfe0b1fd45f8f2cd4.MainActivity
+inputfields.MainActivity;md5727789fc911a639dfe0b1fd45f8f2cd4.MainActivity
+inputFields.TextField, inputFields;md5727789fc911a639dfe0b1fd45f8f2cd4.TextField
+inputFields.TextField, inputFields, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5727789fc911a639dfe0b1fd45f8f2cd4.TextField
+inputFields.TextField;md5727789fc911a639dfe0b1fd45f8f2cd4.TextField
+inputfields.TextField;md5727789fc911a639dfe0b1fd45f8f2cd4.TextField

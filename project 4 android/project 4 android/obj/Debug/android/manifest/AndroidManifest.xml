@@ -6,7 +6,13 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="project 4 android" android:icon="@drawable/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:icon="@drawable/icon" android:label="project 4 android" android:launchMode="singleInstance" android:screenOrientation="sensorLandscape" android:theme="@style/Theme.Splash" android:name="md54c5a65637a7c6daaf3da1300b1e04287.Activity1">
+    <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|orientation|screenSize" android:icon="@drawable/icon" android:label="project 4 android" android:launchMode="singleInstance" android:screenOrientation="sensorLandscape" android:theme="@style/Theme.Splash" android:name="md54c5a65637a7c6daaf3da1300b1e04287.Activity1">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:icon="@drawable/icon" android:label="inputFields" android:screenOrientation="sensorLandscape" android:name="md5727789fc911a639dfe0b1fd45f8f2cd4.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

@@ -101,6 +101,7 @@ class MonoPackageManager_Resources {
 		"project 4 android.dll",
 		"MonoGame.Framework.dll",
 		"project 4 algemeen.exe",
+		"inputFields.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

@@ -12,12 +12,12 @@ namespace project_4_android
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Game1 : Game, game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        int screen_height, screen_width;
-        float relativeSize;
+        public int screen_height, screen_width;
+        public float relativeSize;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -49,8 +49,9 @@ namespace project_4_android
         /// all of your content.
         /// </summary>
 
-        gameElement Current = new Menu();
+        public gameElement Current = new Menu();
         List<androidButtonAdapter> buttonAdapters = new List<androidButtonAdapter>();
+        List<androidTextBoxAdapter> textboxAdapters = new List<androidTextBoxAdapter>();
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -59,7 +60,7 @@ namespace project_4_android
             // Load the font used by the text
             SpriteFont font = Content.Load<SpriteFont>("FONT");
 
-            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1));
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
 
@@ -68,11 +69,28 @@ namespace project_4_android
             {
                 buttonAdapters.Add(new androidButtonAdapter(b));
             }
+            foreach(textbox t in Current.textboxes)
+            {
+                textboxAdapters.Add(new androidTextBoxAdapter(t));
+            }
         }
         // function used to exit the program
-        private void exit()
+        private void exit(game game1)
         {
             Exit();
+        }
+
+
+        public gameElement current
+        {
+            get
+            {
+                return Current;
+            }
+            set
+            {
+                Current = value;
+            }
         }
 
         /// <summary>
@@ -93,15 +111,31 @@ namespace project_4_android
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-
+            var type = Current.GetType();
             // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
             // update the adapters
             foreach(androidButtonAdapter b in buttonAdapters)
             {
-                b.update(currentTouch);
+                b.update(currentTouch, this);
             }
-
+            foreach (androidTextBoxAdapter t in textboxAdapters)
+            {
+                t.update(currentTouch);
+            }
+            if (Current.GetType() != type)
+            {
+                buttonAdapters.Clear();
+                foreach (button b in Current.buttons)
+                {
+                    buttonAdapters.Add(new androidButtonAdapter(b));
+                }
+                textboxAdapters.Clear();
+                foreach (textbox t in Current.textboxes)
+                {
+                    textboxAdapters.Add(new androidTextBoxAdapter(t));
+                }
+            }
             base.Update(gameTime);
         }
 
@@ -111,11 +145,11 @@ namespace project_4_android
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             // begin the spriteBatch
             spriteBatch.Begin();
-            // draw the instructions screen
+            // draw the current screen
             Current.draw(spriteBatch);
             // end the spriteBatch
             spriteBatch.End();

@@ -4,7 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/FONT.spritefont</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/Big_Font.spritefont</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/FONT.spritefont</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/Big_Font.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

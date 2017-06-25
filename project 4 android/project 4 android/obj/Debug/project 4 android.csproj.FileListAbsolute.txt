@@ -18,3 +18,31 @@ C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bi
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\obj\Debug\android\assets\project 4 android.dll.mdb
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.exe
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.pdb
+C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll.mdb
+C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\obj\Debug\android\assets\inputFields.dll.mdb
+C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll
+C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\project 4 android.csprojResolveAssemblyReference.cache
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\project 4 android.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\project 4 android.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 android.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 android.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project_4_android.project_4_android.apk
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project_4_android.project_4_android-Signed.apk
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\MonoGame.Framework.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.exe
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\MonoGame.Framework.xml
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\android\bin\project_4_android.project_4_android.apk
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\res\values\strings.xml
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\res\drawable\icon.png
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\res\drawable\splash.png
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\res\values\styles.xml
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\R.cs.flag
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\uploadflags.txt
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll.mdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 android.dll.mdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\android\assets\inputFields.dll.mdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 android\project 4 android\obj\Debug\android\assets\project 4 android.dll.mdb
