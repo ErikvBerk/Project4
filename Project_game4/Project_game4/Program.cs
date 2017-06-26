@@ -16,8 +16,6 @@ namespace Project_game4
             using (var game = new Game1())
                 
                 game.Run();
-            
-
         }
     }
 }

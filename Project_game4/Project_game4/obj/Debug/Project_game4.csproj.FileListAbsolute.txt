@@ -237,3 +237,9 @@ C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
+C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb

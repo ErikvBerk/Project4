@@ -43,8 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="button.cs" />
-    <Compile Include="Instructies.cs" />
+    <Compile Include="Highscores.cs" />
+    <Compile Include="Instructions.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Play.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="textbox.cs" />
