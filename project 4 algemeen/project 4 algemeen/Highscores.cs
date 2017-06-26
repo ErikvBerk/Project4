@@ -20,23 +20,26 @@ namespace project_4_algemeen
         string class_name;
         SpriteFont Font;
         Texture2D texture;
-        int screen_width, screen_height;
+        double screen_width, screen_height;
         GraphicsDeviceManager graphics;
         List<button> list_highscore_buttons;
+        float relativeSize;
+        game game1;
 
 
 
-        public Highscores(string name, SpriteFont Font, int screen_width, int screen_height, GraphicsDeviceManager graphics, List<button> list_highscore_buttons)
+        public Highscores(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
         {
-            this.name = name;
-            this.Font = Font;
-            this.screen_width=screen_width;
-            this.screen_height = screen_height;
             this.graphics = graphics;
-            this.list_highscore_buttons = list_highscore_buttons;
+            this.Font = font;
+            this.screen_width = screen_width;
+            this.screen_height = screen_height;
+            this.relativeSize = relativeSize;
+            this.game1 = game1;
+            this.name = name;
 
 
-            Console.WriteLine("Highscore constructor works");
+
 
             //not important creates a texture
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
@@ -77,7 +80,7 @@ namespace project_4_algemeen
     public void draw(SpriteBatch spritebatch)
         {
             spritebatch.Draw(this.texture, new Vector2(100, 200), Color.White);
-            spritebatch.DrawString(Font, this.name, new Vector2(this.screen_width/2, this.screen_height/2), Color.Black);
+            spritebatch.DrawString(Font, this.name, new Vector2((int)this.screen_width/2, (int)this.screen_height/2), Color.Black);
             foreach (button But in Buttons)
             {
                 But.draw(spritebatch);
