@@ -14,7 +14,10 @@ namespace Project_game4
         static void Main()
         {
             using (var game = new Game1())
+                
                 game.Run();
+            
+
         }
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/Big_Font.spritefont</SourceFile>
+  <SourceTime>2017-06-25T13:33:25.3776672+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/Big_Font.xnb</DestFile>
+  <DestTime>2017-06-25T13:58:22.7145896+02:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2017-03-01T16:05:36+01:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

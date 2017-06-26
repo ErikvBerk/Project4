@@ -4,17 +4,20 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using System;
+using project_4_algemeen;
+using System.Collections.Generic;
 
 namespace project_4_android
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class Game1 : Game, game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        int screen_height, screen_width;
+        public int screen_height, screen_width;
+        public float relativeSize;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -32,10 +35,9 @@ namespace project_4_android
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             screen_width = GraphicsDevice.DisplayMode.Width;
             screen_height = GraphicsDevice.DisplayMode.Height;
+            relativeSize = (float)screen_height / 720;
             graphics.PreferredBackBufferWidth = screen_width;
             graphics.PreferredBackBufferHeight = screen_height;
             graphics.ApplyChanges();
@@ -46,28 +48,49 @@ namespace project_4_android
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        button test1, test2, test3, test4;
-        androidButtonAdapter adapterTest1, adapterTest2, adapterTest3, adapterTest4;
+
+        public gameElement Current = new Menu();
+        List<androidButtonAdapter> buttonAdapters = new List<androidButtonAdapter>();
+        List<androidTextBoxAdapter> textboxAdapters = new List<androidTextBoxAdapter>();
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-            Texture2D rect = new Texture2D(graphics.GraphicsDevice, (int)(screen_width / 2), (int)(screen_height / 2));
-            Color[] data = new Color[(int)(screen_width / 2) * (int)(screen_height / 2)];
-            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
-            rect.SetData(data);
-            test1 = new button(0, 0, (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test2 = new button((int)(screen_width / 2), (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test3 = new button(0, (int)(screen_height / 2), (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test4 = new button((int)(screen_width / 2), 0, (int)(screen_width / 2), (int)(screen_height / 2), rect);
-            test3.visible = false;
-            test4.visible = false;
-            adapterTest1 = new androidButtonAdapter(test1);
-            adapterTest2 = new androidButtonAdapter(test2);
-            adapterTest3 = new androidButtonAdapter(test3);
-            adapterTest4 = new androidButtonAdapter(test4);
+            // Load the font used by the text
+            SpriteFont font = Content.Load<SpriteFont>("FONT");
+
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1));
+            //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
+            //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
+
+            // create adapters for the buttons of the instructions screen
+            foreach (button b in Current.buttons)
+            {
+                buttonAdapters.Add(new androidButtonAdapter(b));
+            }
+            foreach(textbox t in Current.textboxes)
+            {
+                textboxAdapters.Add(new androidTextBoxAdapter(t));
+            }
+        }
+        // function used to exit the program
+        private void exit(game game1)
+        {
+            Exit();
+        }
+
+
+        public gameElement current
+        {
+            get
+            {
+                return Current;
+            }
+            set
+            {
+                Current = value;
+            }
         }
 
         /// <summary>
@@ -88,14 +111,31 @@ namespace project_4_android
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-
-            // TODO: Add your update logic here
-
+            var type = Current.GetType();
+            // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
-            adapterTest1.update(currentTouch);
-            adapterTest2.update(currentTouch);
-            adapterTest3.update(currentTouch);
-            adapterTest4.update(currentTouch);
+            // update the adapters
+            foreach(androidButtonAdapter b in buttonAdapters)
+            {
+                b.update(currentTouch, this);
+            }
+            foreach (androidTextBoxAdapter t in textboxAdapters)
+            {
+                t.update(currentTouch);
+            }
+            if (Current.GetType() != type)
+            {
+                buttonAdapters.Clear();
+                foreach (button b in Current.buttons)
+                {
+                    buttonAdapters.Add(new androidButtonAdapter(b));
+                }
+                textboxAdapters.Clear();
+                foreach (textbox t in Current.textboxes)
+                {
+                    textboxAdapters.Add(new androidTextBoxAdapter(t));
+                }
+            }
             base.Update(gameTime);
         }
 
@@ -105,14 +145,13 @@ namespace project_4_android
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkOliveGreen);
 
-            // TODO: Add your drawing code here
+            // begin the spriteBatch
             spriteBatch.Begin();
-            adapterTest1.draw(spriteBatch);
-            adapterTest2.draw(spriteBatch);
-            adapterTest3.draw(spriteBatch);
-            adapterTest4.draw(spriteBatch);
+            // draw the current screen
+            Current.draw(spriteBatch);
+            // end the spriteBatch
             spriteBatch.End();
             base.Draw(gameTime);
         }

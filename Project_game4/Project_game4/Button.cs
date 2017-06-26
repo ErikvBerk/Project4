@@ -1,119 +1,141 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+
+using Microsoft.Xna.Framework.Input.Touch;
+
+
+
 using Microsoft.VisualBasic;
+using project_4_algemeen;
 
 namespace Project_game4
 {
-
-    public class Button
+    public class androidButtonAdapter
     {
-        int buttonX, buttonY, buttonWidth, buttonHeigth;
-        string Name;
-        Texture2D Texture;
-        public bool isClicked;
-        public bool isHovered;
-        public bool isClickable;
-        public bool hasBeenClicked;
-        public bool Clicked;
-        Vector2 Position;
-        public Color Color;
-        SpriteFont font;
-        
-        
-
-        public int ButtonX
+        button button;
+        public androidButtonAdapter(button button)
         {
-            get
-            {
-                return buttonX;
-            }
+            this.button = button;
         }
-
-        public int ButtonY
+        public void update(TouchCollection currenttouch)
         {
-            get
+            foreach (TouchLocation t in currenttouch)
             {
-                return buttonY;
-            }
-        }
-
-        public Button(string name, Texture2D texture, int buttonX, int buttonY, SpriteFont font,int Width,int Height,Color color)
-        {
-            this.Name = name;
-            this.Texture = texture;
-            this.buttonX = buttonX;
-            this.buttonY = buttonY;
-            this.buttonWidth = Width;
-            this.buttonHeigth = Height;
-            this.Position = new Vector2(this.buttonX, this.buttonY);
-            this.font = font;
-            this.isClickable = true;
-            this.Color = color;
-        }
-
-        public void Update()
-        {
-            var mouseState = Mouse.GetState();
-
-            if((mouseState.X >=buttonX && mouseState.X<= (buttonX+buttonWidth)) && (mouseState.Y >= buttonY && mouseState.Y<(buttonY + buttonHeigth)))          
-            {
-                this.isHovered = true;
-                this.Color = Color.Green;
-
-                Console.WriteLine("Hover works");
-
-
-                Clicked = mouseState.LeftButton == ButtonState.Pressed;
-
-                if (this.Clicked == true)
-                {                    
-                    this.Color = Color.Green;           
-                    this.hasBeenClicked = true;
-
-                    Console.WriteLine(mouseState.X);
-                    Console.WriteLine("Clicked works");
-
-                }
-                    if (hasBeenClicked == true)
+                if (t.Position.X >= this.button.X && t.Position.X < this.button.X + this.button.width && t.Position.Y >= this.button.Y && t.Position.Y < this.button.Y + this.button.heigth)
+                {
+                    if (t.State == TouchLocationState.Pressed)
                     {
-                    //Execute Action here
-                    Console.WriteLine("hasBeenClicked works");
-
+                        button.onclick();
                     }
                 }
+            }
+        }
+        public void draw(SpriteBatch spritebatch)
+        {
+            this.button.draw(spritebatch);
+        }
+    }
+    public class button
+    {
+        public int X, Y, width, heigth;
+        Texture2D texture;
+        Color Color, hoverColor, CurrentColor;
+        public I_Button_classes Class_call;
+        public bool visible;
+        bool clicked=false;
+        public bool HasBeenClicked;
+        String Text;
+        SpriteFont Font;
+        SpriteBatch spritebatch;
+        GraphicsDeviceManager graphics;
+        string Class_call_name;
+
+        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, I_Button_classes Class_call, GraphicsDeviceManager graphics)
+        {
+            this.X = x;
+            this.Y = y;
+            this.width = width;
+            this.heigth = heigth;
+            this.Color = color;
+            this.hoverColor = hovercolor;
+            this.Class_call = Class_call;
+            this.CurrentColor = this.Color;
+            visible = true;
+            this.Text = text;
+            this.Font = font;
+            this.graphics = graphics;
+            this.Class_call_name = get_class_name();
+            
+
+
+            createTexture(graphics);
+        }
+        public string get_class_name()
+        {
+            return Class_call.get_name();
+        }
+        public void createTexture(GraphicsDeviceManager graphics) //creates the texture (background) for the buttons
+        {
+            this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width), (int)(this.heigth));
+            Color[] data = new Color[(int)(this.width) * (int)(this.heigth)];
+            for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            this.texture.SetData(data);
+        }
+        public void onclick()
+        {
+
+            
+            if (clicked==true)
+            {
+                HasBeenClicked = true;
+                clicked = false;
+            }
+            
+
+        }
+        public void isClicked()
+        {
+            
+        }
+        public void update()
+        {
+            var mousestate = Mouse.GetState();  //Position of mouse , if statement creates the hitbox for the buttons.
+
+            if (mousestate.X >= this.X && mousestate.X < (this.X + this.width) && mousestate.Y >= this.Y && mousestate.Y < (this.Y + this.heigth))
+            {
+                this.CurrentColor = hoverColor;
+                if (mousestate.LeftButton == ButtonState.Pressed)
+                {
+
+                    
+                    this.CurrentColor = this.hoverColor;
+                    clicked = true;
+                    onclick();
+
+                }
+            }
             else
             {
-                this.isHovered = false;
-                this.Clicked = false;
-                this.Color = Color.Red;
+                this.CurrentColor = this.Color;
             }
-
-
         }
-
-            
-            
-            
-        
-        public void Draw(SpriteBatch spriteBatch)
+        public void draw(SpriteBatch spritebatch) 
         {
-            if (isHovered)
-                spriteBatch.Draw(this.Texture, this.Position, this.Color);
-            else
-                spriteBatch.Draw(this.Texture, this.Position, this.Color);
+            
+            if (visible)
+                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);  //draws the background color texture
+            spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);  //draws the strings on the buttons
 
             
-            spriteBatch.Draw(Texture, Position,Color);
-            spriteBatch.DrawString(this.font, this.Name, new Vector2(this.buttonX + 5, this.buttonY + 7), Color.Black);
-
         }
-        
     }
 }
+

@@ -19,7 +19,7 @@ namespace project_4_algemeen
         {
             this.button = button;
         }
-        public void update(TouchCollection currenttouch)
+        public void update(TouchCollection currenttouch, game game1)
         {
             foreach (TouchLocation t in currenttouch)
             {
@@ -27,7 +27,7 @@ namespace project_4_algemeen
                 {
                     if (t.State == TouchLocationState.Pressed)
                     {
-                        button.onclick();
+                        button.onclick(game1);
                     }
                 }
             }
@@ -42,12 +42,12 @@ namespace project_4_algemeen
         public int X, Y, width, heigth;
         Texture2D texture;
         Color Color, hoverColor, CurrentColor;
-        Action Action;
+        public Action<game> Action;
         public bool visible;
         String Text;
         SpriteFont Font;
         
-        public button(int x, int y, int width, int heigth,String text,SpriteFont font, Color color, Color hovercolor, Action action, GraphicsDeviceManager graphics)
+        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics)
         {
             this.X = x;
             this.Y = y;
@@ -70,11 +70,11 @@ namespace project_4_algemeen
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
         }
-        public void onclick()
+        public void onclick(game game1)
         {
-            this.Action();
+            this.Action(game1);
         }
-        public void update()
+        public void update(game game1)
         {
             var mousestate = Mouse.GetState();
             
@@ -84,7 +84,7 @@ namespace project_4_algemeen
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
                     
-                    onclick();
+                    onclick(game1);
                     this.CurrentColor = this.hoverColor;
                 }
             }
