@@ -24,13 +24,15 @@ namespace Project_game4
         public int screen_width;
 		public int screen_height;
         public float relativeSize;
+        List<Texture2D> All_images=new List<Texture2D>();
+        public Texture2D Level_1_Background;
 
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";           
-           
+            Content.RootDirectory = "Content";
+
             
         }
         
@@ -67,6 +69,8 @@ namespace Project_game4
             this.IsMouseVisible = true;
 			screen_width = graphics.PreferredBackBufferWidth;
 			screen_height = graphics.PreferredBackBufferHeight;
+
+            
             base.Initialize();
 
             base.Initialize();
@@ -79,11 +83,15 @@ namespace Project_game4
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Font = Content.Load<SpriteFont>("FONT");
             Big_Font = Content.Load<SpriteFont>("Big_Font");
+            this.All_images.Add(Content.Load<Texture2D>("Level_1_background")); //0
+            this.All_images.Add(Content.Load<Texture2D>("enemyneutral2")); //1 
+            this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
+            this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
+            this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
+            //All_images.Add(this.Content.Load<Texture2D>("Level_1_background"));
 
 
-            
-            
-            Current = new project_4_algemeen.Menu(this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this);
+            Current = new project_4_algemeen.Menu(this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this,this.All_images);
             
            
         }
@@ -91,10 +99,7 @@ namespace Project_game4
         {
             Exit();
         }
-        public void change_Screen()
-        {
-
-        }
+        
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
