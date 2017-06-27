@@ -22,20 +22,17 @@ namespace Project_game4
     public class Menu 
     {
         GraphicsDeviceManager graphics;
-        public List<button> list_buttons_menu;
+        public List<project_4_algemeen.button> list_buttons_menu;
         SpriteFont Font;
         double screen_height;
         double screen_width;
-        public bool Clicked = true;
-        public string name = "Menu";
         
 
         public Menu()
         {
-            this.Clicked = true;
-            this.name = "Menu";
+
         }
-        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize,List<button> list_buttons_menu)
+        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, List<project_4_algemeen.button> list_buttons_menu)
         {
             this.graphics = graphics;
             this.Font = Font;
@@ -49,23 +46,21 @@ namespace Project_game4
             //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, graphics));
             //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, graphics));
         }
-        public void update()
+        public void update(game game1)
         {
-            foreach (button b in list_buttons_menu) 
+            foreach (project_4_algemeen.button b in list_buttons_menu) 
             {
-                b.update();
+                b.update(game1);
             }
         }
         public void draw(SpriteBatch spritebatch)
         {
-            foreach (button b in list_buttons_menu)
+            foreach (project_4_algemeen.button b in list_buttons_menu)
             {
                 b.draw(spritebatch);
             }
-            Console.WriteLine("Menu draw");
-            
         }
-        public List<button> buttons
+        public List<project_4_algemeen.button> buttons
         {
             get
             {

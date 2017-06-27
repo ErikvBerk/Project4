@@ -52,6 +52,7 @@ namespace project_4_android
         public gameElement Current = new Menu();
         List<androidButtonAdapter> buttonAdapters = new List<androidButtonAdapter>();
         List<androidTextBoxAdapter> textboxAdapters = new List<androidTextBoxAdapter>();
+        List<Texture2D> All_images = new List<Texture2D>();
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -59,8 +60,14 @@ namespace project_4_android
 
             // Load the font used by the text
             SpriteFont font = Content.Load<SpriteFont>("FONT");
+            SpriteFont Big_Font = Content.Load<SpriteFont>("Big_Font");
+            this.All_images.Add(Content.Load<Texture2D>("Level_1_background")); //0
+            this.All_images.Add(Content.Load<Texture2D>("enemyneutral2")); //1 
+            this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
+            this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
+            this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
 
-            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1));
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
 
@@ -111,7 +118,7 @@ namespace project_4_android
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-            var type = Current.GetType();
+            Type type = Current.GetType();
             // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
             // update the adapters
@@ -123,7 +130,16 @@ namespace project_4_android
             {
                 t.update(currentTouch);
             }
-            if (Current.GetType() != type)
+            Type newtype = null;
+            try
+            {
+                newtype = Current.GetType();
+            }
+            catch
+            {
+                newtype = type;
+            }
+            if (newtype != type)
             {
                 buttonAdapters.Clear();
                 foreach (button b in Current.buttons)

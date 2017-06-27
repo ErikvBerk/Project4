@@ -114,104 +114,6 @@ C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.exe
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.exe
-C:\Users\Erik\Downloads\Project4-niet-master2 (1)\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.exe
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-C:\Users\erikv\Downloads\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
-D:\Program files\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.exe
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.exe
-C:\Users\Erik\Downloads\Project4-niet-master2 (3)3\Project4-niet-master2\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
@@ -223,7 +125,6 @@ C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\FONT.xnb
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
@@ -232,19 +133,14 @@ C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.csprojResolveAssemblyReference.cache
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.exe
 C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\obj\Debug\Project_game4.pdb
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
-C:\Users\sibre\Documents\studie\project 4\github\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemyneutral2.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Level_1_background.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy3.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy4b.xnb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\endboss.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\endboss.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy3.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy4b.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemyneutral2.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Level_1_background.xnb

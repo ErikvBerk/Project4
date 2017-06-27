@@ -42,7 +42,7 @@ namespace project_4_algemeen
         public int X, Y, width, heigth;
         Texture2D texture;
         Color Color, hoverColor, CurrentColor;
-        //public Action<game> Action;
+        public Action<game> action;
         public bool visible;
         String Text;
         SpriteFont Font;
@@ -66,7 +66,23 @@ namespace project_4_algemeen
 
             createTexture(graphics);
         }
-        
+        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics)
+        {
+            this.X = x;
+            this.Y = y;
+            this.width = width;
+            this.heigth = heigth;
+            this.Color = color;
+            this.hoverColor = hovercolor;
+            this.CurrentColor = this.Color;
+            visible = true;
+            this.Text = text;
+            this.Font = font;
+            this.action = action;
+            this.graphics = graphics;
+
+            createTexture(graphics);
+        }
         public void createTexture(GraphicsDeviceManager graphics)
         {
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width), (int)(this.heigth));
@@ -76,9 +92,14 @@ namespace project_4_algemeen
         }
         public void onclick(game game1)
         {
-            //this.Action(game1);
-            
-            game1.current = Current_class;
+            try
+            {
+                game1.current = Current_class;
+            }
+            catch
+            {
+                action(game1);
+            }
         }
         public void update(game game1)
         {

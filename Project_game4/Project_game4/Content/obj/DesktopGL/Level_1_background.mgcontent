@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/erikv/Desktop/Proj4/sprint2/Project4-niet-master2/Project_game4/Project_game4/Content/Level_1_background.jpeg</SourceFile>
-  <SourceTime>2017-06-26T13:04:27.9330599+02:00</SourceTime>
-  <DestFile>C:/Users/erikv/Desktop/Proj4/sprint2/Project4-niet-master2/Project_game4/Project_game4/Content/bin/DesktopGL/Level_1_background.xnb</DestFile>
-  <DestTime>2017-06-26T19:49:43.6032854+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/Level_1_background.jpeg</SourceFile>
+  <SourceTime>2017-06-27T12:47:30.270854+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/bin/DesktopGL/Level_1_background.xnb</DestFile>
+  <DestTime>2017-06-27T14:16:39.6360926+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

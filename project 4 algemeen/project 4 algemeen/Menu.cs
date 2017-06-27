@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using project_4_android;
 
 namespace project_4_algemeen
 {
     public interface game
     {
         gameElement current { get; set; }
-        
     }
     public interface gameElement
     {
@@ -20,36 +20,52 @@ namespace project_4_algemeen
         void draw(SpriteBatch spritebatch);
         List<button> buttons { get; }
         List<textbox> textboxes { get; }
-        
     }
     public class Menu : gameElement
     {
-        public GraphicsDeviceManager graphics;
-        List<button> Buttons = new List<button>();
-        List<textbox> Textboxes = new List<textbox>();
-        public SpriteFont Font;
-        public double screen_height, screen_width;
-        public float relativeSize;
-        public Action<game> exit;
-        public game game1;
+        GraphicsDeviceManager graphics;
+        public List<button> Buttons = new List<button>();
+        public List<textbox> Textboxes = new List<textbox>();
         List<Texture2D> All_images;
-        
-        
-        public Menu(double screen_width, double screen_height, float relativeSize, SpriteFont Font, GraphicsDeviceManager graphics,game game1,List<Texture2D> All_images)
+        SpriteFont Font;
+        double screen_height;
+        double screen_width;
+        float relativeSize;
+        Action<game> exit;
+
+        public Menu()
+        {
+
+        }
+        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, Action<game> exit, game game1, List<Texture2D> All_images)
         {
             this.graphics = graphics;
             this.Font = Font;
             this.screen_height = screen_height;
             this.screen_width = screen_width;
-            this.relativeSize = relativeSize;            
-            this.game1 = game1;
+            this.relativeSize = relativeSize;
+            this.exit = exit;
             this.All_images = All_images;
 
-            this.Textboxes.Add(new textbox(10, 10, 500, 200, this.Font, graphics));
-            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.2), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1,this.All_images), this.graphics));
-            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.3), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores("Highscores",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1),this.graphics));
-            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.4), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
-            //Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.5), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, new Exit(this.game1), graphics));
+            this.Textboxes.Add(new textbox(10, 10, 500, 200, Font, graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, exit, graphics));
+        }
+        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, Action<game> exit, List<button> list_buttons_menu, game game1)
+        {
+            this.graphics = graphics;
+            this.Font = Font;
+            this.screen_height = screen_height;
+            this.screen_width = screen_width;
+            this.relativeSize = relativeSize;
+            this.exit = exit;
+            this.Textboxes.Add(new textbox(10, 10, 500, 200, Font, graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, (game1) => (game1), graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, (game1) => (game1), graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, (game1) => toInstructions(game1), graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, (game1) => exit(game1), graphics));
         }
         public void update(game game1)
         {
@@ -64,17 +80,22 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            
-            foreach (button b in Buttons)
+            foreach(button b in Buttons)
             {
                 b.draw(spritebatch);
             }
-            foreach (textbox t in Textboxes)
+            foreach(textbox t in Textboxes)
             {
                 t.draw(spritebatch);
             }
         }
-       
+        public List<button> buttons
+        {
+            get
+            {
+                return this.Buttons;
+            }
+        }
         public List<textbox> textboxes
         {
             get
@@ -82,15 +103,9 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-
-        
-
-        public List<button> buttons
+        private void toInstructions(game game1)
         {
-            get
-            {
-                return Buttons;
-            }
+            game1.current = new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this);
         }
     }
 }

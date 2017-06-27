@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using project_4_algemeen;
+using project_4_android;
 
 namespace project_4_algemeen
 {
@@ -29,8 +30,6 @@ namespace project_4_algemeen
             this.All_images = All_images;
 
             Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images));
-            
-
         }
         public List<button> buttons
         {

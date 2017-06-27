@@ -27,10 +27,8 @@ namespace project_4_algemeen
         game game1;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
-
-
-
-        public Highscores(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
+        
+        public Highscores(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
         {
             this.graphics = graphics;
             this.Font = font;
@@ -39,10 +37,7 @@ namespace project_4_algemeen
             this.relativeSize = relativeSize;
             this.game1 = game1;
             this.name = name;
-
-
-
-
+        
             //not important creates a texture
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
             Color[] data = new Color[(int)(100) * (int)(100)];

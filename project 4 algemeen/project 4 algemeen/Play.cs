@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.VisualBasic;
 using project_4_algemeen;
 using Microsoft.Xna.Framework.Content;
+using project_4_android;
 
 namespace project_4_algemeen
 {
@@ -33,7 +34,7 @@ namespace project_4_algemeen
         Level_2 level2;
         Level_3 level3;
         Level_Boss levelBoss;
-        public Play(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1,List<Texture2D> All_images)
+        public Play(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1,List<Texture2D> All_images)
 
         {
             this.graphics = graphics;
@@ -108,9 +109,7 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-
-
-
+        
 
         public int CurrentScore()
         {

@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    class Enemy :gameElement
+    class Enemy
     {
         //will need position of player.
 

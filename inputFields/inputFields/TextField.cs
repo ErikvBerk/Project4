@@ -22,11 +22,5 @@ namespace inputFields
 
             return view;
         }
-        public void ShowDialog()
-        {
-            var transaction = FragmentManager.BeginTransaction();
-            var dialogFragment = new TextField();
-            dialogFragment.Show(transaction, "dialog_fragment");
-        }
     }
 }

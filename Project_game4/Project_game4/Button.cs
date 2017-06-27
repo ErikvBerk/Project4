@@ -50,13 +50,11 @@ namespace Project_game4
         Color Color, hoverColor, CurrentColor;
         public I_Button_classes Class_call;
         public bool visible;
-        bool clicked=false;
-        public bool HasBeenClicked;
+        public bool clicked=false;
         String Text;
         SpriteFont Font;
         SpriteBatch spritebatch;
         GraphicsDeviceManager graphics;
-        string Class_call_name;
 
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, I_Button_classes Class_call, GraphicsDeviceManager graphics)
         {
@@ -72,15 +70,10 @@ namespace Project_game4
             this.Text = text;
             this.Font = font;
             this.graphics = graphics;
-            this.Class_call_name = get_class_name();
             
 
 
             createTexture(graphics);
-        }
-        public string get_class_name()
-        {
-            return Class_call.get_name();
         }
         public void createTexture(GraphicsDeviceManager graphics) //creates the texture (background) for the buttons
         {
@@ -91,19 +84,9 @@ namespace Project_game4
         }
         public void onclick()
         {
-
-            
-            if (clicked==true)
-            {
-                HasBeenClicked = true;
-                clicked = false;
-            }
+           
             
 
-        }
-        public void isClicked()
-        {
-            
         }
         public void update()
         {
@@ -115,11 +98,10 @@ namespace Project_game4
                 if (mousestate.LeftButton == ButtonState.Pressed)
                 {
 
-                    
+                    onclick();
                     this.CurrentColor = this.hoverColor;
                     clicked = true;
-                    onclick();
-
+                    
                 }
             }
             else
@@ -133,7 +115,6 @@ namespace Project_game4
             if (visible)
                 spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);  //draws the background color texture
             spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);  //draws the strings on the buttons
-
             
         }
     }
