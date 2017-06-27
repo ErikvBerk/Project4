@@ -10,6 +10,11 @@ using project_4_android;
 
 namespace project_4_algemeen
 {
+    public enum platform
+    {
+        android,
+        windows
+    }
     public interface game
     {
         gameElement current { get; set; }
@@ -32,12 +37,13 @@ namespace project_4_algemeen
         double screen_width;
         float relativeSize;
         Action<game> exit;
+        platform platform;
 
         public Menu()
         {
 
         }
-        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, Action<game> exit, game game1, List<Texture2D> All_images)
+        public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, Action<game> exit, game game1, List<Texture2D> All_images, platform platform = platform.windows)
         {
             this.graphics = graphics;
             this.Font = Font;
@@ -46,11 +52,12 @@ namespace project_4_algemeen
             this.relativeSize = relativeSize;
             this.exit = exit;
             this.All_images = All_images;
+            this.platform = platform;
 
             this.Textboxes.Add(new textbox(10, 10, 500, 200, Font, graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images), graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1), graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images,platform), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1,this,platform), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this,platform), graphics));
             Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, exit, graphics));
         }
         public Menu(GraphicsDeviceManager graphics, SpriteFont Font, double screen_height, double screen_width, float relativeSize, Action<game> exit, List<button> list_buttons_menu, game game1)
@@ -105,7 +112,7 @@ namespace project_4_algemeen
         }
         private void toInstructions(game game1)
         {
-            game1.current = new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this);
+            game1.current = new Instructies(screen_width, screen_height, Font, relativeSize, exit, graphics, this, platform);
         }
     }
 }

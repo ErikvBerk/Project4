@@ -28,7 +28,7 @@ namespace project_4_algemeen
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
         
-        public Highscores(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
+        public Highscores(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, gameElement origin, platform platform)
         {
             this.graphics = graphics;
             this.Font = font;

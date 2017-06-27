@@ -66,8 +66,9 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
             this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
+            this.All_images.Add(Content.Load<Texture2D>("P0")); //5
 
-            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images);
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
 
@@ -166,7 +167,14 @@ namespace project_4_android
             // begin the spriteBatch
             spriteBatch.Begin();
             // draw the current screen
-            Current.draw(spriteBatch);
+            try
+            {
+                Current.draw(spriteBatch);
+            }
+            catch
+            {
+
+            }
             // end the spriteBatch
             spriteBatch.End();
             base.Draw(gameTime);

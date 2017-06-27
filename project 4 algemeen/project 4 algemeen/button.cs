@@ -48,8 +48,9 @@ namespace project_4_algemeen
         SpriteFont Font;
         public gameElement Current_class;
         GraphicsDeviceManager graphics;
+        float transparancy;
 
-        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics)
+        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics, float transparancy = 1)
         {
             this.X = x;
             this.Y = y;
@@ -63,10 +64,11 @@ namespace project_4_algemeen
             this.Text = text;
             this.Font = font;
             this.graphics = graphics;
+            this.transparancy = transparancy;
 
             createTexture(graphics);
         }
-        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics)
+        public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics, float transparancy = 1)
         {
             this.X = x;
             this.Y = y;
@@ -80,6 +82,7 @@ namespace project_4_algemeen
             this.Font = font;
             this.action = action;
             this.graphics = graphics;
+            this.transparancy = transparancy;
 
             createTexture(graphics);
         }
@@ -122,9 +125,9 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if(visible)
-                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor);
-            spritebatch.DrawString(Font, Text, new Vector2(this.X,this.Y),Color.Black);
+            if (visible)
+                spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor * this.transparancy);
+            spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);
         }
     }
 }

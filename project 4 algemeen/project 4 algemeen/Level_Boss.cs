@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using project_4_algemeen;
-using project_4_android;
 
 namespace project_4_algemeen
 {
@@ -21,15 +20,29 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
-
-        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images)
+        Player player1;
+        game game1;
+        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
         {
 
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.All_images = All_images;
+            this.game1 = game1;
 
             Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images));
+            switch (platform)
+            {
+                case platform.android:
+                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics);
+                    break;
+                case platform.windows:
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height);
+                    break;
+                default:
+                    break;
+            }
+
         }
         public List<button> buttons
         {
@@ -54,11 +67,16 @@ namespace project_4_algemeen
             {
                 enemy.draw(spritebatch);
             }
+            player1.draw(spritebatch);
         }
 
         public void update(game game1)
         {
-
+            player1.update(game1);
+            foreach (Enemy enemy in Enemies)
+            {
+                enemy.update(game1);
+            }
         }
     }
 }

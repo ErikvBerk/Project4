@@ -13,16 +13,13 @@ namespace project_4_algemeen
 {
     class Enemy
     {
-        //will need position of player.
-
+        //will need position of player
         int ID;
         int HP, DMG;
         int X, Y;
         double screen_width, screen_height;
         string name;
         List<Texture2D> All_images = new List<Texture2D>();
-        List<button> Buttons = new List<button>();
-        List<textbox> Textboxes = new List<textbox>();
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images)
         {
@@ -66,7 +63,7 @@ namespace project_4_algemeen
 
         public void update(game game1)
         {
-            
+            X = X  -1;
         }
 
         public void draw(SpriteBatch spritebatch)
@@ -79,20 +76,6 @@ namespace project_4_algemeen
             else if(this.ID == 4){ spritebatch.Draw(All_images[4], destinationRectangle, Color.White);}
 
 
-        }
-        public List<button> buttons
-        {
-            get
-            {
-                return this.Buttons;
-            }
-        }
-        public List<textbox> textboxes
-        {
-            get
-            {
-                return Textboxes;
-            }
         }
     }
 }

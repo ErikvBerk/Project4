@@ -23,7 +23,7 @@ namespace project_4_algemeen
         {
 
         }
-        public Instructies(double screen_width, double screen_height, SpriteFont font, float relativeSize, Action<game> Exit, GraphicsDeviceManager graphics, gameElement origin)
+        public Instructies(double screen_width, double screen_height, SpriteFont font, float relativeSize, Action<game> Exit, GraphicsDeviceManager graphics, gameElement origin, platform platform)
         {
             this.graphics = graphics;
             this.origin = origin;
