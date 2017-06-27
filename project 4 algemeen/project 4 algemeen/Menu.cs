@@ -18,7 +18,7 @@ namespace project_4_algemeen
     {
         void update(game game1);
         void draw(SpriteBatch spritebatch);
-        //List<button> buttons { get; }
+        List<button> buttons { get; }
         List<textbox> textboxes { get; }
         
     }
@@ -83,12 +83,14 @@ namespace project_4_algemeen
             }
         }
 
-        //List<button> gameElement.buttons
-        //{
-        //    get
-        //    {
-        //        return Buttons;
-        //    }
-        //}
+        
+
+        public List<button> buttons
+        {
+            get
+            {
+                return Buttons;
+            }
+        }
     }
 }

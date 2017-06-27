@@ -25,6 +25,8 @@ namespace project_4_algemeen
         List<button> list_highscore_buttons;
         float relativeSize;
         game game1;
+        List<button> Buttons = new List<button>();
+        List<textbox> Textboxes = new List<textbox>();
 
 
 
@@ -48,34 +50,22 @@ namespace project_4_algemeen
             this.texture.SetData(data);
             //
         }
-        public List<button> Buttons
+        public List<button> buttons
         {
             get
             {
-                return this.list_highscore_buttons;
+                return this.Buttons;
             }
-
-            set
+        }
+        public List<textbox> textboxes
+        {
+            get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
 
-    public List<button> buttons
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public List<textbox> textboxes
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+     
 
     public void draw(SpriteBatch spritebatch)
         {

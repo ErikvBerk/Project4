@@ -21,7 +21,9 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         string name;
         List<Texture2D> All_images = new List<Texture2D>();
-        
+        List<button> Buttons = new List<button>();
+        List<textbox> Textboxes = new List<textbox>();
+
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images)
         {
             this.ID = ID;
@@ -78,13 +80,19 @@ namespace project_4_algemeen
 
 
         }
+        public List<button> buttons
+        {
+            get
+            {
+                return this.Buttons;
+            }
+        }
         public List<textbox> textboxes
         {
             get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
-
     }
 }

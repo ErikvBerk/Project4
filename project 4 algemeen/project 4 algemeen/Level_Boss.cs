@@ -18,6 +18,8 @@ namespace project_4_algemeen
         List<Texture2D> All_images = new List<Texture2D>();
         string name;
         double screen_width, screen_height;
+        List<button> Buttons = new List<button>();
+        List<textbox> Textboxes = new List<textbox>();
 
         public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images)
         {
@@ -30,11 +32,18 @@ namespace project_4_algemeen
             
 
         }
+        public List<button> buttons
+        {
+            get
+            {
+                return this.Buttons;
+            }
+        }
         public List<textbox> textboxes
         {
             get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
 
