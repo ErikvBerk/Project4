@@ -43,8 +43,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="button.cs" />
+    <Compile Include="Enemy.cs" />
     <Compile Include="Highscores.cs" />
     <Compile Include="Instructions.cs" />
+    <Compile Include="Level_1.cs" />
+    <Compile Include="Level_2.cs" />
+    <Compile Include="Level_3.cs" />
+    <Compile Include="Level_Boss.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Play.cs" />
     <Compile Include="Program.cs" />

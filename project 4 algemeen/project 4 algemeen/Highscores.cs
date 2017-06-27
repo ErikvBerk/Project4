@@ -20,23 +20,28 @@ namespace project_4_algemeen
         string class_name;
         SpriteFont Font;
         Texture2D texture;
-        int screen_width, screen_height;
+        double screen_width, screen_height;
         GraphicsDeviceManager graphics;
         List<button> list_highscore_buttons;
+        float relativeSize;
+        game game1;
+        List<button> Buttons = new List<button>();
+        List<textbox> Textboxes = new List<textbox>();
 
 
 
-        public Highscores(string name, SpriteFont Font, int screen_width, int screen_height, GraphicsDeviceManager graphics, List<button> list_highscore_buttons)
+        public Highscores(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
         {
-            this.name = name;
-            this.Font = Font;
-            this.screen_width=screen_width;
-            this.screen_height = screen_height;
             this.graphics = graphics;
-            this.list_highscore_buttons = list_highscore_buttons;
+            this.Font = font;
+            this.screen_width = screen_width;
+            this.screen_height = screen_height;
+            this.relativeSize = relativeSize;
+            this.game1 = game1;
+            this.name = name;
 
 
-            Console.WriteLine("Highscore constructor works");
+
 
             //not important creates a texture
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
@@ -45,39 +50,27 @@ namespace project_4_algemeen
             this.texture.SetData(data);
             //
         }
-        public List<button> Buttons
+        public List<button> buttons
         {
             get
             {
-                return this.list_highscore_buttons;
+                return this.Buttons;
             }
-
-            set
+        }
+        public List<textbox> textboxes
+        {
+            get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
 
-    public List<button> buttons
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public List<textbox> textboxes
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+     
 
     public void draw(SpriteBatch spritebatch)
         {
             spritebatch.Draw(this.texture, new Vector2(100, 200), Color.White);
-            spritebatch.DrawString(Font, this.name, new Vector2(this.screen_width/2, this.screen_height/2), Color.Black);
+            spritebatch.DrawString(Font, this.name, new Vector2((int)this.screen_width/2, (int)this.screen_height/2), Color.Black);
             foreach (button But in Buttons)
             {
                 But.draw(spritebatch);

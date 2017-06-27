@@ -18,7 +18,7 @@ namespace project_4_algemeen
     {
         void update(game game1);
         void draw(SpriteBatch spritebatch);
-        //List<button> buttons { get; }
+        List<button> buttons { get; }
         List<textbox> textboxes { get; }
         
     }
@@ -32,9 +32,10 @@ namespace project_4_algemeen
         public float relativeSize;
         public Action<game> exit;
         public game game1;
+        List<Texture2D> All_images;
         
         
-        public Menu(double screen_width, double screen_height, float relativeSize, SpriteFont Font, GraphicsDeviceManager graphics,game game1)
+        public Menu(double screen_width, double screen_height, float relativeSize, SpriteFont Font, GraphicsDeviceManager graphics,game game1,List<Texture2D> All_images)
         {
             this.graphics = graphics;
             this.Font = Font;
@@ -42,12 +43,13 @@ namespace project_4_algemeen
             this.screen_width = screen_width;
             this.relativeSize = relativeSize;            
             this.game1 = game1;
+            this.All_images = All_images;
 
             this.Textboxes.Add(new textbox(10, 10, 500, 200, this.Font, graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1), this.graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!_instructions", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1),this.graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.34), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.42), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, new Instructions("Instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.2), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play("Play",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1,this.All_images), this.graphics));
+            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.3), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores("Highscores",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1),this.graphics));
+            Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.4), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions("Instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
+            //Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.5), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, new Exit(this.game1), graphics));
         }
         public void update(game game1)
         {
@@ -62,7 +64,8 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            foreach(button b in Buttons)
+            
+            foreach (button b in Buttons)
             {
                 b.draw(spritebatch);
             }
@@ -80,12 +83,14 @@ namespace project_4_algemeen
             }
         }
 
-        //List<button> gameElement.buttons
-        //{
-        //    get
-        //    {
-        //        return Buttons;
-        //    }
-        //}
+        
+
+        public List<button> buttons
+        {
+            get
+            {
+                return Buttons;
+            }
+        }
     }
 }

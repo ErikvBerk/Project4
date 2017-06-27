@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.VisualBasic;
 using project_4_algemeen;
+using Microsoft.Xna.Framework.Content;
 
 namespace project_4_algemeen
 {
@@ -24,14 +25,15 @@ namespace project_4_algemeen
         List<textbox> Textboxes = new List<textbox>();
         game game1;
         string name;
-
+        List<Texture2D> All_images;
         int currentscore;
         string currentscorestring;
 
-
-
-
-        public Play(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
+        Level_1 level1;
+        Level_2 level2;
+        Level_3 level3;
+        Level_Boss levelBoss;
+        public Play(string name, double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1,List<Texture2D> All_images)
 
         {
             this.graphics = graphics;
@@ -41,7 +43,7 @@ namespace project_4_algemeen
             this.relativeSize = relativeSize;
             this.game1 = game1;
             this.name = name;
-
+            this.All_images = All_images;
 
 
 
@@ -51,18 +53,25 @@ namespace project_4_algemeen
             //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             //this.texture.SetData(data);
 
+            //All level instances 
+
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level1 = new Level_1("Level1", this.screen_width, this.screen_height,All_images), graphics));
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level2 = new Level_2("Level2", this.screen_width, this.screen_height, All_images), graphics));
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level3 = new Level_3("Level3", this.screen_width, this.screen_height, All_images), graphics));
+            Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, levelBoss = new Level_Boss("Boss Level", this.screen_width, this.screen_height, All_images), graphics));
 
 
-            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "next", this.Font, this.relativeSize, Color.White, Color.LightGray, new Instructions("Play", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
             //Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 3), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, new Instructions("Play_instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
 
 
             //CurrentScore();
             //CurrentScoreString();
+
         }
 
         public void update(game game1)
         {
+            
             foreach (button b in Buttons)
             {
                 b.update(game1);
@@ -75,6 +84,7 @@ namespace project_4_algemeen
 
         public void draw(SpriteBatch spritebatch)
         {
+            
             foreach (button b in Buttons)
             {
                 b.draw(spritebatch);
