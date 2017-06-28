@@ -61,6 +61,15 @@ namespace project_4_algemeen
 
         }
 
+        public bool Dead()
+        {
+            if (this.HP == 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
         public void update(game game1)
         {
             X = X  -1;
