@@ -20,7 +20,6 @@ namespace project_4_algemeen
     {
         List<Texture2D> All_images;
         public Location[] position;
-        Keys[] activeKeys;
         public Location direction;
         Random random;
         int X, Y;
@@ -28,10 +27,12 @@ namespace project_4_algemeen
         public int texdirection;
         int size_x, size_y;
         KeyboardState keyboard;
+        Keys[] activeKeys;
         game game1;
         double screen_width, screen_height;
         public List<button> buttons = new List<button>();
-        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height)
+        platform platform;
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -43,6 +44,7 @@ namespace project_4_algemeen
             this.game1 = game1;
             this.screen_width = screen_width;
             this.screen_height = screen_height;
+            this.platform = platform;
 
         }
         public virtual void update(game game1)
@@ -57,9 +59,10 @@ namespace project_4_algemeen
 
 
             keyboard = Keyboard.GetState();
-            activeKeys = keyboard.GetPressedKeys();
+            Keys[] keys = keyboard.GetPressedKeys();
 
-            Move(activeKeys);
+            if (platform == platform.windows)
+                Move(keys);
 
 
 
@@ -90,7 +93,7 @@ namespace project_4_algemeen
 
         public virtual void Move(Keys[] keys)
         {
-
+            activeKeys = keys;
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) { Exit(); }
 
             if (this.X > (int)this.screen_width - size_x)
@@ -101,7 +104,7 @@ namespace project_4_algemeen
                 this.X = -1;
             if (this.Y < -2)
                 this.Y = -1;
-            foreach (Keys k in keys)
+            foreach (Keys k in activeKeys)
             {
                 if (k == Keys.Right || k == Keys.D)
                 {
@@ -136,24 +139,13 @@ namespace project_4_algemeen
             //else
             //    cnt--;
         }
-        public Keys[] ActiveKeys
-        {
-            get
-            {
-                return activeKeys;
-            }
-            set
-            {
-                activeKeys = value;
-            }
-        }
 
 
     }
     public class AndroidPlayer : Player
     {
         Keys[] keys = new Keys[2];
-        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics) : base(All_images, game, screen_width, screen_height)
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height, platform)
         {
 
         }

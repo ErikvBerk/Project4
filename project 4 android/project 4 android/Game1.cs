@@ -109,7 +109,7 @@ namespace project_4_android
         {
             // TODO: Unload any non ContentManager content here
         }
-
+        gameElement LastKnown;
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -119,7 +119,16 @@ namespace project_4_android
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-            Type type = Current.GetType();
+            Type type = null;
+            try
+            {
+                type = Current.GetType();
+            }
+            catch
+            {
+                Current = LastKnown;
+                type = Current.GetType();
+            }
             // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
             // update the adapters
@@ -129,7 +138,11 @@ namespace project_4_android
             }
             foreach (androidTextBoxAdapter t in textboxAdapters)
             {
-                t.update(currentTouch);
+                try
+                {
+                    t.update(currentTouch);
+                }
+                catch { }
             }
             Type newtype = null;
             try
@@ -142,18 +155,35 @@ namespace project_4_android
             }
             if (newtype != type)
             {
-                buttonAdapters.Clear();
+                resetButtons();
+            }
+            if (Current != null)
+                LastKnown = Current;
+            base.Update(gameTime);
+        }
+        Switch_level sl = new Switch_level();
+        public void resetButtons()
+        {
+            buttonAdapters.Clear();
+            if (Current.GetType() == sl.GetType())
+            {
+                foreach(button b in Current.buttons)
+                {
+                    buttonAdapters.Add(new moveButton(b));
+                }
+            }
+            else
+            {
                 foreach (button b in Current.buttons)
                 {
                     buttonAdapters.Add(new androidButtonAdapter(b));
                 }
-                textboxAdapters.Clear();
-                foreach (textbox t in Current.textboxes)
-                {
-                    textboxAdapters.Add(new androidTextBoxAdapter(t));
-                }
             }
-            base.Update(gameTime);
+            textboxAdapters.Clear();
+            foreach (textbox t in Current.textboxes)
+            {
+                textboxAdapters.Add(new androidTextBoxAdapter(t));
+            }
         }
 
         /// <summary>

@@ -28,13 +28,13 @@ namespace project_4_algemeen
         List<Texture2D> All_images;
         int currentscore;
         string currentscorestring;
-        int score;
 
         Level_1 level1;
         Level_2 level2;
         Level_3 level3;
         Level_Boss levelBoss;
         platform platform;
+        int score;
         public Play(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1,List<Texture2D> All_images, platform platform)
 
         {
@@ -46,6 +46,7 @@ namespace project_4_algemeen
             this.game1 = game1;
             this.All_images = All_images;
             this.platform = platform;
+            
 
 
 
@@ -117,12 +118,12 @@ namespace project_4_algemeen
         {
             currentscore = 0;
             //code to calculate the score
-            if(LevelCleared == true)
+            if (/*LevelCleared == */true)
             {
-                score = time * Player.HP;                
+                //score = time * Player.HP;
             }
             currentscore = currentscore + score;
-
+            
             return currentscore;
         }
 
