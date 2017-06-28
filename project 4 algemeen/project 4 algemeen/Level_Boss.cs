@@ -21,6 +21,7 @@ namespace project_4_algemeen
         List<textbox> Textboxes = new List<textbox>();
         public Player player1;
         game game1;
+        platform platform;
         public Level_Boss() { }
         public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1)
         {
@@ -29,6 +30,7 @@ namespace project_4_algemeen
             this.All_images = All_images;
             this.game1 = game1;
             this.player1 = player1;
+            this.platform = platform;
 
             Color buttonColor = new Color(255, 255, 255, 127);
             buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftUp(game), graphics, 0.5f));
@@ -56,7 +58,6 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);
@@ -66,8 +67,14 @@ namespace project_4_algemeen
                 enemy.draw(spritebatch);
             }
             player1.draw(spritebatch);
+            if (platform == platform.android)
+            {
+                foreach (button b in Buttons)
+                {
+                    b.draw(spritebatch);
+                }
+            }
         }
-
         public void update(game game1)
         {
             player1.update(game1);

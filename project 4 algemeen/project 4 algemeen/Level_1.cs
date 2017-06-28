@@ -38,6 +38,16 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.player1 = player1;
 
+            Color buttonColor = new Color(255, 255, 255, 127);
+            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftUp(game), graphics, 0.5f));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, "up", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => up(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightUp(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "left", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => left(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "right", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => right(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " left \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftDown(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics));
+            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics));
+
             Enemies.Add(new Enemy(1, 800, 200, this.screen_width, this.screen_height, All_images));
             Enemies.Add(new Enemy(2, 800, 400, this.screen_width, this.screen_height, All_images));
             Enemies.Add(new Enemy(1, 800, 600, this.screen_width, this.screen_height, All_images));
@@ -45,6 +55,17 @@ namespace project_4_algemeen
             
 
 
+        }
+        public bool LevelCleared()
+        {
+            
+            bool levelcleared = false;
+            foreach(Enemy enemy in Enemies)
+            {
+                levelcleared = !levelcleared && enemy.Dead();
+                
+            }
+            return (levelcleared);
         }
         public List<button> buttons
         {
@@ -69,11 +90,53 @@ namespace project_4_algemeen
             {
                 enemy.draw(spritebatch);
             }
+            player1.draw(spritebatch);
         }
 
         public void update(game game1)
         {
-            
+            player1.update(game1);
+
+        }
+        public void leftUp(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Left, Keys.Up };
+            player1.Move(keys);
+        }
+        public void up(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Up };
+            player1.Move(keys);
+        }
+        public void rightUp(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Right, Keys.Up };
+            player1.Move(keys);
+        }
+        public void left(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Left };
+            player1.Move(keys);
+        }
+        public void right(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Right };
+            player1.Move(keys);
+        }
+        public void leftDown(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Left, Keys.Down };
+            player1.Move(keys);
+        }
+        public void down(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Down };
+            player1.Move(keys);
+        }
+        public void rightDown(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Right, Keys.Down };
+            player1.Move(keys);
         }
     }
 }
