@@ -16,23 +16,24 @@ namespace project_4_algemeen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Player
+    public class Player : gameElement
     {
         List<Texture2D> All_images;
+        public List<projectile> projectiles=new List<projectile>();
         public Location[] position;
+        Keys[] activeKeys;
         public Location direction;
         Random random;
         int X, Y;
         public int lenght;
         public int texdirection;
+        public int mouseX, mouseY;
         int size_x, size_y;
         KeyboardState keyboard;
-        Keys[] activeKeys;
         game game1;
         double screen_width, screen_height;
         public List<button> buttons = new List<button>();
-        platform platform;
-        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -44,7 +45,6 @@ namespace project_4_algemeen
             this.game1 = game1;
             this.screen_width = screen_width;
             this.screen_height = screen_height;
-            this.platform = platform;
 
         }
         public virtual void update(game game1)
@@ -57,12 +57,16 @@ namespace project_4_algemeen
                     position[i] = position[i - 1];
             }
 
+            foreach (projectile p in projectiles)
+            {
+                p.update(game1);
+            }
 
             keyboard = Keyboard.GetState();
-            Keys[] keys = keyboard.GetPressedKeys();
+            activeKeys = keyboard.GetPressedKeys();
 
-            if (platform == platform.windows)
-                Move(keys);
+            Move(activeKeys);
+            Shoot();
 
 
 
@@ -87,24 +91,35 @@ namespace project_4_algemeen
             //spritebatch.Draw(All_images[0], destinationRectangle, Color.White);
             // for (int i = 0; i < lenght; i++)
             spritebatch.Draw(All_images[5], destinationRectangle, Color.White);
+            foreach(projectile p in projectiles)
+            {
+                p.draw(spritebatch);
+            }
 
         }
-        int cnt = 1;
+        public virtual void Shoot()
+        {
+            MouseState mouse = Mouse.GetState();
+            if(mouse.LeftButton== ButtonState.Pressed)
+            {
+                mouseX = mouse.X;
+                mouseY = mouse.Y;
+
+                projectiles.Add(new projectile(this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images, this));
+
+            }
+        }
 
         public virtual void Move(Keys[] keys)
         {
-            activeKeys = keys;
+
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) { Exit(); }
 
-            if (this.X > (int)this.screen_width - size_x)
-                this.X = (int)this.screen_width - size_x;
-            if (this.Y > (int)this.screen_height - size_y)
-                this.Y = (int)this.screen_height - size_y;
-            if (this.X < -2)
-                this.X = -1;
-            if (this.Y < -2)
-                this.Y = -1;
-            foreach (Keys k in activeKeys)
+            if (this.X > (int)this.screen_width - size_x) { this.X = (int)this.screen_width - size_x; }
+            if (this.Y > (int)this.screen_height - size_y) { this.Y = (int)this.screen_height - size_y; }
+            if (this.X < 1) { this.X = 1; }
+            if (this.Y < 1) { this.Y = 1; }
+            foreach (Keys k in keys)
             {
                 if (k == Keys.Right || k == Keys.D)
                 {
@@ -139,13 +154,38 @@ namespace project_4_algemeen
             //else
             //    cnt--;
         }
+        public Keys[] ActiveKeys
+        {
+            get
+            {
+                return activeKeys;
+            }
+            set
+            {
+                activeKeys = value;
+            }
+        }
 
+        List<button> gameElement.buttons
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
+        public List<textbox> textboxes
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
     public class AndroidPlayer : Player
     {
         Keys[] keys = new Keys[2];
-        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height, platform)
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics) : base(All_images, game, screen_width, screen_height)
         {
 
         }

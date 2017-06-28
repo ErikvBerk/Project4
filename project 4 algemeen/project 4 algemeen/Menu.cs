@@ -18,7 +18,6 @@ namespace project_4_algemeen
     public interface game
     {
         gameElement current { get; set; }
-        void resetButtons();
     }
     public interface gameElement
     {

@@ -14,14 +14,13 @@ using Microsoft.Xna.Framework;
 
 namespace project_4_algemeen
 {
-    public class Switch_level : gameElement
+    class Switch_level:gameElement
     {
         List<Texture2D> All_images = new List<Texture2D>();
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
         game game1;
         double screen_width, screen_height;
-        bool level1Started, level2Started, level3Started, levelBossStarted;
         Player player1;
         Level_1 level1;
         Level_2 level2;
@@ -30,8 +29,7 @@ namespace project_4_algemeen
         platform platform;
         SpriteFont Font;
         GraphicsDeviceManager graphics;
-        EndGame EndGame;
-        public Switch_level() { }
+
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics)
         {
             this.All_images = All_images;
@@ -43,13 +41,14 @@ namespace project_4_algemeen
             this.graphics = graphics;
 
 
+
             switch (platform)
             {
                 case platform.android:
-                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform);
+                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height);
                     break;
                 default:
                     break;
@@ -58,8 +57,8 @@ namespace project_4_algemeen
             level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
             level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
             level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
-            levelBoss = new Level_Boss("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
-            EndGame = new EndGame();
+            //levelBoss = new Level_Boss("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
+
 
             //public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
 
@@ -72,22 +71,7 @@ namespace project_4_algemeen
         {
             get
             {
-                if (level1.LevelCleared() == false)
-                {
-                    return level1.buttons;
-                }
-                else if (level2.LevelCleared() == false)
-                {
-                    return level2.buttons;
-                }
-                else if (level3.LevelCleared() == false)
-                {
-                    return level3.buttons;
-                }
-                else
-                {
-                    return levelBoss.buttons;
-                }
+                return Buttons;
             }
         }
 
@@ -95,62 +79,23 @@ namespace project_4_algemeen
         {
             get
             {
-                if (level1.LevelCleared() == false)
-                {
-                    return level1.textboxes;
-                }
-                else if (level2.LevelCleared() == false)
-                {
-                    return level2.textboxes;
-                }
-                else if (level3.LevelCleared() == false)
-                {
-                    return level3.textboxes;
-                }
-                else
-                {
-                    return levelBoss.textboxes;
-                }
+                return Textboxes;
             }
         }
 
         public void update(game game1)
         {
-            if(level1.LevelCleared()== false)
+            if(level1.LevelCleared()==false)
             {
-                if (!level1Started)
-                {
-                    game1.resetButtons();
-                    level1Started = true;
-                }
                 level1.update(game1);
             }
-            else if(level2.LevelCleared()== false)
+            else if(level2.LevelCleared()==false)
             {
-                if (!level2Started)
-                {
-                    game1.resetButtons();
-                    level2Started = true;
-                }
                 level2.update(game1);
             }
-            else if(level3.LevelCleared()== false)
+            else if(level3.LevelCleared()==false)
             {
-                if (!level3Started)
-                {
-                    game1.resetButtons();
-                    level3Started = true;
-                }
                 level3.update(game1);
-            }
-            else
-            {
-                if (!levelBossStarted)
-                {
-                    game1.resetButtons();
-                    levelBossStarted = false;
-                }
-                levelBoss.update(game1);
             }
         }
 
@@ -168,10 +113,7 @@ namespace project_4_algemeen
             {
                 level3.draw(spritebatch);
             }
-            else
-            {
-                levelBoss.draw(spritebatch);
-            }
+
         }
 
         
