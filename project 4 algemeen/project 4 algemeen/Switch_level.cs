@@ -19,6 +19,7 @@ namespace project_4_algemeen
         List<Texture2D> All_images = new List<Texture2D>();
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
+        public List<projectile> projectiles = new List<projectile>();
         game game1;
         double screen_width, screen_height;
         Player player1;
@@ -39,6 +40,7 @@ namespace project_4_algemeen
             this.platform = platform;
             this.Font = font;
             this.graphics = graphics;
+            
 
 
 
@@ -54,9 +56,9 @@ namespace project_4_algemeen
                     break;
             }
 
-            level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
-            level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
-            level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
+            level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
+            level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
+            level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
             //levelBoss = new Level_Boss("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
 
 
@@ -85,6 +87,7 @@ namespace project_4_algemeen
 
         public void update(game game1)
         {
+            projectiles = player1.projectiles;
             if(level1.LevelCleared()==false)
             {
                 level1.update(game1);

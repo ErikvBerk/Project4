@@ -71,6 +71,7 @@ namespace project_4_algemeen
 
         public void update(game game1)
         {
+
             
             foreach (button b in Buttons)
             {

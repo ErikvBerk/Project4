@@ -21,10 +21,12 @@ namespace project_4_algemeen
         Vector2 position;
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
-        int speedX,speedY;
+        double speedX,speedY;
+        public int damage=500;
 
-        public projectile(int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
+        public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
         {
+            //this.damage = damage;
             this.mouseX = mouseX;
             this.mouseY = mouseY;
             this.PlayerposX = PlayerposX;
@@ -36,12 +38,13 @@ namespace project_4_algemeen
             this.position.Y = 1+this.PlayerposY;
             this.All_images = All_images;
             this.character = character;
+            
 
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
             //if (this.PlayerposY == 0) { this.PlayerposY += 1; }
 
-            this.speedX = 1;
-            this.speedY = 1;
+            this.speedX = 0.25;
+            this.speedY = 0.25;
 
         }
         public void ShootToTarget()
@@ -49,15 +52,35 @@ namespace project_4_algemeen
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + (DirectionX*speedX);
-            position.Y = position.Y + (DirectionY*speedY);
+            position.X = position.X + (int)(DirectionX*speedX);
+            position.Y = position.Y + (int)(DirectionY*speedY);
 
+        }
+        public int Hits()
+        {
+            return this.damage;
         }
         public void update(game game1)
         {
             ShootToTarget();
             
             
+        }
+        public int X1()
+        {
+            return (int)position.X;
+        }
+        public int X2()
+        {
+            return (int)position.X + 30;
+        }
+        public int Y1()
+        {
+            return (int)position.Y;
+        }
+        public int Y2()
+        {
+            return (int)position.Y + 30;
         }
 
         public void draw(SpriteBatch spritebatch)

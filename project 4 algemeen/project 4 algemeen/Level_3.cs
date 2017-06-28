@@ -20,13 +20,15 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
+        List<projectile> projectiles = new List<projectile>();
         game game1;
         platform platform;
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         Player player1;
+        
 
-        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1)
+        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles )
         {
 
             this.screen_width = screen_width;
@@ -37,6 +39,8 @@ namespace project_4_algemeen
             this.Font = font;
             this.graphics = graphics;
             this.player1 = player1;
+            this.projectiles = projectiles;
+            
 
             Color buttonColor = new Color(255, 255, 255, 127);
             buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftUp(game), graphics, 0.5f));
@@ -48,9 +52,9 @@ namespace project_4_algemeen
             buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics));
             buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics));
 
-            Enemies.Add(new Enemy(3, 800, 200, this.screen_width, this.screen_height, All_images));
-            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images));
-            Enemies.Add(new Enemy(3, 800, 600, this.screen_width, this.screen_height, All_images));
+            Enemies.Add(new Enemy(3, 800, 200, this.screen_width, this.screen_height, All_images,projectiles));
+            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images, projectiles));
+            Enemies.Add(new Enemy(3, 800, 600, this.screen_width, this.screen_height, All_images, projectiles));
 
         }
         public bool LevelCleared()

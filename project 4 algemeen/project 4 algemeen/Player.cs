@@ -33,6 +33,9 @@ namespace project_4_algemeen
         game game1;
         double screen_width, screen_height;
         public List<button> buttons = new List<button>();
+        int damage = 50;
+
+
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height)
         {
             this.All_images = All_images;
@@ -45,6 +48,7 @@ namespace project_4_algemeen
             this.game1 = game1;
             this.screen_width = screen_width;
             this.screen_height = screen_height;
+            this.damage = damage;
 
         }
         public virtual void update(game game1)
@@ -105,7 +109,7 @@ namespace project_4_algemeen
                 mouseX = mouse.X;
                 mouseY = mouse.Y;
 
-                projectiles.Add(new projectile(this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images, this));
+                projectiles.Add(new projectile(this.damage,this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images,this));
 
             }
         }

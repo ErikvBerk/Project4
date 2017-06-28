@@ -44,13 +44,23 @@ namespace project_4_algemeen
                 new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1, this, platform), graphics));
         }
 
-        
-        
 
-        public List<textbox> textboxes => throw new NotImplementedException();
 
-        public List<button> buttons => throw new NotImplementedException();
 
+        public List<button> buttons
+        {
+            get
+            {
+                return this.Buttons;
+            }
+        }
+        public List<textbox> textboxes
+        {
+            get
+            {
+                return null;
+            }
+        }
         public void draw(SpriteBatch spritebatch)
         {
             spritebatch.DrawString(this.Font, endscreen, new Vector2((int)screen_width/3, (int)screen_height / 10), Color.White);
