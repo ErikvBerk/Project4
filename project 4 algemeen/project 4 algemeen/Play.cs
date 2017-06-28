@@ -28,6 +28,7 @@ namespace project_4_algemeen
         List<Texture2D> All_images;
         int currentscore;
         string currentscorestring;
+        int score;
 
         Level_1 level1;
         Level_2 level2;
@@ -115,7 +116,13 @@ namespace project_4_algemeen
         public int CurrentScore()
         {
             currentscore = 0;
-            //code to calculate the score comes here.
+            //code to calculate the score
+            if(LevelCleared == true)
+            {
+                score = time * Player.HP;                
+            }
+            currentscore = currentscore + score;
+
             return currentscore;
         }
 

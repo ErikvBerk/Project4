@@ -29,6 +29,7 @@ namespace project_4_algemeen
         platform platform;
         SpriteFont Font;
         GraphicsDeviceManager graphics;
+        EndGame EndGame;
 
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics)
         {
@@ -62,7 +63,7 @@ namespace project_4_algemeen
 
             //public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
 
-
+            EndGame = new EndGame();
         }
 
 

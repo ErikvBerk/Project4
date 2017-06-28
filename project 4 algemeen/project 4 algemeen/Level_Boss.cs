@@ -13,7 +13,7 @@ namespace project_4_algemeen
 {
     public class Level_Boss : gameElement
     {
-        // thins that this class will receive : Player , enemies , list of images 
+        // things that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
