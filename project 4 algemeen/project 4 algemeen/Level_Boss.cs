@@ -22,7 +22,7 @@ namespace project_4_algemeen
         List<textbox> Textboxes = new List<textbox>();
         Player player1;
         game game1;
-        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
+        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1)
         {
 
             this.screen_width = screen_width;
@@ -30,18 +30,9 @@ namespace project_4_algemeen
             this.All_images = All_images;
             this.game1 = game1;
 
+
             Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images));
-            switch (platform)
-            {
-                case platform.android:
-                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics);
-                    break;
-                case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height);
-                    break;
-                default:
-                    break;
-            }
+            
 
         }
         public List<button> buttons

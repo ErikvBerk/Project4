@@ -20,13 +20,23 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
+        game game1;
+        platform platform;
+        SpriteFont Font;
+        GraphicsDeviceManager graphics;
+        Player player1;
 
-        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images)
+        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1)
         {
 
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.All_images = All_images;
+            this.game1 = game1;
+            this.platform = platform;
+            this.Font = font;
+            this.graphics = graphics;
+            this.player1 = player1;
 
             Enemies.Add(new Enemy(3, 800, 200, this.screen_width, this.screen_height, All_images));
             Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images));
