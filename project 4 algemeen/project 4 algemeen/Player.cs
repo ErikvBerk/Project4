@@ -16,7 +16,7 @@ namespace project_4_algemeen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    class Player
+    public class Player
     {
         List<Texture2D> All_images;
         public Location[] position;
@@ -30,7 +30,8 @@ namespace project_4_algemeen
         KeyboardState keyboard;
         game game1;
         double screen_width, screen_height;
-        public Player(List<Texture2D> All_images, game game, double screen_width, double screen_height)
+        public List<button> buttons = new List<button>();
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -58,7 +59,7 @@ namespace project_4_algemeen
             keyboard = Keyboard.GetState();
             activeKeys = keyboard.GetPressedKeys();
 
-            Move();
+            Move(activeKeys);
 
 
 
@@ -87,7 +88,7 @@ namespace project_4_algemeen
         }
         int cnt = 1;
 
-        public virtual void Move()
+        public virtual void Move(Keys[] keys)
         {
 
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) { Exit(); }
@@ -100,8 +101,7 @@ namespace project_4_algemeen
                 this.X = -1;
             if (this.Y < -2)
                 this.Y = -1;
-            foreach (Keys k in activeKeys)
-
+            foreach (Keys k in keys)
             {
                 if (k == Keys.Right || k == Keys.D)
                 {
@@ -150,21 +150,12 @@ namespace project_4_algemeen
 
 
     }
-    class AndroidPlayer : Player
+    public class AndroidPlayer : Player
     {
-        List<button> buttons = new List<button>();
         Keys[] keys = new Keys[2];
         public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics) : base(All_images, game, screen_width, screen_height)
         {
-            Color buttonColor = new Color(255, 255, 255, 127);
-            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game1) => leftUp(game1), graphics, 0.5f));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, "up", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " right \n up ", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "left", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "right", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " left \n down ", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
-            buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, Color.TransparentBlack, Color.TransparentBlack, (game1) => leftUp(game1), graphics));
+
         }
         public override void update(game game1)
         {
@@ -176,34 +167,19 @@ namespace project_4_algemeen
                     position[i] = position[i - 1];
             }
 
-            Move();
-
             position[0] = position[0] + direction;
             direction = new Location(0, 0);
         }
-        public override void Move()
+        public override void Move(Keys[] keys)
         {
-
-            keys[0] = Keys.Up;
-            base.ActiveKeys = keys;
-            base.Move();
-            keys = new Keys[2];
+            base.Move(keys);
         }
         public override void draw(SpriteBatch spritebatch)
         {
             base.draw(spritebatch);
-            foreach(button b in buttons)
-            {
-                b.draw(spritebatch);
-            }
-        }
-        void leftUp(game game1)
-        {
-            keys[0] = Keys.Left;
-            keys[1] = Keys.Up;
         }
     }
-    class Location
+    public class Location
     {
         public int X, Y;
         public Location(int x, int y)

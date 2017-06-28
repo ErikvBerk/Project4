@@ -17,6 +17,8 @@ namespace project_4_algemeen
     class Switch_level:gameElement
     {
         List<Texture2D> All_images = new List<Texture2D>();
+        List<button> Buttons = new List<button>();
+        List<textbox> Textboxes = new List<textbox>();
         game game1;
         double screen_width, screen_height;
         Player player1;
@@ -55,7 +57,7 @@ namespace project_4_algemeen
             level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
             level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
             level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
-            levelBoss = new Level_Boss("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
+            //levelBoss = new Level_Boss("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
 
 
             //public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
@@ -69,7 +71,7 @@ namespace project_4_algemeen
         {
             get
             {
-                throw new NotImplementedException();
+                return Buttons;
             }
         }
 
@@ -77,18 +79,41 @@ namespace project_4_algemeen
         {
             get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
 
         public void update(game game1)
         {
-            
+            if(level1.LevelCleared()==false)
+            {
+                level1.update(game1);
+            }
+            else if(level2.LevelCleared()==false)
+            {
+                level2.update(game1);
+            }
+            else if(level3.LevelCleared()==false)
+            {
+                level3.update(game1);
+            }
         }
 
         public void draw(SpriteBatch spritebatch)
         {
-            
+            if (level1.LevelCleared() == false)
+            {
+                level1.draw(spritebatch);
+            }
+            else if (level2.LevelCleared() == false)
+            {
+                level2.draw(spritebatch);
+            }
+            else if (level3.LevelCleared() == false)
+            {
+                level3.draw(spritebatch);
+            }
+
         }
 
         
