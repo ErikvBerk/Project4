@@ -91,6 +91,7 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
             this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
+            this.All_images.Add(Content.Load<Texture2D>("P0")); //5
 
 
             // TODO: use this.Content to load your game content here

@@ -16,7 +16,7 @@ namespace project_4_algemeen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    class Player:gameElement
+    class Player
     {
         List<Texture2D> All_images;
         Location[] position;
@@ -90,22 +90,6 @@ namespace project_4_algemeen
         }
         int cnt = 1;
 
-        public List<button> buttons
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public List<textbox> textboxes
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public virtual void Move()
         {
 
@@ -155,8 +139,33 @@ namespace project_4_algemeen
             //else
             //    cnt--;
         }
+        public Keys[] ActiveKeys
+        {
+            get
+            {
+                return activeKeys;
+            }
+            set
+            {
+                activeKeys = value;
+            }
+        }
 
         
+    }
+    class AndroidPlayer : Player
+    {
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height) : base(All_images, game, screen_width, screen_height)
+        {
+
+        }
+        public override void Move()
+        {
+            Keys[] keys = new Keys[2]();
+            base.ActiveKeys = new Keys[2];
+            ActiveKeys[0]
+            base.Move();
+        }
     }
     class Location
     {

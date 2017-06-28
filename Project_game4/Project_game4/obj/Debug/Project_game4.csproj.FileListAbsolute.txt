@@ -144,3 +144,4 @@ C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\Deskto
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy4b.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemyneutral2.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Level_1_background.xnb
+C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\P0.xnb
