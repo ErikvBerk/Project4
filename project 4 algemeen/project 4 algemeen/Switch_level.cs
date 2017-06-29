@@ -46,7 +46,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.PlayerposX = 0;
             this.PlayerposY = 0;
-
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform);
 
 
             switch (platform)
@@ -64,7 +64,7 @@ namespace project_4_algemeen
             level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
             level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
             level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
-            levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1);
+            levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
 
 
             //public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
@@ -177,6 +177,12 @@ namespace project_4_algemeen
             {
                 level1.draw(spritebatch);
             }
+
+            else if(endScreen.LevelCleared() == false)
+            {
+                endScreen.draw(spritebatch);
+            }
+
             else if (level2.LevelCleared() == false)
             {
                 level2.draw(spritebatch);

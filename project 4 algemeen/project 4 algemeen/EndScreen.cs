@@ -18,8 +18,7 @@ namespace project_4_algemeen
     class EndScreen : gameElement
     {
         bool PlayerDead = false;
-        bool LevelCleared = true;
-        string endscreen = "";
+        string endscreen = "THIS IS A END SCREEN STRING WOOHOO!!!!!!";
         SpriteFont Font;
         double screen_width;
         double screen_height;
@@ -29,10 +28,9 @@ namespace project_4_algemeen
         platform platform;
         public List<button> Buttons = new List<button>();
 
-        public EndScreen(bool Playerdead, bool Levelcleared, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform)
         {
             this.PlayerDead = Playerdead;
-            this.LevelCleared = Levelcleared;
             this.Font = Font;
             this.screen_height = screen_height;
             this.screen_width = screen_width;
@@ -81,6 +79,11 @@ namespace project_4_algemeen
         public void GameLose() //everytime player dies
         {
             endscreen = "Game Over!";
+        }
+
+        public bool LevelCleared()
+        {
+            return false;
         }
     }
 }
