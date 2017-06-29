@@ -136,7 +136,8 @@ namespace project_4_algemeen
             
             foreach(projectile PRO in projectiles)
             {
-                PRO.update(game1);                
+                PRO.update(game1);
+                
             }
             GetHit();
 

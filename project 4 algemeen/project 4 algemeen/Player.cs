@@ -35,6 +35,8 @@ namespace project_4_algemeen
         public int damage = 50;
         platform platform;
         public int projectilesPS, projectileCNTMAX, projectileCNT;
+        public int currentscore;
+        public int HP = 0;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
