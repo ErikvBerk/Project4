@@ -35,9 +35,6 @@ namespace project_4_algemeen
         public int damage = 50;
         platform platform;
         public int projectilesPS, projectileCNTMAX, projectileCNT;
-        public int currentscore;
-        int score;
-        int HP = 0;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
@@ -94,7 +91,6 @@ namespace project_4_algemeen
             direction = new Location(0, 0);
 
         }
-
         public int CurrentScore(int Score)
         {
             currentscore = currentscore + Score;
@@ -103,10 +99,9 @@ namespace project_4_algemeen
             {
                 score = time * Player.HP;
             }*/
-            
+
             return currentscore;
         }
-
         public bool Dead()
         {
             if (this.HP <= 0)
@@ -119,7 +114,6 @@ namespace project_4_algemeen
                 return false;
             }
         }
-
         public virtual void draw(SpriteBatch spritebatch)
         {
             size_x = (int)this.screen_width / 12;
@@ -232,7 +226,7 @@ namespace project_4_algemeen
         }
     }
     public class AndroidPlayer : Player
-    {        
+    {
         Keys[] keys = new Keys[2];
         public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height,platform)
         {
@@ -252,7 +246,6 @@ namespace project_4_algemeen
             {
                 p.update(game1);
             }
-
             position[0] = position[0] + direction;
             direction = new Location(0, 0);
         }
@@ -268,25 +261,9 @@ namespace project_4_algemeen
             }
             else if(projectileCNT>= projectileCNTMAX)
             {
-                projectiles.Add(new projectile(damage, X + (int)(size_x / 2), Y + (int)(size_y / 2), shootDirection.X, shootDirection.Y, screen_width, screen_height, All_images, this));
+                projectiles.Add(new androidProjectile(damage, X + (int)(size_x / 2), Y + (int)(size_y / 2), shootDirection.X, shootDirection.Y, screen_width, screen_height, All_images, this));
                 projectileCNT = 0;
             }
-            //if (projectileCNT < projectileCNTMAX)
-            //{
-            //    projectileCNT++;
-            //}
-            //else if (projectileCNT == projectileCNTMAX)
-            //{
-            //    MouseState mouse = Mouse.GetState();
-            //    if (mouse.LeftButton == ButtonState.Pressed)
-            //    {
-            //        mouseX = mouse.X;
-            //        mouseY = mouse.Y;
-
-            //        projectiles.Add(new projectile(this.damage, this.X + (int)(size_x / 2), this.Y + (int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images, this));
-            //    }
-            //    projectileCNT = 0;
-            //}
         }
         public override void draw(SpriteBatch spritebatch)
         {

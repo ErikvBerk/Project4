@@ -18,12 +18,11 @@ namespace project_4_algemeen
         public int mouseX, mouseY;
         public int DirectionX, DirectionY;
         gameElement character;
-        Vector2 position;
+        public Vector2 position;
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
-        double speedratioX,speedratioY;
+        double speedX,speedY;
         public int damage=500;
-        
 
         public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
         {
@@ -44,110 +43,26 @@ namespace project_4_algemeen
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
             //if (this.PlayerposY == 0) { this.PlayerposY += 1; }
 
-            
+            this.speedX = 0.25;
+            this.speedY = 0.25;
 
         }
         public void ShootToTarget()
         {
-            
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + DirectionX;
-            position.Y = position.Y + DirectionY;
-
-            //if (DirectionX < 0)
-            //{
-            //    if (DirectionX < DirectionY)
-            //    {
-
-            //        speedratioX = -15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-            //    if (DirectionX > DirectionY)
-            //    {
-
-            //        speedratioX = 15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-
-            //}
-            //if (DirectionX > 0)
-            //{
-            //    if (DirectionX < DirectionY)
-            //    {
-
-            //        speedratioX = -15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-            //    if (DirectionX > DirectionY)
-            //    {
-
-            //        speedratioX = 15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-            //}
-            //if (DirectionY < 0)
-            //{
-            //    if (DirectionY < DirectionX)
-            //    {
-            //        speedratioY = -15;
-            //        double ratio = DirectionY / speedratioY;
-            //        speedratioX = DirectionY / ratio;
-            //    }
-            //    if (DirectionY > DirectionX)
-            //    {
-            //        speedratioY = 15;
-            //        double ratio = DirectionY / speedratioY;
-            //        speedratioX = DirectionY / ratio;
-            //    }
-            //}
-            //if (DirectionY > 0)
-            //{
-            //    if (DirectionX < DirectionY)
-            //    {
-
-            //        speedratioX = -15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-            //    if (DirectionX > DirectionY)
-            //    {
-
-            //        speedratioX = 15;
-            //        double ratio = DirectionX / speedratioX;
-            //        speedratioY = DirectionY / ratio;
-
-            //    }
-            //}
-
-
-
-
-
-
-            position.X = position.X + (int)(speedratioX);
-            position.Y = position.Y + (int)(speedratioY);
+            position.X = position.X + (int)(DirectionX*speedX);
+            position.Y = position.Y + (int)(DirectionY*speedY);
 
         }
         public int Hits()
         {
             return this.damage;
         }
-        public void update(game game1)
+        public virtual void update(game game1)
         {
             ShootToTarget();
-            
-            
         }
         public int X1()
         {
@@ -165,7 +80,6 @@ namespace project_4_algemeen
         {
             return (int)position.Y + 30;
         }
-
         public void draw(SpriteBatch spritebatch)
         {
             
@@ -179,13 +93,24 @@ namespace project_4_algemeen
                 throw new NotImplementedException();
             }
         }
-
         public List<textbox> textboxes
         {
             get
             {
                 throw new NotImplementedException();
             }
+        }
+    }
+    public class androidProjectile : projectile
+    {
+        public androidProjectile(int damage,int PlayerposX,int PlayerposY,int mouseX,int mouseY,double screen_width,double screen_height,List<Texture2D>All_images,gameElement character) : base(damage, PlayerposX, PlayerposY, mouseX, mouseY, screen_width, screen_height, All_images, character)
+        {
+
+        }
+        public override void update(game game1)
+        {
+            position.X += mouseX;
+            position.Y += mouseY;
         }
     }
 }

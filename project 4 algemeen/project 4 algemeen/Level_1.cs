@@ -47,6 +47,8 @@ namespace project_4_algemeen
             if (platform == platform.android)
             {
                 Color buttonColor = new Color(255, 255, 255, 127);
+
+                //movebuttons
                 buttons.Add(new button((int)0, (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftUp(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, "up", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => up(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightUp(game), graphics, 0.3f));
@@ -55,17 +57,23 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)0, (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " left \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftDown(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
+
+                //shotbuttons
+                buttons.Add(new button((int)(screen_width-(screen_width/3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootLeftUp(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootUp(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightUp(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n left ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootLeft(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRight(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n left \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootLeftDown(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootDown(game), graphics, 0.3f));
+                buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightDown(game), graphics, 0.3f));
             }
 
             Enemies.Add(new Enemy(1, 800, 200, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
             Enemies.Add(new Enemy(2, 800, 400, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
             Enemies.Add(new Enemy(1, 800, 600, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
-
             
-
-
         }
-       
         public bool LevelCleared()
         {
             
@@ -91,17 +99,13 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);
             spritebatch.Draw(All_images[0], destinationRectangle, Color.White);
             foreach (Enemy enemy in Enemies)
             {
-                
-                    enemy.draw(spritebatch);
-
-                
+                enemy.draw(spritebatch);
             }
             player1.draw(spritebatch);
             if (platform == platform.android)
@@ -112,7 +116,6 @@ namespace project_4_algemeen
                 }
             }
         }
-
         public void update(game game1)
         {
             player1.update(game1);
@@ -160,6 +163,46 @@ namespace project_4_algemeen
         {
             Keys[] keys = new Keys[2] { Keys.Right, Keys.Down };
             player1.Move(keys);
+        }
+        public void shootLeftUp(game game1)
+        {
+            player1.shootDirection = new Location(-15, -15);
+            player1.Shoot();
+        }
+        public void shootUp(game game1)
+        {
+            player1.shootDirection = new Location(0, -15);
+            player1.Shoot();
+        }
+        public void shootRightUp(game game1)
+        {
+            player1.shootDirection = new Location(15, -15);
+            player1.Shoot();
+        }
+        public void shootLeft(game game1)
+        {
+            player1.shootDirection = new Location(-15, 0);
+            player1.Shoot();
+        }
+        public void shootRight(game game1)
+        {
+            player1.shootDirection = new Location(15, 0);
+            player1.Shoot();
+        }
+        public void shootLeftDown(game game1)
+        {
+            player1.shootDirection = new Location(-15, 15);
+            player1.Shoot();
+        }
+        public void shootDown(game game1)
+        {
+            player1.shootDirection = new Location(0, 15);
+            player1.Shoot();
+        }
+        public void shootRightDown(game game1)
+        {
+            player1.shootDirection = new Location(15, 15);
+            player1.Shoot();
         }
     }
 }
