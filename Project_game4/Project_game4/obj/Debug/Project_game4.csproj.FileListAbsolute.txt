@@ -157,3 +157,15 @@ C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Big_Font.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\endboss.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy3.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemy4b.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\enemyneutral2.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\Level_1_background.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\P0.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb

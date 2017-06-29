@@ -15,6 +15,7 @@ namespace project_4_algemeen
 {
     public class Player : gameElement
     {
+        public Location shootDirection;
         public List<Texture2D> All_images;
         public List<projectile> projectiles=new List<projectile>();
         public Location[] position;
@@ -34,6 +35,9 @@ namespace project_4_algemeen
         public int damage = 50;
         platform platform;
         public int projectilesPS, projectileCNTMAX, projectileCNT;
+        public int currentscore;
+        int score;
+        int HP = 0;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
@@ -90,6 +94,32 @@ namespace project_4_algemeen
             direction = new Location(0, 0);
 
         }
+
+        public int CurrentScore(int Score)
+        {
+            currentscore = currentscore + Score;
+            //code to calculate the score
+            /*if (LevelCleared == true)
+            {
+                score = time * Player.HP;
+            }*/
+            
+            return currentscore;
+        }
+
+        public bool Dead()
+        {
+            if (this.HP <= 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
         public virtual void draw(SpriteBatch spritebatch)
         {
             size_x = (int)this.screen_width / 12;
@@ -202,8 +232,7 @@ namespace project_4_algemeen
         }
     }
     public class AndroidPlayer : Player
-    {
-        public Location shootDirection;
+    {        
         Keys[] keys = new Keys[2];
         public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height,platform)
         {
@@ -217,6 +246,11 @@ namespace project_4_algemeen
                     position[i] = position[i] + direction;
                 else
                     position[i] = position[i - 1];
+            }
+
+            foreach (projectile p in projectiles)
+            {
+                p.update(game1);
             }
 
             position[0] = position[0] + direction;

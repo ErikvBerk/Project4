@@ -94,16 +94,37 @@ namespace project_4_algemeen
             //{
 
             this.HP = this.HP - 5;
-                    
-                //}
 
             //}
+
+            //}
+            
+
         }
 
         public bool Dead()
         {
             if (this.HP <= 0)
             {
+                if (ID == 1)
+                {
+                    player1.CurrentScore(100);
+                }
+
+                if (ID == 2)
+                {
+                    player1.CurrentScore(200);
+                }
+
+                if (ID == 3)
+                {
+                    player1.CurrentScore(300);
+                }
+
+                if (ID == 4)
+                {
+                    player1.CurrentScore(500);
+                }
                 return true;
             }
             else return false;
@@ -115,14 +136,13 @@ namespace project_4_algemeen
             
             foreach(projectile PRO in projectiles)
             {
-                PRO.update(game1);
-                GetHit();
+                PRO.update(game1);                
             }
-            
-            
+            GetHit();
 
-            
-           // X = X  -0;
+
+
+            // X = X  -0;
         }
 
         public void draw(SpriteBatch spritebatch)

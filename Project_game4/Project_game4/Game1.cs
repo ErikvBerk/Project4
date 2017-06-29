@@ -41,6 +41,7 @@ namespace Project_game4
         }
         public float relativeSize;
 
+        public void resetButtons() { }
         public gameElement current
         {
             get

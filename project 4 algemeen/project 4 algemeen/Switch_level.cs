@@ -32,7 +32,8 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         int PlayerposX, PlayerposY;
-        EndScreen endScreen;
+        EndScreen endScreen, endScreen2, endScreen3, endScreen4;
+        int Score;
         public Switch_level() { }
 
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics)
@@ -46,7 +47,10 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.PlayerposX = 0;
             this.PlayerposY = 0;
-            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform);
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
+            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
+            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
+            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
 
 
             switch (platform)
@@ -64,7 +68,7 @@ namespace project_4_algemeen
             level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
             level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
             level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
-            levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
+            //levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform,this.Font, this.graphics, this.player1, projectiles);
 
 
             //public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics)
@@ -133,8 +137,15 @@ namespace project_4_algemeen
             projectiles = player1.projectiles;
             this.PlayerposX = player1.GetPositionX();
             this.PlayerposY = player1.GetPositionY();
+            Score = player1.currentscore;
+            endScreen.update(game1);
             if (level1.LevelCleared() == false)
             {
+                if (player1.Dead() == true)
+                {
+                    endScreen2.GameLose();
+                }
+
                 if (!level1Started)
                 {
                     game1.resetButtons();
@@ -144,6 +155,10 @@ namespace project_4_algemeen
             }
             else if(level2.LevelCleared() == false)
             {
+                if (player1.Dead() == true)
+                {
+                    endScreen2.GameLose();
+                }
                 if (!level2Started)
                 {
                     game1.resetButtons();
@@ -153,6 +168,11 @@ namespace project_4_algemeen
             }
             else if(level3.LevelCleared() == false)
             {
+                if (player1.Dead() == true)
+                {
+                    endScreen3.GameLose();
+                }
+
                 if (!level3Started)
                 {
                     game1.resetButtons();
@@ -164,6 +184,15 @@ namespace project_4_algemeen
             {
                 if (!levelBossStarted)
                 {
+                    if (player1.Dead() == true)
+                    {
+                        endScreen4.GameLose();
+                    }
+                    else
+                    {
+                        endScreen4.GameWon();
+                    }
+
                     game1.resetButtons();
                     levelBossStarted = false;
                 }
@@ -174,26 +203,43 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             if (level1.LevelCleared() == false)
-            {
+            {               
                 level1.draw(spritebatch);
             }
 
-            else if(endScreen.LevelCleared() == false)
+            else if(endScreen.levelcleared == false)
             {
                 endScreen.draw(spritebatch);
             }
 
             else if (level2.LevelCleared() == false)
             {
+                
                 level2.draw(spritebatch);
+            }
+
+            else if (endScreen2.levelcleared == false)
+            {
+                endScreen2.draw(spritebatch);
             }
             else if (level3.LevelCleared() == false)
             {
+               
                 level3.draw(spritebatch);
             }
-            else
+
+            else if (endScreen3.levelcleared == false)
             {
+                endScreen3.draw(spritebatch);
+            }
+            else if(levelBoss.LevelCleared() == false)
+            {                
                 levelBoss.draw(spritebatch);
+            }
+
+            else if (endScreen4.levelcleared == false)
+            {
+                endScreen4.draw(spritebatch);
             }
 
         }

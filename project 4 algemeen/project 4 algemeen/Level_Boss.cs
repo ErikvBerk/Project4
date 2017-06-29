@@ -77,6 +77,19 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
+
+        public bool LevelCleared()
+        {
+
+            bool levelcleared = false;
+            foreach (Enemy enemy in Enemies)
+            {
+                levelcleared = !levelcleared && enemy.Dead();
+
+            }
+            return (levelcleared);
+        }
+
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);

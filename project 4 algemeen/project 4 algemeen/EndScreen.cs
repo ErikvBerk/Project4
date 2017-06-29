@@ -18,7 +18,7 @@ namespace project_4_algemeen
     class EndScreen : gameElement
     {
         bool PlayerDead = false;
-        string endscreen = "THIS IS A END SCREEN STRING WOOHOO!!!!!!";
+        string endscreen = "Switching levels";
         SpriteFont Font;
         double screen_width;
         double screen_height;
@@ -27,8 +27,11 @@ namespace project_4_algemeen
         game game1;
         platform platform;
         public List<button> Buttons = new List<button>();
+        int Score;
+        string currentscorestring;
+        public bool levelcleared = false;
 
-        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score)
         {
             this.PlayerDead = Playerdead;
             this.Font = Font;
@@ -37,9 +40,10 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.game1 = game1;
             this.platform = platform;
+            this.Score = Score;
 
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab,
-                new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1, this, platform), graphics));
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Next Level!", Font, relativeSize, Color.Khaki, Color.OliveDrab,
+               (game)=>LevelCleared(), graphics));
         }
 
 
@@ -62,13 +66,15 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             spritebatch.DrawString(this.Font, endscreen, new Vector2((int)screen_width/3, (int)screen_height / 10), Color.White);
+            spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)screen_width / 4, (int)screen_height / 12), Color.White);
 
-            foreach(button BUT in buttons) { BUT.draw(spritebatch); }
+            foreach (button BUT in buttons) { BUT.draw(spritebatch); }
         }
 
         public void update(game game1)
         {
             foreach(button BUT in buttons) { BUT.update(game1); }
+            CurrentScoreString();
         }
 
         public void GameWon() //if player beats boss level
@@ -83,7 +89,14 @@ namespace project_4_algemeen
 
         public bool LevelCleared()
         {
-            return false;
+            levelcleared = true;
+            
+            return (levelcleared);
+        }
+
+        public void CurrentScoreString()
+        {
+            currentscorestring = String.Format("Current score: {0}", Score);
         }
     }
 }

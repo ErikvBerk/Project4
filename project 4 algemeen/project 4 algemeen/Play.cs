@@ -25,16 +25,15 @@ namespace project_4_algemeen
         List<textbox> Textboxes = new List<textbox>();
         game game1;
         string name;
-        List<Texture2D> All_images;
-        int currentscore;
-        string currentscorestring;
+        List<Texture2D> All_images;        
+        
 
         Level_1 level1;
         Level_2 level2;
         Level_3 level3;
         Level_Boss levelBoss;
         platform platform;
-        int score;
+        
         public Play(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1,List<Texture2D> All_images, platform platform)
 
         {
@@ -109,26 +108,8 @@ namespace project_4_algemeen
             {
                 return Textboxes;
             }
-        }
+        }           
 
-
-
-
-        public int CurrentScore()
-        {
-            currentscore = 0;
-            //code to calculate the score
-            /*if (LevelCleared == true)
-            {
-                score = time * Player.HP;
-            }
-            currentscore = currentscore + score;*/
-            return currentscore;
-        }
-
-        public void CurrentScoreString()
-        {
-            currentscorestring = String.Format("Current score: {0}", currentscore);
-        }
+     
     }
 }
