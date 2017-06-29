@@ -21,8 +21,9 @@ namespace project_4_algemeen
         Vector2 position;
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
-        double speedX,speedY;
+        double speedratioX,speedratioY;
         public int damage=500;
+        
 
         public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
         {
@@ -43,17 +44,99 @@ namespace project_4_algemeen
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
             //if (this.PlayerposY == 0) { this.PlayerposY += 1; }
 
-            this.speedX = 0.25;
-            this.speedY = 0.25;
+            
 
         }
         public void ShootToTarget()
         {
+            
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + (int)(DirectionX*speedX);
-            position.Y = position.Y + (int)(DirectionY*speedY);
+            position.X = position.X + DirectionX;
+            position.Y = position.Y + DirectionY;
+
+            //if (DirectionX < 0)
+            //{
+            //    if (DirectionX < DirectionY)
+            //    {
+
+            //        speedratioX = -15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+            //    if (DirectionX > DirectionY)
+            //    {
+
+            //        speedratioX = 15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+
+            //}
+            //if (DirectionX > 0)
+            //{
+            //    if (DirectionX < DirectionY)
+            //    {
+
+            //        speedratioX = -15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+            //    if (DirectionX > DirectionY)
+            //    {
+
+            //        speedratioX = 15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+            //}
+            //if (DirectionY < 0)
+            //{
+            //    if (DirectionY < DirectionX)
+            //    {
+            //        speedratioY = -15;
+            //        double ratio = DirectionY / speedratioY;
+            //        speedratioX = DirectionY / ratio;
+            //    }
+            //    if (DirectionY > DirectionX)
+            //    {
+            //        speedratioY = 15;
+            //        double ratio = DirectionY / speedratioY;
+            //        speedratioX = DirectionY / ratio;
+            //    }
+            //}
+            //if (DirectionY > 0)
+            //{
+            //    if (DirectionX < DirectionY)
+            //    {
+
+            //        speedratioX = -15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+            //    if (DirectionX > DirectionY)
+            //    {
+
+            //        speedratioX = 15;
+            //        double ratio = DirectionX / speedratioX;
+            //        speedratioY = DirectionY / ratio;
+
+            //    }
+            //}
+
+
+
+
+
+
+            position.X = position.X + (int)(speedratioX);
+            position.Y = position.Y + (int)(speedratioY);
 
         }
         public int Hits()
