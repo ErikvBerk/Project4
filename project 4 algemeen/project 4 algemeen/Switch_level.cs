@@ -144,6 +144,7 @@ namespace project_4_algemeen
                 if (player1.Dead() == true)
                 {
                     endScreen2.GameLose();
+                    game1.resetButtons();
                 }
 
                 if (!level1Started)
@@ -158,6 +159,7 @@ namespace project_4_algemeen
                 if (player1.Dead() == true)
                 {
                     endScreen2.GameLose();
+                    game1.resetButtons();
                 }
                 if (!level2Started)
                 {
@@ -171,6 +173,7 @@ namespace project_4_algemeen
                 if (player1.Dead() == true)
                 {
                     endScreen3.GameLose();
+                    game1.resetButtons();
                 }
 
                 if (!level3Started)
@@ -187,10 +190,12 @@ namespace project_4_algemeen
                     if (player1.Dead() == true)
                     {
                         endScreen4.GameLose();
+                        game1.resetButtons();
                     }
                     else
                     {
                         endScreen4.GameWon();
+                        game1.resetButtons();
                     }
 
                     game1.resetButtons();
