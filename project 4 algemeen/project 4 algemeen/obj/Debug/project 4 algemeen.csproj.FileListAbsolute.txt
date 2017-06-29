@@ -108,3 +108,28 @@ C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\pr
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 android.pdb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 android.dll
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.exe
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 android.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.exe
+C:\Users\sibre\Documents\studie\project 4\github\Project4\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.pdb

@@ -16,7 +16,7 @@ namespace project_4_algemeen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Player : gameElement
+    public class Player
     {
         List<Texture2D> All_images;
         public List<projectile> projectiles=new List<projectile>();
@@ -34,9 +34,9 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         public List<button> buttons = new List<button>();
         int damage = 50;
+        platform platform;
 
-
-        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height)
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -49,6 +49,7 @@ namespace project_4_algemeen
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.damage = damage;
+            this.platform = platform;
 
         }
         public virtual void update(game game1)
@@ -67,9 +68,9 @@ namespace project_4_algemeen
             }
 
             keyboard = Keyboard.GetState();
-            activeKeys = keyboard.GetPressedKeys();
-
-            Move(activeKeys);
+            Keys[] keys = keyboard.GetPressedKeys();
+            if (platform == platform.windows)
+                Move(keys);
             Shoot();
 
 
@@ -121,10 +122,9 @@ namespace project_4_algemeen
         {
             return this.Y;
         }
-
         public virtual void Move(Keys[] keys)
         {
-
+            activeKeys = keys;
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) { Exit(); }
 
             if (this.X > (int)this.screen_width - size_x) { this.X = (int)this.screen_width - size_x; }
@@ -178,7 +178,7 @@ namespace project_4_algemeen
             }
         }
 
-        List<button> gameElement.buttons
+        List<button> Buttons
         {
             get
             {
@@ -186,7 +186,7 @@ namespace project_4_algemeen
             }
         }
 
-        public List<textbox> textboxes
+        public List<textbox> Textboxes
         {
             get
             {
@@ -197,7 +197,7 @@ namespace project_4_algemeen
     public class AndroidPlayer : Player
     {
         Keys[] keys = new Keys[2];
-        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics) : base(All_images, game, screen_width, screen_height)
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height,platform)
         {
 
         }
