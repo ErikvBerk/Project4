@@ -14,12 +14,12 @@ namespace project_4_algemeen
 {
     public class androidButtonAdapter
     {
-        button button;
+        public button button;
         public androidButtonAdapter(button button)
         {
             this.button = button;
         }
-        public void update(TouchCollection currenttouch, game game1)
+        public virtual void update(TouchCollection currenttouch, game game1)
         {
             foreach (TouchLocation t in currenttouch)
             {
@@ -35,6 +35,29 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             this.button.draw(spritebatch);
+        }
+    }
+    public class moveButton : androidButtonAdapter
+    {
+        bool pressed;
+        public moveButton(button button) : base(button)
+        {
+            pressed = false;
+        }
+        public override void update(TouchCollection currenttouch, game game1)
+        {
+            if (pressed)
+            {
+                button.onclick(game1);
+                pressed = false;
+            }
+            foreach (TouchLocation t in currenttouch)
+            {
+                if (t.Position.X >= this.button.X && t.Position.X< this.button.X + this.button.width && t.Position.Y >= this.button.Y && t.Position.Y< this.button.Y + this.button.heigth)
+                {
+                    pressed = true;
+                }
+            }
         }
     }
     public class button
@@ -95,11 +118,11 @@ namespace project_4_algemeen
         }
         public void onclick(game game1)
         {
-            try
+            if (Current_class != null)
             {
                 game1.current = Current_class;
             }
-            catch
+            else
             {
                 action(game1);
             }

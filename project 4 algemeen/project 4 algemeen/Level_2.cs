@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    class Level_2 : gameElement
+    public class Level_2 : gameElement
     {
         // thins that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();

@@ -16,7 +16,7 @@ namespace project_4_algemeen
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Player
+    public class Player : gameElement
     {
         List<Texture2D> All_images;
         public List<projectile> projectiles=new List<projectile>();
@@ -35,6 +35,7 @@ namespace project_4_algemeen
         public List<button> buttons = new List<button>();
         int damage = 50;
         platform platform;
+        int projectilesPS, projectileCNTMAX, projectileCNT;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
@@ -50,6 +51,9 @@ namespace project_4_algemeen
             this.screen_height = screen_height;
             this.damage = damage;
             this.platform = platform;
+            this.projectilesPS = 3;
+            this.projectileCNTMAX = 60 / projectilesPS;
+            this.projectileCNT = 0;
 
         }
         public virtual void update(game game1)
@@ -104,14 +108,21 @@ namespace project_4_algemeen
         }
         public virtual void Shoot()
         {
-            MouseState mouse = Mouse.GetState();
-            if(mouse.LeftButton== ButtonState.Pressed)
+            if (projectileCNT < projectileCNTMAX)
             {
-                mouseX = mouse.X;
-                mouseY = mouse.Y;
+                projectileCNT++;
+            }
+            else if (projectileCNT == projectileCNTMAX)
+            {
+                MouseState mouse = Mouse.GetState();
+                if(mouse.LeftButton== ButtonState.Pressed)
+                {
+                    mouseX = mouse.X;
+                    mouseY = mouse.Y;
 
-                projectiles.Add(new projectile(this.damage,this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images,this));
-
+                    projectiles.Add(new projectile(this.damage,this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images,this));
+                }
+                projectileCNT = 0;
             }
         }
         public int GetPositionX()
@@ -193,6 +204,10 @@ namespace project_4_algemeen
                 throw new NotImplementedException();
             }
         }
+
+        List<button> gameElement.buttons => throw new NotImplementedException();
+
+        public List<textbox> textboxes => throw new NotImplementedException();
     }
     public class AndroidPlayer : Player
     {
