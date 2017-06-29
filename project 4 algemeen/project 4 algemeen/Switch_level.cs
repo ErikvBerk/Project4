@@ -23,13 +23,14 @@ namespace project_4_algemeen
         game game1;
         double screen_width, screen_height;
         Player player1;
-        Level_1 level1;
+        public Level_1 level1;
         Level_2 level2;
         Level_3 level3;
         Level_Boss levelBoss;
         platform platform;
         SpriteFont Font;
         GraphicsDeviceManager graphics;
+        int PlayerposX, PlayerposY;
 
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics)
         {
@@ -40,7 +41,8 @@ namespace project_4_algemeen
             this.platform = platform;
             this.Font = font;
             this.graphics = graphics;
-            
+            this.PlayerposX = 0;
+            this.PlayerposY = 0;
 
 
 
@@ -84,11 +86,21 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
+        public int GetPlayerposX()
+        {
+            return PlayerposX;
+        }
+        public int GetPlayerposY()
+        {
+            return PlayerposY;
+        }
 
         public void update(game game1)
         {
             projectiles = player1.projectiles;
-            if(level1.LevelCleared()==false)
+            this.PlayerposX = player1.GetPositionX();
+            this.PlayerposY = player1.GetPositionY();
+            if (level1.LevelCleared()==false)
             {
                 level1.update(game1);
             }

@@ -24,7 +24,7 @@ namespace project_4_algemeen
         Keys[] activeKeys;
         public Location direction;
         Random random;
-        int X, Y;
+        public int X, Y;
         public int lenght;
         public int texdirection;
         public int mouseX, mouseY;
@@ -112,6 +112,14 @@ namespace project_4_algemeen
                 projectiles.Add(new projectile(this.damage,this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images,this));
 
             }
+        }
+        public int GetPositionX()
+        {
+            return this.X;
+        }
+        public int GetPositionY()
+        {
+            return this.Y;
         }
 
         public virtual void Move(Keys[] keys)

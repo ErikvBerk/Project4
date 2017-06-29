@@ -24,9 +24,10 @@ namespace project_4_algemeen
         game game1;
         platform platform;
         gameElement switchLevel;
+        int PlayerposX, PlayerposY;
 
         public Level_Boss() { }
-        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles)
+        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles,int PlayerposX,int PlayerposY)
         {
             this.screen_width = screen_width;
             this.screen_height = screen_height;
@@ -35,6 +36,8 @@ namespace project_4_algemeen
             this.player1 = player1;
             this.platform = platform;
             this.projectiles = projectiles;
+            this.PlayerposX = PlayerposX;
+            this.PlayerposY = PlayerposY;
 
 
             Color buttonColor = new Color(255, 255, 255, 127);
@@ -47,7 +50,7 @@ namespace project_4_algemeen
             buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics));
             buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics));
 
-            Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images, projectiles));
+            Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
         }
         public List<button> buttons
         {
@@ -55,6 +58,14 @@ namespace project_4_algemeen
             {
                 return this.Buttons;
             }
+        }
+        public int GetPlayerposX()
+        {
+            return PlayerposX;
+        }
+        public int GetPlayerposY()
+        {
+            return PlayerposY;
         }
         public List<textbox> textboxes
         {

@@ -21,9 +21,10 @@ namespace project_4_algemeen
         string name;
         List<Texture2D> All_images = new List<Texture2D>();
         List<projectile> projectiles = new List<projectile>();
-        gameElement switchLevel;
+        Player player1;
+        int PlayerposX, PlayerposY;
 
-        public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,List<projectile> projectiles)
+        public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,List<projectile> projectiles,Player player1)
         {
             this.ID = ID;
             this.X = X;
@@ -32,6 +33,9 @@ namespace project_4_algemeen
             this.screen_height = screen_height;
             this.screen_width = screen_width;
             this.projectiles = projectiles;
+            this.PlayerposX = PlayerposX;
+            this.PlayerposY = PlayerposY;
+            this.player1 = player1;
 
             if (ID == 1)
             {
@@ -57,6 +61,25 @@ namespace project_4_algemeen
                 this.name = "Boss";
                 this.HP = 20000;
                 this.DMG = 50;
+            }
+        }
+        public void MoveToPlayer()
+        {
+            PlayerposX = player1.GetPositionX();
+            PlayerposY = player1.GetPositionY();
+            if (this.ID==1)
+            {
+                if (PlayerposX > this.X) { this.X = this.X + 5; }
+                if (PlayerposX < this.X) { this.X = this.X - 5; }
+                if (PlayerposY > this.Y) { this.Y = this.Y + 5; }
+                if (PlayerposY < this.Y) { this.Y = this.Y - 5; }
+            }
+            if (this.ID == 2)
+            {
+                if (PlayerposX > this.X) { this.X = this.X + 2; }
+                if (PlayerposX < this.X) { this.X = this.X - 2; }
+                if (PlayerposY > this.Y) { this.Y = this.Y + 2; }
+                if (PlayerposY < this.Y) { this.Y = this.Y - 2; }
             }
         }
         public void shoot()
@@ -88,6 +111,8 @@ namespace project_4_algemeen
 
         public void update(game game1)
         {
+            MoveToPlayer();
+            
             foreach(projectile PRO in projectiles)
             {
                 PRO.update(game1);
@@ -97,7 +122,7 @@ namespace project_4_algemeen
             
 
             
-            X = X  -0;
+           // X = X  -0;
         }
 
         public void draw(SpriteBatch spritebatch)
