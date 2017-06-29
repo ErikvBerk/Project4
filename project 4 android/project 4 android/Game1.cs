@@ -67,6 +67,7 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
             this.All_images.Add(Content.Load<Texture2D>("P0")); //5
+            this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
 
             Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
