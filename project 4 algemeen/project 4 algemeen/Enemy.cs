@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Enemy
+    public class Enemy:gameElement
     {
         int ID;
         int HP, DMG;
@@ -19,9 +19,15 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         string name;
         List<Texture2D> All_images = new List<Texture2D>();
+        List<projectile> enemy_projectiles = new List<projectile>();
         public List<projectile> projectiles = new List<projectile>();
         Player player1;
         int PlayerposX, PlayerposY;
+
+        public List<button> buttons => throw new NotImplementedException();
+
+        public List<textbox> textboxes => throw new NotImplementedException();
+
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
         {
             this.ID = ID;
@@ -80,6 +86,12 @@ namespace project_4_algemeen
         public void shoot()
         {
 
+
+            if (ID == 3)
+            {
+                enemy_projectiles.Add(new projectile(200, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
+
+            }
         }
         public void GetHit()
         {
@@ -88,7 +100,9 @@ namespace project_4_algemeen
             //if (this.X >= PRO.X1() && this.X < PRO.X2() && this.Y >= PRO.Y1() && this.Y < PRO.Y2())
             //{
 
-            this.HP = this.HP - 5;
+            
+                this.HP = this.HP - 500;
+            
 
             //}
 
@@ -125,18 +139,27 @@ namespace project_4_algemeen
         }
         public void update(game game1)
         {
-            if (!Dead())
-            {
+          //  if (Dead()==false)
+           // {
+                shoot();
                 MoveToPlayer();
-            
-                foreach(projectile PRO in projectiles)
+                projectiles = player1.projectiles;
+
+                foreach (projectile PRO in projectiles)
                 {
                     if (PRO.position.X >= X && PRO.position.X < X + (int)(screen_width / 5) && PRO.position.Y >= Y && PRO.position.Y < Y + (int)(screen_height / 5))
                     {
-                        GetHit();
+                         GetHit();
+                         PRO.update(game1);
                     }
                 }
-            }
+                foreach (projectile PRO in enemy_projectiles)
+                {
+                    PRO.update(game1);
+
+                }
+
+            //}
 
 
 
@@ -144,9 +167,14 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if (!Dead())
+            if (Dead()==false)
             {
                 Rectangle destinationRectangle = new Rectangle(this.X, this.Y, (int)this.screen_width / 5, (int)this.screen_height / 5);
+
+                foreach (projectile PRO in enemy_projectiles)
+                {
+                    PRO.draw(spritebatch);
+                }
 
                 if (this.ID == 1)
                 {
