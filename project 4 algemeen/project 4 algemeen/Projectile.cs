@@ -84,7 +84,7 @@ namespace project_4_algemeen
         {
             
             Rectangle destinationRectangle = new Rectangle((int)position.X,(int)position.Y, 30, 30);
-            spritebatch.Draw(All_images[1], destinationRectangle, Color.White);
+            spritebatch.Draw(All_images[6], destinationRectangle, Color.White);
         }
         public List<button> buttons
         {
