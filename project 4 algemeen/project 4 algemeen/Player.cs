@@ -13,12 +13,9 @@ using System.Collections.Generic;
 
 namespace project_4_algemeen
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class Player : gameElement
     {
-        List<Texture2D> All_images;
+        public List<Texture2D> All_images;
         public List<projectile> projectiles=new List<projectile>();
         public Location[] position;
         Keys[] activeKeys;
@@ -28,14 +25,15 @@ namespace project_4_algemeen
         public int lenght;
         public int texdirection;
         public int mouseX, mouseY;
-        int size_x, size_y;
+        public int size_x, size_y;
         KeyboardState keyboard;
         game game1;
-        double screen_width, screen_height;
-        public List<button> buttons = new List<button>();
-        int damage = 50;
+        public double screen_width, screen_height;
+        public List<button> Buttons = new List<button>();
+        public List<textbox> Textboxes = new List<textbox>();
+        public int damage = 50;
         platform platform;
-        int projectilesPS, projectileCNTMAX, projectileCNT;
+        public int projectilesPS, projectileCNTMAX, projectileCNT;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
         {
@@ -112,7 +110,7 @@ namespace project_4_algemeen
             {
                 projectileCNT++;
             }
-            else if (projectileCNT == projectileCNTMAX)
+            else if (projectileCNT >= projectileCNTMAX)
             {
                 MouseState mouse = Mouse.GetState();
                 if(mouse.LeftButton== ButtonState.Pressed)
@@ -188,33 +186,28 @@ namespace project_4_algemeen
                 activeKeys = value;
             }
         }
-
-        List<button> Buttons
+        public List<button> buttons
         {
             get
             {
-                throw new NotImplementedException();
+                return Buttons;
             }
         }
-
-        public List<textbox> Textboxes
+        public List<textbox> textboxes
         {
             get
             {
-                throw new NotImplementedException();
+                return Textboxes;
             }
         }
-
-        List<button> gameElement.buttons => throw new NotImplementedException();
-
-        public List<textbox> textboxes => throw new NotImplementedException();
     }
     public class AndroidPlayer : Player
     {
+        public Location shootDirection;
         Keys[] keys = new Keys[2];
         public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height,platform)
         {
-
+            shootDirection = new Location(0, 0);
         }
         public override void update(game game1)
         {
@@ -232,6 +225,34 @@ namespace project_4_algemeen
         public override void Move(Keys[] keys)
         {
             base.Move(keys);
+        }
+        public override void Shoot()
+        {
+            if(projectileCNT < projectileCNTMAX)
+            {
+                projectileCNT++;
+            }
+            else if(projectileCNT>= projectileCNTMAX)
+            {
+                projectiles.Add(new projectile(damage, X + (int)(size_x / 2), Y + (int)(size_y / 2), shootDirection.X, shootDirection.Y, screen_width, screen_height, All_images, this));
+                projectileCNT = 0;
+            }
+            //if (projectileCNT < projectileCNTMAX)
+            //{
+            //    projectileCNT++;
+            //}
+            //else if (projectileCNT == projectileCNTMAX)
+            //{
+            //    MouseState mouse = Mouse.GetState();
+            //    if (mouse.LeftButton == ButtonState.Pressed)
+            //    {
+            //        mouseX = mouse.X;
+            //        mouseY = mouse.Y;
+
+            //        projectiles.Add(new projectile(this.damage, this.X + (int)(size_x / 2), this.Y + (int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images, this));
+            //    }
+            //    projectileCNT = 0;
+            //}
         }
         public override void draw(SpriteBatch spritebatch)
         {
