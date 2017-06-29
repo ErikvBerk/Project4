@@ -130,6 +130,7 @@ namespace project_4_android
                 Current = LastKnown;
                 type = Current.GetType();
             }
+            Current.update(this);
             // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
             // update the adapters
