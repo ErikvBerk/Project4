@@ -53,7 +53,11 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
             }
 
+<<<<<<< HEAD
             Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images, this.player1));
+=======
+            Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
+>>>>>>> niet-master2
         }
         public List<button> buttons
         {

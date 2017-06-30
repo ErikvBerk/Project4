@@ -24,6 +24,7 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
 
+<<<<<<< HEAD
         public List<button> buttons
         {
             get
@@ -39,6 +40,11 @@ namespace project_4_algemeen
                 throw new NotImplementedException();
             }
         }
+=======
+        public List<button> buttons => throw new NotImplementedException();
+
+        public List<textbox> textboxes => throw new NotImplementedException();
+>>>>>>> niet-master2
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
         {
