@@ -32,7 +32,7 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         int PlayerposX, PlayerposY;
-        EndScreen endScreen1, endScreen2, endScreen3, endScreen4;
+        EndScreen endScreen, endScreen2, endScreen3, endScreen4;
         int Score;
         public Switch_level() { }
 
@@ -47,7 +47,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.PlayerposX = 0;
             this.PlayerposY = 0;
-            endScreen1 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
             endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
             endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
             endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
@@ -86,33 +86,17 @@ namespace project_4_algemeen
                 {
                     return level1.buttons;
                 }
-                else if(endScreen1.levelcleared == false)
-                {
-                    return endScreen1.buttons;
-                }
                 else if (level2.LevelCleared() == false)
                 {
                     return level2.buttons;
-                }
-                else if (endScreen2.levelcleared == false)
-                {
-                    return endScreen2.buttons;
                 }
                 else if (level3.LevelCleared() == false)
                 {
                     return level3.buttons;
                 }
-                else if (endScreen3.levelcleared == false)
-                {
-                    return endScreen3.buttons;
-                }
-                else if(levelBoss.LevelCleared() == false)
-                {
-                    return levelBoss.buttons;
-                }
                 else
                 {
-                    return endScreen4.buttons;
+                    return levelBoss.buttons;
                 }
             }
         }
@@ -125,33 +109,17 @@ namespace project_4_algemeen
                 {
                     return level1.textboxes;
                 }
-                else if (endScreen1.levelcleared == false)
-                {
-                    return endScreen1.textboxes;
-                }
                 else if (level2.LevelCleared() == false)
                 {
                     return level2.textboxes;
-                }
-                else if (endScreen2.levelcleared == false)
-                {
-                    return endScreen2.textboxes;
                 }
                 else if (level3.LevelCleared() == false)
                 {
                     return level3.textboxes;
                 }
-                else if (endScreen3.levelcleared == false)
-                {
-                    return endScreen3.textboxes;
-                }
-                else if (levelBoss.LevelCleared() == false)
-                {
-                    return levelBoss.textboxes;
-                }
                 else
                 {
-                    return endScreen4.textboxes;
+                return levelBoss.textboxes;
                 }
             }
         }
@@ -170,7 +138,7 @@ namespace project_4_algemeen
             this.PlayerposX = player1.GetPositionX();
             this.PlayerposY = player1.GetPositionY();
             Score = player1.currentscore;
-            endScreen1.update(game1);
+            endScreen.update(game1);
             if (level1.LevelCleared() == false)
             {
                 if (player1.Dead() == true)
@@ -244,9 +212,9 @@ namespace project_4_algemeen
                 level1.draw(spritebatch);
             }
 
-            else if(endScreen1.levelcleared == false)
+            else if(endScreen.levelcleared == false)
             {
-                endScreen1.draw(spritebatch);
+                endScreen.draw(spritebatch);
             }
 
             else if (level2.LevelCleared() == false)

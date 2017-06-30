@@ -61,8 +61,12 @@ namespace project_4_algemeen
         }
         public int Hits()
         {
-            projectile_HP -= damage;
-            return this.damage;
+            if (projectile_HP > 0)
+            {
+                projectile_HP -= damage;
+                return this.damage;
+            }
+            else return 0;
         }
         public virtual void update(game game1)
         {

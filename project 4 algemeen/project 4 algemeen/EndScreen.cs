@@ -66,7 +66,7 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             spritebatch.DrawString(this.Font, endscreen, new Vector2((int)screen_width/3, (int)screen_height / 10), Color.White);
-            spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)screen_width / 4, (int)screen_height / 12), Color.White);
+            //spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)screen_width / 4, (int)screen_height / 12), Color.White);
 
             foreach (button BUT in buttons) { BUT.draw(spritebatch); }
         }

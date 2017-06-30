@@ -25,7 +25,6 @@ namespace project_4_algemeen
         platform platform;
         gameElement switchLevel;
         int PlayerposX, PlayerposY;
-        Random rand;
 
         public Level_Boss() { }
         public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles,int PlayerposX,int PlayerposY)
@@ -53,8 +52,8 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
             }
-            rand = new Random();
-            Enemies.Add(EnemyFactory.create(4, this.screen_width, this.screen_height, All_images, this.player1, rand));
+
+            Enemies.Add(new Enemy(4, 800, 200, this.screen_width, this.screen_height, All_images, this.player1));
         }
         public List<button> buttons
         {
@@ -113,23 +112,6 @@ namespace project_4_algemeen
             player1.update(game1);
             foreach (Enemy enemy in Enemies)
             {
-                enemy.update(game1);
-            }
-            int spawn = rand.Next(0, 99999);
-            if (spawn > 0 && spawn <= 1000)
-            {
-                Enemies.Add(EnemyFactory.create(1, screen_width, screen_height, All_images, player1, rand));
-            }
-            else if (spawn == 0)
-            {
-                for (int i = 0; i < 1000; i++)
-                {
-                    Enemies.Add(EnemyFactory.create(3, screen_width, screen_height, All_images, player1, rand));
-                }
-            }
-            foreach (Enemy enemy in Enemies)
-            {
-                enemy.projectiles = player1.projectiles;
                 enemy.update(game1);
             }
         }

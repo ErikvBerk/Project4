@@ -114,20 +114,14 @@ namespace project_4_algemeen
 
             foreach (projectile PRO in projectiles)
             {
+
                 if (PRO.position.X >= X && PRO.position.X < X + (int)(screen_width / 5) && PRO.position.Y >= Y && PRO.position.Y < Y + (int)(screen_height / 5))
                 {
 
-                    this.HP -= PRO.damage;
-
+                    this.HP -= PRO.Hits();
                 }
             }
-            
-            
 
-            //}
-
-            //}
-            
 
         }
         public bool Dead()
