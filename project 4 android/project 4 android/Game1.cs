@@ -52,6 +52,7 @@ namespace project_4_android
         public gameElement Current = new Menu();
         List<androidButtonAdapter> buttonAdapters = new List<androidButtonAdapter>();
         List<androidTextBoxAdapter> textboxAdapters = new List<androidTextBoxAdapter>();
+        List<Texture2D> All_images = new List<Texture2D>();
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -59,8 +60,16 @@ namespace project_4_android
 
             // Load the font used by the text
             SpriteFont font = Content.Load<SpriteFont>("FONT");
+            SpriteFont Big_Font = Content.Load<SpriteFont>("Big_Font");
+            this.All_images.Add(Content.Load<Texture2D>("Level_1_background")); //0
+            this.All_images.Add(Content.Load<Texture2D>("enemyneutral2")); //1 
+            this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
+            this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
+            this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
+            this.All_images.Add(Content.Load<Texture2D>("P0")); //5
+            this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
 
-            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1));
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
             //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
 
@@ -101,7 +110,7 @@ namespace project_4_android
         {
             // TODO: Unload any non ContentManager content here
         }
-
+        gameElement LastKnown;
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -111,7 +120,17 @@ namespace project_4_android
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-            var type = Current.GetType();
+            Type type = null;
+            try
+            {
+                type = Current.GetType();
+            }
+            catch
+            {
+                Current = LastKnown;
+                type = Current.GetType();
+            }
+            Current.update(this);
             // get all the places where the screen is touched
             var currentTouch = Microsoft.Xna.Framework.Input.Touch.TouchPanel.GetState();
             // update the adapters
@@ -121,22 +140,52 @@ namespace project_4_android
             }
             foreach (androidTextBoxAdapter t in textboxAdapters)
             {
-                t.update(currentTouch);
+                try
+                {
+                    t.update(currentTouch);
+                }
+                catch { }
             }
-            if (Current.GetType() != type)
+            Type newtype = null;
+            try
             {
-                buttonAdapters.Clear();
+                newtype = Current.GetType();
+            }
+            catch
+            {
+                newtype = type;
+            }
+            if (newtype != type)
+            {
+                resetButtons();
+            }
+            if (Current != null)
+                LastKnown = Current;
+            base.Update(gameTime);
+        }
+        Switch_level sl = new Switch_level();
+        public void resetButtons()
+        {
+            buttonAdapters.Clear();
+            if (Current.GetType() == sl.GetType())
+            {
+                foreach(button b in Current.buttons)
+                {
+                    buttonAdapters.Add(new moveButton(b));
+                }
+            }
+            else
+            {
                 foreach (button b in Current.buttons)
                 {
                     buttonAdapters.Add(new androidButtonAdapter(b));
                 }
-                textboxAdapters.Clear();
-                foreach (textbox t in Current.textboxes)
-                {
-                    textboxAdapters.Add(new androidTextBoxAdapter(t));
-                }
             }
-            base.Update(gameTime);
+            textboxAdapters.Clear();
+            foreach (textbox t in Current.textboxes)
+            {
+                textboxAdapters.Add(new androidTextBoxAdapter(t));
+            }
         }
 
         /// <summary>
@@ -150,7 +199,14 @@ namespace project_4_android
             // begin the spriteBatch
             spriteBatch.Begin();
             // draw the current screen
-            Current.draw(spriteBatch);
+            try
+            {
+                Current.draw(spriteBatch);
+            }
+            catch
+            {
+
+            }
             // end the spriteBatch
             spriteBatch.End();
             base.Draw(gameTime);
