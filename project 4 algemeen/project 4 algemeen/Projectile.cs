@@ -23,10 +23,11 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         double speedX,speedY;
         public int damage=500;
+        public int projectile_HP;
 
         public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
         {
-            //this.damage = damage;
+            this.damage = damage;
             this.mouseX = mouseX;
             this.mouseY = mouseY;
             this.PlayerposX = PlayerposX;
@@ -38,6 +39,8 @@ namespace project_4_algemeen
             this.position.Y = 1+this.PlayerposY;
             this.All_images = All_images;
             this.character = character;
+            this.projectile_HP = damage;
+
             
 
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
@@ -58,6 +61,7 @@ namespace project_4_algemeen
         }
         public int Hits()
         {
+            projectile_HP -= damage;
             return this.damage;
         }
         public virtual void update(game game1)
@@ -82,9 +86,11 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            
-            Rectangle destinationRectangle = new Rectangle((int)position.X,(int)position.Y, 30, 30);
-            spritebatch.Draw(All_images[6], destinationRectangle, Color.White);
+            if (this.projectile_HP > 0)
+            {
+                Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 30);
+                spritebatch.Draw(All_images[6], destinationRectangle, Color.White);
+            }
         }
         public List<button> buttons
         {
