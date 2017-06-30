@@ -32,13 +32,14 @@ namespace project_4_algemeen
         public double screen_width, screen_height;
         public List<button> Buttons = new List<button>();
         public List<textbox> Textboxes = new List<textbox>();
-        public int damage = 50;
+        public List<projectile> enemy_projectiles = new List<projectile> ();
+        public int damage = 0;
         platform platform;
         public int projectilesPS, projectileCNTMAX, projectileCNT;
         public int currentscore;
-        public int HP = 0;
+        public int HP = 1;
 
-        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform)
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform,int HP,int damage)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -51,6 +52,7 @@ namespace project_4_algemeen
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.damage = damage;
+            this.HP = HP;
             this.platform = platform;
             this.projectilesPS = 3;
             this.projectileCNTMAX = 60 / projectilesPS;
@@ -129,6 +131,19 @@ namespace project_4_algemeen
                 p.draw(spritebatch);
             }
 
+        }
+        public void GetHit(List<projectile> enemy_projectiles)
+        {
+            
+            foreach (projectile PRO in enemy_projectiles)
+            {
+                if (PRO.position.X >= X && PRO.position.X < X + size_x && PRO.position.Y >= Y && PRO.position.Y < size_y)
+                {
+                    
+                    PRO.update(game1);
+                    this.HP -= PRO.damage;
+                }
+            }
         }
         public virtual void Shoot()
         {
@@ -230,12 +245,13 @@ namespace project_4_algemeen
     public class AndroidPlayer : Player
     {
         Keys[] keys = new Keys[2];
-        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform) : base(All_images, game, screen_width, screen_height,platform)
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform,int HP,int damage) : base(All_images, game, screen_width, screen_height,platform,HP,damage)
         {
             shootDirection = new Location(0, 0);
         }
         public override void update(game game1)
         {
+            
             for (int i = lenght - 1; i > 0; i--)
             {
                 if (i == 0)

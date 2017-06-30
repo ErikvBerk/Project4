@@ -98,7 +98,6 @@ C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\pr
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.exe
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 algemeen.pdb
-C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 android.dll
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.exe

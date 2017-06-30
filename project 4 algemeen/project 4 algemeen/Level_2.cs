@@ -41,8 +41,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.player1 = player1;
             this.projectiles = projectiles;
-            this.PlayerposX = PlayerposX;
-            this.PlayerposY = PlayerposY;
+
 
             if (platform == platform.android)
             {
@@ -57,9 +56,9 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
             }
 
-            Enemies.Add(new Enemy(2, 800, 200, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
-            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
-            Enemies.Add(new Enemy(2, 800, 600, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
+            Enemies.Add(new Enemy(2, 800, 200, this.screen_width, this.screen_height, All_images, this.player1));
+            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images, this.player1));
+            Enemies.Add(new Enemy(2, 800, 600, this.screen_width, this.screen_height, All_images,  this.player1));
 
         }
         public bool LevelCleared()
@@ -117,6 +116,10 @@ namespace project_4_algemeen
         public void update(game game1)
         {
             player1.update(game1);
+            foreach (Enemy enemy in Enemies)
+            {
+                enemy.update(game1);
+            }
         }
         public void leftUp(game game1)
         {

@@ -24,9 +24,21 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
 
-        public List<button> buttons => throw new NotImplementedException();
+        public List<button> buttons
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-        public List<textbox> textboxes => throw new NotImplementedException();
+        public List<textbox> textboxes
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
         {
