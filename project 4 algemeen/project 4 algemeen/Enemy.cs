@@ -24,9 +24,21 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
 
-        public List<button> buttons => throw new NotImplementedException();
+        public List<button> buttons
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-        public List<textbox> textboxes => throw new NotImplementedException();
+        public List<textbox> textboxes
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
         {
@@ -89,7 +101,7 @@ namespace project_4_algemeen
 
             if (ID == 3)
             {
-                enemy_projectiles.Add(new projectile(200, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
+                enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
 
             }
         }
@@ -100,8 +112,16 @@ namespace project_4_algemeen
             //if (this.X >= PRO.X1() && this.X < PRO.X2() && this.Y >= PRO.Y1() && this.Y < PRO.Y2())
             //{
 
+            foreach (projectile PRO in projectiles)
+            {
+                if (PRO.position.X >= X && PRO.position.X < X + (int)(screen_width / 5) && PRO.position.Y >= Y && PRO.position.Y < Y + (int)(screen_height / 5))
+                {
+
+                    this.HP -= PRO.damage;
+
+                }
+            }
             
-                this.HP = this.HP - 500;
             
 
             //}
@@ -144,20 +164,16 @@ namespace project_4_algemeen
                 shoot();
                 MoveToPlayer();
                 projectiles = player1.projectiles;
-
-                foreach (projectile PRO in projectiles)
-                {
-                    if (PRO.position.X >= X && PRO.position.X < X + (int)(screen_width / 5) && PRO.position.Y >= Y && PRO.position.Y < Y + (int)(screen_height / 5))
-                    {
-                         GetHit();
-                         PRO.update(game1);
-                    }
-                }
-                foreach (projectile PRO in enemy_projectiles)
-                {
+                GetHit();
+            player1.GetHit(enemy_projectiles);
+            foreach(projectile PRO in projectiles)
+            {
+                PRO.update(game1);
+            }
+            foreach (projectile PRO in enemy_projectiles)
+            {
                     PRO.update(game1);
-
-                }
+            }
 
             //}
 

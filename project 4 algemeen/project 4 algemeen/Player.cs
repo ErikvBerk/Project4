@@ -38,6 +38,7 @@ namespace project_4_algemeen
         public int projectilesPS, projectileCNTMAX, projectileCNT;
         public int currentscore;
         public int HP = 1;
+        public bool dead = false;
 
         public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform,int HP,int damage)
         {
@@ -61,6 +62,7 @@ namespace project_4_algemeen
         }
         public virtual void update(game game1)
         {
+            Dead();
             for (int i = lenght - 1; i > 0; i--)
             {
                 if (i == 0)
@@ -110,12 +112,14 @@ namespace project_4_algemeen
         {
             if (this.HP <= 0)
             {
-                return true;
+                 dead= true;
+                return dead;
             }
 
             else
             {
-                return false;
+                dead = false;
+                return dead;
             }
         }
         public virtual void draw(SpriteBatch spritebatch)
