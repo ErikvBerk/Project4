@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    class Level_3 : gameElement
+    public class Level_3 : gameElement
     {
         // thins that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();
@@ -20,18 +20,66 @@ namespace project_4_algemeen
         double screen_width, screen_height;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
+        List<projectile> projectiles = new List<projectile>();
+        game game1;
+        platform platform;
+        SpriteFont Font;
+        GraphicsDeviceManager graphics;
+        Player player1;
+        int PlayerposX, PlayerposY;
 
-        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images)
+        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles)
         {
 
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.All_images = All_images;
+            this.game1 = game1;
+            this.platform = platform;
+            this.Font = font;
+            this.graphics = graphics;
+            this.player1 = player1;
+            this.projectiles = projectiles;
+            this.PlayerposX = PlayerposX;
+            this.PlayerposY = PlayerposY;
 
-            Enemies.Add(new Enemy(3, 800, 200, this.screen_width, this.screen_height, All_images));
-            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images));
-            Enemies.Add(new Enemy(3, 800, 600, this.screen_width, this.screen_height, All_images));
 
+            if (platform == platform.android)
+            {
+                Color buttonColor = new Color(255, 255, 255, 127);
+                buttons.Add(new button((int)0, (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftUp(game), graphics, 0.3f));
+                buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, "up", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => up(game), graphics, 0.3f));
+                buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightUp(game), graphics, 0.3f));
+                buttons.Add(new button((int)0, (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "left", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => left(game), graphics, 0.3f));
+                buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + (screen_width / 9)), (int)screen_width / 9, (int)screen_width / 9, "right", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => right(game), graphics, 0.3f));
+                buttons.Add(new button((int)0, (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " left \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => leftDown(game), graphics, 0.3f));
+                buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics, 0.3f));
+                buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
+            }
+
+            Enemies.Add(new Enemy(3, 800, 200, this.screen_width, this.screen_height, All_images, this.player1));
+            Enemies.Add(new Enemy(3, 800, 400, this.screen_width, this.screen_height, All_images,  this.player1));
+            Enemies.Add(new Enemy(3, 800, 600, this.screen_width, this.screen_height, All_images,  this.player1));
+
+        }
+        public int GetPlayerposX()
+        {
+            return PlayerposX;
+        }
+        public int GetPlayerposY()
+        {
+            return PlayerposY;
+        }
+        public bool LevelCleared()
+        {
+
+            bool levelcleared = false;
+            foreach (Enemy enemy in Enemies)
+            {
+                levelcleared = !levelcleared && enemy.Dead();
+
+            }
+            return (levelcleared);
         }
         public List<button> buttons
         {
@@ -56,11 +104,63 @@ namespace project_4_algemeen
             {
                 enemy.draw(spritebatch);
             }
+            player1.draw(spritebatch);
+            if (platform == platform.android)
+            {
+                foreach (button b in Buttons)
+                {
+                    b.draw(spritebatch);
+                }
+            }
         }
 
         public void update(game game1)
         {
-
+            player1.update(game1);
+            foreach (Enemy enemy in Enemies)
+            {
+                enemy.update(game1);
+            }
+        }
+        public void leftUp(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Left, Keys.Up };
+            player1.Move(keys);
+        }
+        public void up(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Up };
+            player1.Move(keys);
+        }
+        public void rightUp(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Right, Keys.Up };
+            player1.Move(keys);
+        }
+        public void left(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Left };
+            player1.Move(keys);
+        }
+        public void right(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Right };
+            player1.Move(keys);
+        }
+        public void leftDown(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Left, Keys.Down };
+            player1.Move(keys);
+        }
+        public void down(game game1)
+        {
+            Keys[] keys = new Keys[1] { Keys.Down };
+            player1.Move(keys);
+        }
+        public void rightDown(game game1)
+        {
+            Keys[] keys = new Keys[2] { Keys.Right, Keys.Down };
+            player1.Move(keys);
         }
     }
 }

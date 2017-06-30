@@ -27,7 +27,7 @@ namespace project_4_algemeen
         public androidTextBoxAdapter(textbox textbox)
         {
             this.textbox = textbox;
-        }    
+        }
         public void update(TouchCollection currentTouch)
         {
             foreach (TouchLocation t in currentTouch)
@@ -48,8 +48,9 @@ namespace project_4_algemeen
                 {
                     textbox.beenPressed = false;
                     textbox.hasBeenPressed = !(textbox.hasBeenPressed);
-                    var textField = new TextField();
-                    textField.ShowDialog();
+                    FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                    TextField textField = new TextField();
+                    textField.Show(transaction, "input name");
                 }
                 if (textbox.hasBeenPressed)
                 {
@@ -60,7 +61,7 @@ namespace project_4_algemeen
     }
     public class textbox
     {
-        string currentText = "hi";
+        string currentText = "";
         Texture2D texture;
         public int x, y, width, heigth;
         SpriteFont font;

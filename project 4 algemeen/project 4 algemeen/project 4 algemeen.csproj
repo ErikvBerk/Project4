@@ -43,8 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="button.cs" />
+    <Compile Include="EndScreen.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Highscores.cs" />
+    <Compile Include="Instructies.cs" />
     <Compile Include="Instructions.cs" />
     <Compile Include="Level_1.cs" />
     <Compile Include="Level_2.cs" />
@@ -52,19 +54,25 @@
     <Compile Include="Level_Boss.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Play.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Switch_level.cs" />
     <Compile Include="textbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="inputFields">
-      <HintPath>..\..\..\..\inputFields\inputFields\bin\Debug\inputFields.dll</HintPath>
+      <HintPath>..\..\inputFields\inputFields\bin\Debug\inputFields.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
     </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="project 4 android">
+      <HintPath>..\..\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 android.dll</HintPath>
     </Reference>
     <Reference Include="Project_game4">
       <HintPath>..\..\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Project_game4.exe</HintPath>
