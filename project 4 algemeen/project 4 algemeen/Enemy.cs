@@ -23,6 +23,7 @@ namespace project_4_algemeen
         public List<projectile> projectiles = new List<projectile>();
         Player player1;
         int PlayerposX, PlayerposY;
+        int size_x ,size_y;
 
         public List<button> buttons
         {
@@ -49,6 +50,8 @@ namespace project_4_algemeen
             this.screen_height = screen_height;
             this.screen_width = screen_width;
             this.player1 = player1;
+            this.size_x = (int)(screen_width / 10);
+            this.size_y = (int)(screen_height / 10);
 
             if (ID == 1)
             {
@@ -115,9 +118,8 @@ namespace project_4_algemeen
             foreach (projectile PRO in projectiles)
             {
 
-                if (PRO.position.X >= X && PRO.position.X < X + (int)(screen_width / 5) && PRO.position.Y >= Y && PRO.position.Y < Y + (int)(screen_height / 5))
+                if (PRO.position.X > this.X && PRO.position.X <= this.X+size_x && PRO.position.Y >= this.Y && PRO.position.Y < this.Y+size_y)
                 {
-
                     this.HP -= PRO.Hits();
                 }
             }
@@ -155,11 +157,7 @@ namespace project_4_algemeen
         {
           //  if (Dead()==false)
            // {
-                shoot();
-                MoveToPlayer();
-                projectiles = player1.projectiles;
-                GetHit();
-            player1.GetHit(enemy_projectiles);
+                
             foreach(projectile PRO in projectiles)
             {
                 PRO.update(game1);
@@ -168,7 +166,12 @@ namespace project_4_algemeen
             {
                     PRO.update(game1);
             }
+            GetHit();
+            shoot();
+            MoveToPlayer();
+            projectiles = player1.projectiles;
 
+            player1.GetHit(enemy_projectiles);
             //}
 
 
@@ -179,7 +182,7 @@ namespace project_4_algemeen
         {
             if (Dead()==false)
             {
-                Rectangle destinationRectangle = new Rectangle(this.X, this.Y, (int)this.screen_width / 5, (int)this.screen_height / 5);
+                Rectangle destinationRectangle = new Rectangle(this.X, this.Y, size_x, size_y);
 
                 foreach (projectile PRO in enemy_projectiles)
                 {
