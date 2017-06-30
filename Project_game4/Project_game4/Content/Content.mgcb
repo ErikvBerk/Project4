@@ -111,3 +111,45 @@
 /processorParam:TextureFormat=Color
 /build:bullet.png
 
+#begin GameOverSound.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:GameOverSound.ogg
+
+#begin GunSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:GunSound.wav
+
+#begin PlayerDeadSound.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:PlayerDeadSound.ogg
+
+#begin UnicornSound.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:UnicornSound.ogg
+
+#begin VictorySound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:VictorySound.wav
+
+#begin ZombieDeadSound.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ZombieDeadSound.ogg
+
+#begin ZombieUnicornDeadSound.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:ZombieUnicornDeadSound.ogg
+
