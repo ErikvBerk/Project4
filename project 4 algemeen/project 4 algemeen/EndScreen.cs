@@ -79,7 +79,8 @@ namespace project_4_algemeen
 
         public void GameWon() //if player beats boss level
         {
-            endscreen = "Congratulations, you beat the game!";
+            endscreen = "Congratulations, you beat the game! Yes, Yes indeed. That was a zombie unicorn you just killed";
+            //soundeffects[5].Play(2.0f, 0.0f);
         }
 
         public void GameLose() //everytime player dies

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using project_4_algemeen;
 using System.Collections.Generic;
@@ -18,9 +19,12 @@ namespace project_4_android
         SpriteBatch spriteBatch;
         public int screen_height, screen_width;
         public float relativeSize;
+        public List<SoundEffect> soundeffects;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            soundeffects = new List<SoundEffect>();
             Content.RootDirectory = "Content";
 
             graphics.IsFullScreen = true;
@@ -68,6 +72,14 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
             this.All_images.Add(Content.Load<Texture2D>("P0")); //5
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
+
+            soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
+            soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
+            soundeffects.Add(Content.Load<SoundEffect>("PlayerDeadSound")); //2
+            soundeffects.Add(Content.Load<SoundEffect>("UnicornSound")); //3
+            soundeffects.Add(Content.Load<SoundEffect>("ZombieUnicornDeadSound")); //4
+            soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
+            soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
 
             Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);

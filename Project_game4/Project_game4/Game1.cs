@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System.Linq;
 using System;
 
@@ -26,6 +27,7 @@ namespace Project_game4
         gameElement Current = new project_4_algemeen.Menu();
         List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
         List<Texture2D> All_images = new List<Texture2D>();
+        public List<SoundEffect> soundeffects;
 
         public double screen_width;
 		public double screen_height;
@@ -35,6 +37,7 @@ namespace Project_game4
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            soundeffects = new List<SoundEffect>();
             Content.RootDirectory = "Content";           
            
             
@@ -94,6 +97,14 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
             this.All_images.Add(Content.Load<Texture2D>("P0")); //5	    
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
+
+            soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
+            soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
+            soundeffects.Add(Content.Load<SoundEffect>("PlayerDeadSound")); //2
+            soundeffects.Add(Content.Load<SoundEffect>("UnicornSound")); //3
+            soundeffects.Add(Content.Load<SoundEffect>("ZombieUnicornDeadSound")); //4
+            soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
+            soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
 
 
             // TODO: use this.Content to load your game content here
