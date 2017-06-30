@@ -19,24 +19,29 @@ namespace Project_game4
     {
         public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        gameElement Current;
+        public project_4_algemeen.Menu menu = new project_4_algemeen.Menu();
         SpriteFont Font, Big_Font;
-        public int screen_width;
-		public int screen_height;
-        public float relativeSize;
-        List<Texture2D> All_images=new List<Texture2D>();
-        public Texture2D Level_1_Background;
+        public  string screen_name="Menu";
+        int id;
+        gameElement Current = new project_4_algemeen.Menu();
+        List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
+        List<Texture2D> All_images = new List<Texture2D>();
 
+        public double screen_width;
+		public double screen_height;
+        
+        
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-
+            Content.RootDirectory = "Content";           
+           
             
         }
-        
+        public float relativeSize;
 
+        public void resetButtons() { }
         public gameElement current
         {
             get
@@ -48,8 +53,6 @@ namespace Project_game4
                 Current = value;
             }
         }
-
-        
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -69,37 +72,52 @@ namespace Project_game4
             this.IsMouseVisible = true;
 			screen_width = graphics.PreferredBackBufferWidth;
 			screen_height = graphics.PreferredBackBufferHeight;
-
-            
             base.Initialize();
 
             base.Initialize();
         }
 
-       
+        /// <summary>
+        /// LoadContent will be called once per game and is the place to load
+        /// all of your content.
+        /// </summary>
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Font = Content.Load<SpriteFont>("FONT");
-            Big_Font = Content.Load<SpriteFont>("Big_Font");
+            SpriteFont Big_Font = Content.Load<SpriteFont>("Big_Font");
             this.All_images.Add(Content.Load<Texture2D>("Level_1_background")); //0
             this.All_images.Add(Content.Load<Texture2D>("enemyneutral2")); //1 
             this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
             this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
-            //All_images.Add(this.Content.Load<Texture2D>("Level_1_background"));
+            this.All_images.Add(Content.Load<Texture2D>("P0")); //5	    
+            this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
 
 
-            Current = new project_4_algemeen.Menu(this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this,this.All_images);
-            
-           
+            // TODO: use this.Content to load your game content here
+            //rect = new Texture2D(graphics.GraphicsDevice, this.ButtonWith, this.ButtonHeight);
+            //Color[] data = new Color[this.ButtonWith * this.ButtonHeight];
+            //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            //rect.SetData(data);
+
+
+            //initiate all different classes here , including the ones given to the buttons in other classes
+            Current = new project_4_algemeen.Menu(graphics, Font, screen_height, screen_width, relativeSize, exit, this, All_images);
+            //menu = new project_4_algemeen.Menu(graphics, Font,screen_width,screen_height,relativeSize, (game1) => exit(game1), list_buttons_menu);
+            //list_buttons_menu.Add(new project_4_algemeen.button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Test_Play("Test_Play",Font,400,400, graphics), graphics));
+            //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
+            //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
         }
-        public void exit(game game1)
+        private void exit(game game1)
         {
             Exit();
         }
-        
+        public void change_Screen()
+        {
+
+        }
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
@@ -116,13 +134,21 @@ namespace Project_game4
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) { Exit(); }
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                Exit();
+            Current.update(this);
+            
+            
+            
+
+            //if (menu.list_buttons_menu[0].clicked == true) { screen_name = menu.list_buttons_menu[0].Class_call.get_name(); }
+
+            //menu.list_buttons_menu[id].update();
 
 
-           
-            current.update(this);
 
-
+            Console.WriteLine(id);
+            
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -137,8 +163,14 @@ namespace Project_game4
             GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             spriteBatch.Begin();
-           
-            current.draw(spriteBatch);
+
+            //if (screen_name == "Menu")  //checks what the "screen_name"  is to determine which draw function to call
+            //{
+            //    foreach (button BUT in menu.list_buttons_menu) { BUT.draw(spriteBatch); }
+
+            //}
+            //else if (screen_name == "Test_Play") { list_buttons_menu[0].Class_call.draw(spriteBatch); }
+            Current.draw(spriteBatch);
             spriteBatch.End();
             // TODO: Add your drawing code here
 
@@ -149,6 +181,4 @@ namespace Project_game4
             this.Exit();
         }
     }
-
-    
 }

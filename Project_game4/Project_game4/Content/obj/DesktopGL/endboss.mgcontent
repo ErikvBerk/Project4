@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/erikv/Desktop/Proj4/sprint2/Project4-niet-master2/Project_game4/Project_game4/Content/endboss.png</SourceFile>
-  <SourceTime>2017-06-26T19:49:16.5378774+02:00</SourceTime>
+  <SourceTime>2017-06-29T13:43:22+02:00</SourceTime>
   <DestFile>C:/Users/erikv/Desktop/Proj4/sprint2/Project4-niet-master2/Project_game4/Project_game4/Content/bin/DesktopGL/endboss.xnb</DestFile>
-  <DestTime>2017-06-26T19:49:44.0432661+02:00</DestTime>
+  <DestTime>2017-06-30T09:23:54.9320601+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
