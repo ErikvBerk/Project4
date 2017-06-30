@@ -63,9 +63,9 @@ namespace Project_game4
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            graphics.IsFullScreen = false;
-            graphics.PreferredBackBufferWidth = Convert.ToInt32(GraphicsDevice.DisplayMode.Width * 0.9f);
-            graphics.PreferredBackBufferHeight = Convert.ToInt32(GraphicsDevice.DisplayMode.Height * 0.9f);
+            graphics.IsFullScreen = true;
+            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
             relativeSize = 1;
             graphics.ApplyChanges();
             Window.AllowUserResizing = true;
@@ -132,10 +132,35 @@ namespace Project_game4
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        bool f11pressed;
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.F11))
+            {
+                f11pressed = true;
+            }
+            if (Keyboard.GetState().IsKeyUp(Keys.F11))
+            {
+                if (f11pressed)
+                {
+                    if (graphics.IsFullScreen)
+                    {
+                        graphics.IsFullScreen = false;
+                        graphics.PreferredBackBufferWidth = (int)(GraphicsDevice.DisplayMode.Width * 0.9f);
+                        graphics.PreferredBackBufferHeight = (int)(GraphicsDevice.DisplayMode.Height * 0.9f);
+                    }
+                    else
+                    {
+                        graphics.IsFullScreen = true;
+                        graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+                        graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+                    }
+                    graphics.ApplyChanges();
+                    f11pressed = false;
+                }
+            }
             Current.update(this);
             
             

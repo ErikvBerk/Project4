@@ -24,21 +24,9 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
 
-        public List<button> buttons
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public List<button> buttons => throw new NotImplementedException();
 
-        public List<textbox> textboxes
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public List<textbox> textboxes => throw new NotImplementedException();
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
         {
@@ -210,9 +198,8 @@ namespace project_4_algemeen
     }
     public abstract class EnemyFactory
     {
-        public static Enemy create(int id, double screen_width, double screen_heigth, List<Texture2D>All_images, Player player1)
+        public static Enemy create(int id, double screen_width, double screen_heigth, List<Texture2D>All_images, Player player1, Random rand)
         {
-            Random rand = new Random();
             int x = rand.Next(0, (int)screen_width);
             int y = rand.Next(0, (int)screen_heigth);
             int centrX = (int)((player1.X + (player1.X + player1.size_x)) / 2);
