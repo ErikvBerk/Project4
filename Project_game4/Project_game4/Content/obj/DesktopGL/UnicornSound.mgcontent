@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/UnicornSound.ogg</SourceFile>
-  <SourceTime>2016-03-09T06:26:00+01:00</SourceTime>
-  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/UnicornSound.xnb</DestFile>
-  <DestTime>2017-06-30T11:52:47.2035884+02:00</DestTime>
-  <Importer>OggImporter</Importer>
+  <SourceFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/UnicornSound.wav</SourceFile>
+  <SourceTime>2017-07-01T19:34:27.6518372+02:00</SourceTime>
+  <DestFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/UnicornSound.xnb</DestFile>
+  <DestTime>2017-07-01T21:52:31.3324217+02:00</DestTime>
+  <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
-  <Processor>SongProcessor</Processor>
+  <Processor>SoundEffectProcessor</Processor>
   <ProcessorTime>2017-03-01T16:05:36+01:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
@@ -14,7 +14,5 @@
   </Parameters>
   <Dependencies />
   <BuildAsset />
-  <BuildOutput>
-    <string>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/UnicornSound.ogg</string>
-  </BuildOutput>
+  <BuildOutput />
 </PipelineBuildEvent>

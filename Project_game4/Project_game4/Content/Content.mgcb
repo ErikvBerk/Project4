@@ -111,29 +111,11 @@
 /processorParam:TextureFormat=Color
 /build:bullet.png
 
-#begin GameOverSound.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:GameOverSound.ogg
-
 #begin GunSound.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:GunSound.wav
-
-#begin PlayerDeadSound.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:PlayerDeadSound.ogg
-
-#begin UnicornSound.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:UnicornSound.ogg
 
 #begin VictorySound.wav
 /importer:WavImporter
@@ -141,15 +123,33 @@
 /processorParam:Quality=Best
 /build:VictorySound.wav
 
-#begin ZombieDeadSound.ogg
-/importer:OggImporter
-/processor:SongProcessor
+#begin GameOverSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:ZombieDeadSound.ogg
+/build:GameOverSound.wav
 
-#begin ZombieUnicornDeadSound.ogg
-/importer:OggImporter
-/processor:SongProcessor
+#begin PlayerDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:ZombieUnicornDeadSound.ogg
+/build:PlayerDeadSound.wav
+
+#begin UnicornSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:UnicornSound.wav
+
+#begin ZombieDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ZombieDeadSound.wav
+
+#begin ZombieUnicornDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ZombieUnicornDeadSound.wav
 

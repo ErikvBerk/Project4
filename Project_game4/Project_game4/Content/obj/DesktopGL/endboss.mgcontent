@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/endboss.png</SourceFile>
-  <SourceTime>2017-06-29T11:31:17.3278191+02:00</SourceTime>
-  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/endboss.xnb</DestFile>
-  <DestTime>2017-06-30T11:52:03.6116869+02:00</DestTime>
+  <SourceFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/endboss.png</SourceFile>
+  <SourceTime>2017-06-28T11:03:53.218184+02:00</SourceTime>
+  <DestFile>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/endboss.xnb</DestFile>
+  <DestTime>2017-07-01T21:52:30.4347762+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

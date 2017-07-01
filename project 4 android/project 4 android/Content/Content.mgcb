@@ -99,3 +99,45 @@
 /processorParam:TextureFormat=Color
 /build:P0.png
 
+#begin GameOverSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:GameOverSound.wav
+
+#begin GunSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:GunSound.wav
+
+#begin PlayerDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PlayerDeadSound.wav
+
+#begin UnicornSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:UnicornSound.wav
+
+#begin VictorySound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:VictorySound.wav
+
+#begin ZombieDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ZombieDeadSound.wav
+
+#begin ZombieUnicornDeadSound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:ZombieUnicornDeadSound.wav
+
