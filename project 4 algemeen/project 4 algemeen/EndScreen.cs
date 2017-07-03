@@ -87,6 +87,7 @@ namespace project_4_algemeen
         public void GameLose() //everytime player dies
         {
             endscreen = "Game Over!";
+            sound.GameOverSound();
         }
 
         public bool LevelCleared()

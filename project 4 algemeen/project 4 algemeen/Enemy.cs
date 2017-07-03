@@ -24,6 +24,8 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
         int size_x ,size_y;
+        public Sound sound;
+        bool dead = false;
 
         public List<button> buttons
         {
@@ -41,7 +43,7 @@ namespace project_4_algemeen
             }
         }
 
-        public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1)
+        public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1, Sound sound)
         {
             this.ID = ID;
             this.X = X;
@@ -52,7 +54,9 @@ namespace project_4_algemeen
             this.player1 = player1;
             this.size_x = (int)(screen_width / 10);
             this.size_y = (int)(screen_height / 10);
+            this.sound = sound;
 
+            
             if (ID == 1)
             {
                 this.name = "Enemy1";
@@ -104,6 +108,7 @@ namespace project_4_algemeen
 
             if (ID == 3)
             {
+                //sound.GunSound();
                 enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
 
             }
@@ -130,29 +135,66 @@ namespace project_4_algemeen
         {
             if (this.HP <= 0)
             {
+                dead = true;
                 if (ID == 1)
                 {
                     player1.CurrentScore(100);
+                    //sound.ZombieDeadSound();
                 }
 
                 if (ID == 2)
                 {
                     player1.CurrentScore(200);
+                    //sound.ZombieDeadSound();
                 }
 
                 if (ID == 3)
                 {
                     player1.CurrentScore(300);
+                    //sound.ZombieDeadSound();
                 }
 
                 if (ID == 4)
                 {
                     player1.CurrentScore(500);
+                    //sound.UnicornDeadSound();
                 }
+                
                 return true;
             }
             else return false;
         }
+
+        public void PlayDeadSound()
+        {
+            if (dead == true)
+            {
+                if (ID == 1)
+                {
+
+                    sound.ZombieDeadSound();
+                }
+
+                if (ID == 2)
+                {
+
+                    sound.ZombieDeadSound();
+                }
+
+                if (ID == 3)
+                {
+
+                    sound.ZombieDeadSound();
+                }
+
+                if (ID == 4)
+                {
+
+                    sound.UnicornDeadSound();
+                }
+            }
+        }   
+
         public void update(game game1)
         {
           //  if (Dead()==false)
@@ -211,7 +253,7 @@ namespace project_4_algemeen
     }
     public abstract class EnemyFactory
     {
-        public static Enemy create(int id, double screen_width, double screen_heigth, List<Texture2D>All_images, Player player1, Random rand)
+        public static Enemy create(int id, double screen_width, double screen_heigth, List<Texture2D>All_images, Player player1, Random rand, Sound sound)
         {
             int x = rand.Next(0, (int)screen_width);
             int y = rand.Next(0, (int)screen_heigth);
@@ -240,13 +282,13 @@ namespace project_4_algemeen
             switch (id)
             {
                 case 1:
-                    return new Enemy(1, x, y, screen_width, screen_heigth, All_images, player1);
+                    return new Enemy(1, x, y, screen_width, screen_heigth, All_images, player1, sound);
                 case 2:
-                    return new Enemy(2, x, y, screen_width, screen_heigth, All_images, player1);
+                    return new Enemy(2, x, y, screen_width, screen_heigth, All_images, player1, sound);
                 case 3:
-                    return new Enemy(3, x, y, screen_width, screen_heigth, All_images, player1);
+                    return new Enemy(3, x, y, screen_width, screen_heigth, All_images, player1, sound);
                 case 4:
-                    return new Enemy(4, x, y, screen_width, screen_heigth, All_images, player1);
+                    return new Enemy(4, x, y, screen_width, screen_heigth, All_images, player1, sound);
                 default:
                     throw new Exception("invalid id");
             }
