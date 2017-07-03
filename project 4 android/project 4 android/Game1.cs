@@ -20,6 +20,7 @@ namespace project_4_android
         public int screen_height, screen_width;
         public float relativeSize;
         public List<SoundEffect> soundeffects;
+        Sound sound;
 
         public Game1()
         {
@@ -80,6 +81,8 @@ namespace project_4_android
             soundeffects.Add(Content.Load<SoundEffect>("ZombieUnicornDeadSound")); //4
             soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
             soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
+
+            sound = new Sound(soundeffects);
 
             Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);

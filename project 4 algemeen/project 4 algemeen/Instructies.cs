@@ -19,11 +19,13 @@ namespace project_4_algemeen
         public List<button> Buttons = new List<button>();
         public List<textbox> Textboxes = new List<textbox>();
         List<Texture2D> All_images = new List<Texture2D>();
+        Sound sound;
+
         public Instructies()
         {
 
         }
-        public Instructies(double screen_width, double screen_height, SpriteFont font, float relativeSize, Action<game> Exit, GraphicsDeviceManager graphics, gameElement origin, platform platform)
+        public Instructies(double screen_width, double screen_height, SpriteFont font, float relativeSize, Action<game> Exit, GraphicsDeviceManager graphics, gameElement origin, platform platform, Sound sound)
         {
             this.graphics = graphics;
             this.origin = origin;
@@ -32,6 +34,7 @@ namespace project_4_algemeen
             this.screen_height = screen_height;
             this.relativeSize = relativeSize;
             this.exit = Exit;
+            this.sound = sound;
 
             Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, new Menu(), graphics));
             Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, new Menu(), graphics));

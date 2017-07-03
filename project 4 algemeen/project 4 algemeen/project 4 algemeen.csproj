@@ -58,7 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoundEffects.cs" />
+    <Compile Include="Sound.cs" />
     <Compile Include="Switch_level.cs" />
     <Compile Include="textbox.cs" />
   </ItemGroup>

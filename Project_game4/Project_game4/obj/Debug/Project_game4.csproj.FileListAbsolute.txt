@@ -169,3 +169,15 @@ C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\Deskt
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\bullet.xnb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\bullet.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\GameOverSound.ogg
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\GameOverSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\GunSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\PlayerDeadSound.ogg
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\PlayerDeadSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\UnicornSound.ogg
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\UnicornSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\VictorySound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieDeadSound.ogg
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieDeadSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieUnicornDeadSound.ogg
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieUnicornDeadSound.xnb

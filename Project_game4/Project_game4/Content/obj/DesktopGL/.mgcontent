@@ -4,21 +4,21 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/FONT.spritefont</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/Big_Font.spritefont</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/endboss.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/enemy3.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/enemy4b.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/enemyneutral2.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/Level_1_background.jpeg</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/P0.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/bullet.png</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/GunSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/VictorySound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/GameOverSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/PlayerDeadSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/UnicornSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/ZombieDeadSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/Project_game4/Project_game4/Content/ZombieUnicornDeadSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/FONT.spritefont</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/Big_Font.spritefont</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/endboss.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/enemy3.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/enemy4b.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/enemyneutral2.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/Level_1_background.jpeg</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/P0.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bullet.png</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/GunSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/VictorySound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/GameOverSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/PlayerDeadSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/UnicornSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/ZombieDeadSound.wav</File>
+    <File>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/ZombieUnicornDeadSound.wav</File>
   </SourceFiles>
 </SourceFileCollection>

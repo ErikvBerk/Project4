@@ -30,8 +30,9 @@ namespace project_4_algemeen
         int Score;
         string currentscorestring;
         public bool levelcleared = false;
+        Sound sound;
 
-        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound)
         {
             this.PlayerDead = Playerdead;
             this.Font = Font;
@@ -41,6 +42,7 @@ namespace project_4_algemeen
             this.game1 = game1;
             this.platform = platform;
             this.Score = Score;
+            this.sound = sound;
 
             Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Next Level!", Font, relativeSize, Color.Khaki, Color.OliveDrab,
                (game)=>LevelCleared(), graphics));
@@ -79,8 +81,7 @@ namespace project_4_algemeen
 
         public void GameWon() //if player beats boss level
         {
-            endscreen = "Congratulations, you beat the game! Yes, Yes indeed. That was a zombie unicorn you just killed";
-            //soundeffects[5].Play(2.0f, 0.0f);
+            endscreen = "Congratulations, you beat the game! Yes, Yes indeed. That was a zombie unicorn you just killed";            
         }
 
         public void GameLose() //everytime player dies

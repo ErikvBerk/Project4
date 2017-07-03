@@ -39,8 +39,9 @@ namespace project_4_algemeen
         public int currentscore;
         public int HP = 1;
         public bool dead = false;
+        public Sound sound;
 
-        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform,int HP,int damage)
+        public Player(List<Texture2D> All_images, game game1, double screen_width, double screen_height, platform platform,int HP,int damage, Sound sound)
         {
             this.All_images = All_images;
             this.lenght = 1;
@@ -58,6 +59,7 @@ namespace project_4_algemeen
             this.projectilesPS = 3;
             this.projectileCNTMAX = 60 / projectilesPS;
             this.projectileCNT = 0;
+            this.sound = sound;
 
         }
         public virtual void update(game game1)
@@ -162,7 +164,7 @@ namespace project_4_algemeen
                 {
                     mouseX = mouse.X;
                     mouseY = mouse.Y;
-
+                    sound.GunSound();
                     projectiles.Add(new projectile(this.damage,this.X+ (int)(size_x/2), this.Y+(int)(size_y / 2), this.mouseX, this.mouseY, this.screen_width, this.screen_height, this.All_images,this));
                 }
                 projectileCNT = 0;
@@ -249,7 +251,7 @@ namespace project_4_algemeen
     public class AndroidPlayer : Player
     {
         Keys[] keys = new Keys[2];
-        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform,int HP,int damage) : base(All_images, game, screen_width, screen_height,platform,HP,damage)
+        public AndroidPlayer(List<Texture2D> All_images, game game, double screen_width, double screen_height, SpriteFont font, GraphicsDeviceManager graphics, platform platform,int HP,int damage, Sound sound) : base(All_images, game, screen_width, screen_height,platform,HP,damage, sound)
         {
             shootDirection = new Location(0, 0);
         }
@@ -285,6 +287,7 @@ namespace project_4_algemeen
             {
                 projectiles.Add(new androidProjectile(damage, X + (int)(size_x / 2), Y + (int)(size_y / 2), shootDirection.X, shootDirection.Y, screen_width, screen_height, All_images, this));
                 projectileCNT = 0;
+                sound.GunSound();
             }
         }
         public override void draw(SpriteBatch spritebatch)

@@ -21,9 +21,10 @@ namespace project_4_algemeen
         List<textbox> Textboxes = new List<textbox>();
         game game1;
         string name;
+        Sound sound;
 
 
-        public Instructions(string name,double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1)
+        public Instructions(string name,double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, Sound sound)
         {
             this.graphics = graphics;
             this.Font = font;
@@ -32,6 +33,7 @@ namespace project_4_algemeen
             this.relativeSize = relativeSize;
             this.game1 = game1;
             this.name = name;
+            this.sound = sound;
             
             //Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray,new Play("Play",this.screen_width,this.screen_height,this.relativeSize,this.Font,this.graphics,this.game1), graphics));
             //Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, (game1) => hi6(game1), graphics));

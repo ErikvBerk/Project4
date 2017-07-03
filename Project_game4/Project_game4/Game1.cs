@@ -28,6 +28,8 @@ namespace Project_game4
         List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
         List<Texture2D> All_images = new List<Texture2D>();
         public List<SoundEffect> soundeffects;
+        Sound sound;
+        
 
         public double screen_width;
 		public double screen_height;
@@ -106,6 +108,8 @@ namespace Project_game4
             soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
             soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
 
+            sound = new Sound(soundeffects);
+
 
             // TODO: use this.Content to load your game content here
             //rect = new Texture2D(graphics.GraphicsDevice, this.ButtonWith, this.ButtonHeight);
@@ -115,7 +119,7 @@ namespace Project_game4
 
 
             //initiate all different classes here , including the ones given to the buttons in other classes
-            Current = new project_4_algemeen.Menu(graphics, Font, screen_height, screen_width, relativeSize, exit, this, All_images);
+            Current = new project_4_algemeen.Menu(graphics, Font, screen_height, screen_width, relativeSize, exit, this, All_images, sound);
             //menu = new project_4_algemeen.Menu(graphics, Font,screen_width,screen_height,relativeSize, (game1) => exit(game1), list_buttons_menu);
             //list_buttons_menu.Add(new project_4_algemeen.button((int)(screen_width * 0.8), (int)(this.screen_height * 0.18), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Test_Play("Test_Play",Font,400,400, graphics), graphics));
             //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);

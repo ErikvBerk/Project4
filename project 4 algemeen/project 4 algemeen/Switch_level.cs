@@ -35,8 +35,9 @@ namespace project_4_algemeen
         EndScreen endScreen, endScreen2, endScreen3, endScreen4;
         int Score;
         public Switch_level() { }
+        Sound sound;
 
-        public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics)
+        public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound)
         {
             this.All_images = All_images;
             this.game1 = game1;
@@ -47,19 +48,20 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.PlayerposX = 0;
             this.PlayerposY = 0;
-            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
-            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
-            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
-            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score);
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
+            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
+            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
+            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
+            this.sound = sound;
 
 
             switch (platform)
             {
                 case platform.android:
-                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25);
+                    player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,1000,25);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,1000,25, sound);
                     break;
                 default:
                     break;
