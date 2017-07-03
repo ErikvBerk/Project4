@@ -22,7 +22,7 @@ namespace project_4_algemeen
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
         double speedX,speedY;
-        public int damage=500;
+        public int damage=5;
         public int projectile_HP=1;
         int size_x, size_y;
         public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)

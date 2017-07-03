@@ -90,11 +90,9 @@ namespace project_4_algemeen
             endscreen = "Game Over!";
         }
 
-        public bool LevelCleared()
+        public void LevelCleared()
         {
             levelcleared = true;
-            
-            return (levelcleared);
         }
 
         public void CurrentScoreString()

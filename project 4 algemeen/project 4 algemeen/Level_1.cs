@@ -26,9 +26,11 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         Player player1;
-       
+        public bool levelcleared = false;
         
-        public Level_1() { }
+
+
+
         public Level_1(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1,List<projectile>projectiles)
         {
 
@@ -58,7 +60,7 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
 
-                //shotbuttons
+                //shootbuttons
                 buttons.Add(new button((int)(screen_width-(screen_width/3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootLeftUp(game), graphics, 0.3f));
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootUp(game), graphics, 0.3f));
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightUp(game), graphics, 0.3f));
@@ -76,17 +78,7 @@ namespace project_4_algemeen
             Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand));
             
         }
-        public bool LevelCleared()
-        {
-            
-            bool levelcleared = false;
-            foreach(Enemy enemy in Enemies)
-            {
-                levelcleared = !levelcleared && enemy.Dead();
-                
-            }
-            return (levelcleared);
-        }
+       
         public List<button> buttons
         {
             get
@@ -121,11 +113,28 @@ namespace project_4_algemeen
         public void update(game game1)
         {
             player1.update(game1);
+
+            int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {
-                enemy.update(game1);
+                
+                if (enemy.dead == true)
+                {
+                    dead_count = dead_count+1;
+                }
+                else enemy.update(game1);
+
+                if (dead_count == Enemies.Count())
+                {
+                    levelcleared = true;
+                }
             }
         }
+
+
+
+
+
         public void leftUp(game game1)
         {
             Keys[] keys = new Keys[2] { Keys.Left, Keys.Up };

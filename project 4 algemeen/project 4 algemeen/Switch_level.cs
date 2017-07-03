@@ -35,7 +35,7 @@ namespace project_4_algemeen
         EndScreen endScreen, endScreen2, endScreen3, endScreen4;
         int Score;
         Sound sound;
-        gameElement current = new Level_1();
+        gameElement current;
 
         public Switch_level() { }
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound)
@@ -57,7 +57,7 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,1000,25, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,1000,50, sound);
                     break;
                 default:
                     break;
@@ -93,77 +93,45 @@ namespace project_4_algemeen
         {
             current.update(game1);
             Score = player1.currentscore;
-            if (current.GetType() == level1.GetType() && !level1Cleared)
+            if (current==level1 && level1.levelcleared==true) //checks if current is level 1 and if level 1 is cleared and then changes the current to the first 'endscreen'
             {
-                if (level1.LevelCleared())
-                {
                     current = endScreen;
-                    level1Cleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == endScreen.GetType() && !endscreenCleared)
+            else if (current.GetType() == endScreen.GetType() && endScreen3.levelcleared == true)
             {
-                if (endScreen.levelcleared)
-                {
                     current = level2;
                     endscreenCleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == level2.GetType() && !level2Cleared)
-            {
-                if (level2.LevelCleared())
-                {
-                    current = endScreen2;
-                    level2Cleared = true;
+            else if (current.GetType() == level2.GetType() && level2.levelcleared == true)
+            {                    current = endScreen2;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == endScreen2.GetType() && !endscreen2Cleared)
+            else if (current.GetType() == endScreen2.GetType() && endScreen2.levelcleared == true)
             {
-                if (endScreen2.levelcleared)
-                {
                     current = level3;
-                    endscreen2Cleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == level3.GetType() && !level3Cleared)
+            else if (current.GetType() == level3.GetType() && level3.levelcleared == true)
             {
-                if (level3.LevelCleared())
-                {
                     current = endScreen3;
-                    level3Cleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == endScreen3.GetType() && !endscreen3Cleared)
+            else if (current.GetType() == endScreen3.GetType() && endScreen3.levelcleared==true)
             {
-                if (endScreen3.levelcleared)
-                {
                     current = levelBoss;
-                    endscreen3Cleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == levelBoss.GetType() && !levelBossCleared)
+            else if (current.GetType() == levelBoss.GetType() && levelBoss.levelcleared == true)
             {
-                if (levelBoss.LevelCleared())
-                {
                     current = endScreen4;
-                    levelBossCleared = true;
                     game1.resetButtons();
-                }
             }
-            else if (current.GetType() == endScreen4.GetType() && !endscreen4Cleared)
+            else if (current.GetType() == endScreen4.GetType() && endScreen4.levelcleared == true)
             {
-                if (endScreen4.levelcleared)
-                {
                     current = endScreen4;
-                    endscreen4Cleared = true;
                     game1.resetButtons();
-                }
             }
         }
         public void draw(SpriteBatch spritebatch)

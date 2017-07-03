@@ -27,6 +27,7 @@ namespace project_4_algemeen
         GraphicsDeviceManager graphics;
         Player player1;
         int PlayerposX, PlayerposY;
+        public bool levelcleared = false;
 
         public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles)
         {
@@ -84,17 +85,7 @@ namespace project_4_algemeen
         {
             return PlayerposY;
         }
-        public bool LevelCleared()
-        {
-
-            bool levelcleared = false;
-            foreach (Enemy enemy in Enemies)
-            {
-                levelcleared = !levelcleared && enemy.Dead();
-
-            }
-            return (levelcleared);
-        }
+       
         public List<button> buttons
         {
             get
@@ -131,9 +122,20 @@ namespace project_4_algemeen
         public void update(game game1)
         {
             player1.update(game1);
+            int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {
-                enemy.update(game1);
+
+                if (enemy.dead == true)
+                {
+                    dead_count = dead_count + 1;
+                }
+                else enemy.update(game1);
+
+                if (dead_count == Enemies.Count())
+                {
+                    levelcleared = true;
+                }
             }
         }
         public void leftUp(game game1)

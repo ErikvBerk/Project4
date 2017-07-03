@@ -24,6 +24,7 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
         int size_x ,size_y;
+        public bool dead = false;
 
         public List<button> buttons
         {
@@ -121,12 +122,13 @@ namespace project_4_algemeen
                 if (PRO.position.X > this.X && PRO.position.X <= this.X+size_x && PRO.position.Y >= this.Y && PRO.position.Y < this.Y+size_y)
                 {
                     this.HP -= PRO.Hits();
+                    
                 }
             }
 
 
         }
-        public bool Dead()
+        public bool IsDead()
         {
             if (this.HP <= 0)
             {
@@ -149,16 +151,22 @@ namespace project_4_algemeen
                 {
                     player1.CurrentScore(500);
                 }
-                return true;
+                dead = true;
+                return dead;
             }
-            else return false;
+            else return dead;
         }
         public void update(game game1)
         {
-          //  if (Dead()==false)
-           // {
-                
-            foreach(projectile PRO in projectiles)
+            //  if (Dead()==false)
+            // {
+            GetHit();
+            shoot();
+            IsDead();
+            MoveToPlayer();
+            projectiles = player1.projectiles;
+
+            foreach (projectile PRO in projectiles)
             {
                 PRO.update(game1);
             }
@@ -166,11 +174,8 @@ namespace project_4_algemeen
             {
                     PRO.update(game1);
             }
-            GetHit();
-            shoot();
-            MoveToPlayer();
-            projectiles = player1.projectiles;
-
+            
+            
             player1.GetHit(enemy_projectiles);
             //}
 
@@ -180,7 +185,7 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            if (Dead()==false)
+            if (dead==false)
             {
                 Rectangle destinationRectangle = new Rectangle(this.X, this.Y, size_x, size_y);
 
@@ -191,19 +196,19 @@ namespace project_4_algemeen
 
                 if (this.ID == 1)
                 {
-                    if (Dead() == false) { spritebatch.Draw(All_images[1], destinationRectangle, Color.White); }
+                    if (dead == false) { spritebatch.Draw(All_images[1], destinationRectangle, Color.White); }
                 }
                 else if (this.ID == 2)
                 {
-                    if (Dead() == false) { spritebatch.Draw(All_images[2], destinationRectangle, Color.White); }
+                    if (dead == false) { spritebatch.Draw(All_images[2], destinationRectangle, Color.White); }
                 }
                 else if (this.ID == 3)
                 {
-                    if (Dead() == false) { spritebatch.Draw(All_images[3], destinationRectangle, Color.White); }
+                    if (dead == false) { spritebatch.Draw(All_images[3], destinationRectangle, Color.White); }
                 }
                 else if (this.ID == 4)
                 {
-                    if (Dead() == false) { spritebatch.Draw(All_images[4], destinationRectangle, Color.White); }
+                    if (dead == false) { spritebatch.Draw(All_images[4], destinationRectangle, Color.White); }
                 }
             }
 

@@ -26,6 +26,7 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         Player player1;
+        public bool levelcleared = false;
 
         int PlayerposX, PlayerposY;
 
@@ -75,17 +76,7 @@ namespace project_4_algemeen
             Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images,  this.player1, rand));
 
         }
-        public bool LevelCleared()
-        {
-
-            bool levelcleared = false;
-            foreach (Enemy enemy in Enemies)
-            {
-                levelcleared = !levelcleared && enemy.Dead();
-
-            }
-            return (levelcleared);
-        }
+        
         public int GetPlayerposX()
         {
             return PlayerposX;
@@ -130,9 +121,20 @@ namespace project_4_algemeen
         public void update(game game1)
         {
             player1.update(game1);
+            int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {
-                enemy.update(game1);
+
+                if (enemy.dead == true)
+                {
+                    dead_count = dead_count + 1;
+                }
+                else enemy.update(game1);
+
+                if (dead_count == Enemies.Count())
+                {
+                    levelcleared = true;
+                }
             }
         }
         public void leftUp(game game1)
