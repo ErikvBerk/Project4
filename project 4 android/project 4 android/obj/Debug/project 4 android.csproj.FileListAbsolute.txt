@@ -18,7 +18,6 @@ C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bi
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\obj\Debug\android\assets\project 4 android.dll.mdb
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll.mdb
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\obj\Debug\android\assets\inputFields.dll.mdb
-C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.dll
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\inputFields.pdb
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.exe
 C:\Users\sibre\Documents\studie\project 4\project 4 android\project 4 android\bin\Android\AnyCPU\Debug\project 4 algemeen.pdb

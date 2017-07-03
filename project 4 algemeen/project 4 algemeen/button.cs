@@ -149,8 +149,10 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             if (visible)
+            {
                 spritebatch.Draw(texture, new Vector2(this.X, this.Y), this.CurrentColor * this.transparancy);
-            spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);
+                spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);
+            }
         }
     }
 }

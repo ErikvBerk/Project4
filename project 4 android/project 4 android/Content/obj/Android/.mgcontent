@@ -4,20 +4,23 @@
   <Platform>Android</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/FONT.spritefont</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/Big_Font.spritefont</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/endboss.png</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/enemy3.png</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/enemy4b.png</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/enemyneutral2.png</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/Level_1_background.jpeg</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/P0.png</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/GameOverSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/GunSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/PlayerDeadSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/UnicornSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/VictorySound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/ZombieDeadSound.wav</File>
-    <File>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/ZombieUnicornDeadSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/FONT.spritefont</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/Big_Font.spritefont</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/endboss.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/enemy3.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/enemy4b.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/enemyneutral2.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/Level_1_background.jpeg</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/P0.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/GameOverSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/GunSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/PlayerDeadSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/UnicornSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/VictorySound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/ZombieDeadSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/ZombieUnicornDeadSound.wav</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bullet.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/instructie1.png</File>
+    <File>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/instructie2.png</File>
   </SourceFiles>
 </SourceFileCollection>

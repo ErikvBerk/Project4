@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/enemyneutral2.png</SourceFile>
-  <SourceTime>2017-06-28T11:03:58.4400574+02:00</SourceTime>
-  <DestFile>D:/Program files/GitHub/Project4/project 4 android/project 4 android/Content/bin/Android/enemyneutral2.xnb</DestFile>
-  <DestTime>2017-07-01T21:53:14.9997576+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/enemyneutral2.png</SourceFile>
+  <SourceTime>2017-06-29T13:50:09.4318769+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bin/Android/enemyneutral2.xnb</DestFile>
+  <DestTime>2017-07-03T13:49:33.8482722+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

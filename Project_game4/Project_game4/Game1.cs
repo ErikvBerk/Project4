@@ -28,7 +28,7 @@ namespace Project_game4
         List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
         List<Texture2D> All_images = new List<Texture2D>();
         public List<SoundEffect> soundeffects;
-        public Sound sound;
+        Sound sound;
         
 
         public double screen_width;
@@ -99,6 +99,8 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
             this.All_images.Add(Content.Load<Texture2D>("P0")); //5	    
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
+            this.All_images.Add(Content.Load<Texture2D>("instructie1")); //7
+            this.All_images.Add(Content.Load<Texture2D>("instructie2")); //8
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1

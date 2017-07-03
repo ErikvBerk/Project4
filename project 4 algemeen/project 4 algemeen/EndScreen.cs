@@ -27,6 +27,7 @@ namespace project_4_algemeen
         game game1;
         platform platform;
         public List<button> Buttons = new List<button>();
+        public List<textbox> Textboxes = new List<textbox>();
         int Score;
         string currentscorestring;
         public bool levelcleared = false;
@@ -62,7 +63,7 @@ namespace project_4_algemeen
         {
             get
             {
-                return null;
+                return this.Textboxes;
             }
         }
         public void draw(SpriteBatch spritebatch)
@@ -87,7 +88,6 @@ namespace project_4_algemeen
         public void GameLose() //everytime player dies
         {
             endscreen = "Game Over!";
-            sound.GameOverSound();
         }
 
         public bool LevelCleared()

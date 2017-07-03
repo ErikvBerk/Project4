@@ -66,6 +66,7 @@ namespace project_4_android
             // Load the font used by the text
             SpriteFont font = Content.Load<SpriteFont>("FONT");
             SpriteFont Big_Font = Content.Load<SpriteFont>("Big_Font");
+
             this.All_images.Add(Content.Load<Texture2D>("Level_1_background")); //0
             this.All_images.Add(Content.Load<Texture2D>("enemyneutral2")); //1 
             this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
@@ -73,6 +74,8 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
             this.All_images.Add(Content.Load<Texture2D>("P0")); //5
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
+            this.All_images.Add(Content.Load<Texture2D>("instructie1")); //7
+            this.All_images.Add(Content.Load<Texture2D>("instructie2")); //8
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
@@ -84,9 +87,7 @@ namespace project_4_android
 
             sound = new Sound(soundeffects);
 
-            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, platform.android);
-            //new Instructies(screen_width, screen_height, font, relativeSize, exit, graphics);
-            //new Menu(graphics, font, screen_height, screen_width, relativeSize, exit);
+            Current = new Menu(graphics, font, screen_height, screen_width, relativeSize, (game1) => exit(game1), this, All_images, sound, platform.android);
 
             // create adapters for the buttons of the instructions screen
             foreach (button b in Current.buttons)

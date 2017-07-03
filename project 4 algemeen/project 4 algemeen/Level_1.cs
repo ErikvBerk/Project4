@@ -26,11 +26,10 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         Player player1;
-        Sound sound;
        
         
-
-        public Level_1(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1,List<projectile>projectiles, Sound sound)
+        public Level_1() { }
+        public Level_1(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1,List<projectile>projectiles)
         {
 
             this.screen_width = screen_width;
@@ -42,7 +41,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.player1 = player1;
             this.projectiles = projectiles;
-            this.sound = sound;
+
 
 
             if (platform == platform.android)
@@ -70,9 +69,11 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightDown(game), graphics, 0.3f));
             }
 
-            Enemies.Add(new Enemy(1, 800, 200, this.screen_width, this.screen_height, All_images,  this.player1, this.sound));
-            Enemies.Add(new Enemy(2, 800, 400, this.screen_width, this.screen_height, All_images,  this.player1, this.sound));
-            Enemies.Add(new Enemy(1, 800, 600, this.screen_width, this.screen_height, All_images,  this.player1, this.sound));
+            Random rand = new Random();
+
+            Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand));
+            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand));
+            Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand));
             
         }
         public bool LevelCleared()
