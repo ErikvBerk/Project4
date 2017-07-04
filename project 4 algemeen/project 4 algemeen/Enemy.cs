@@ -78,6 +78,10 @@ namespace project_4_algemeen
             }
             if(ID==4)
             {
+                this.size_x = this.size_x * 5;
+                this.size_y = this.size_y * 5;
+                this.X = (int)(screen_width * 0.60);
+                this.Y = (int)(screen_height * 0.2);
                 this.name = "Boss";
                 this.HP = 20000;
                 this.DMG = 50;
@@ -235,6 +239,7 @@ namespace project_4_algemeen
                 }
                 else if (this.ID == 4)
                 {
+                    destinationRectangle = new Rectangle(this.X, this.Y, size_x, size_y);
                     if (dead == false) { spritebatch.Draw(All_images[4], destinationRectangle, Color.White); }
                 }
             }

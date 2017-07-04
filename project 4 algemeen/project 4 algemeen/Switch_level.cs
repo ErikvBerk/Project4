@@ -56,7 +56,7 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 10000 ,500, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 1000000000 ,500, sound);
                     break;
                 default:
                     break;
@@ -97,12 +97,14 @@ namespace project_4_algemeen
             {
                 if(player1.dead == true)
                 {
+                    endScreen5.UpdateScore(Score);
                     current = endScreen5;
                     endScreen5.GameLose();
                     game1.resetButtons();
                 }
                 else
                 {
+                    endScreen.UpdateScore(Score);
                     current = endScreen;
                     game1.resetButtons();
                 }
@@ -117,12 +119,14 @@ namespace project_4_algemeen
             {
                 if (player1.dead == true)
                 {
+                    endScreen5.UpdateScore(Score);
                     current = endScreen5;
                     endScreen5.GameLose();
                     game1.resetButtons();
                 }
                 else
                 {
+                    endScreen2.UpdateScore(Score);
                     current = endScreen2;
                     game1.resetButtons();
                 }
@@ -136,12 +140,14 @@ namespace project_4_algemeen
             {
                 if (player1.dead == true)
                 {
+                    endScreen5.UpdateScore(Score);
                     current = endScreen5;
                     endScreen5.GameLose();
                     game1.resetButtons();
                 }
                 else
                 {
+                    endScreen3.UpdateScore(Score);
                     current = endScreen3;
                     game1.resetButtons();
                 }
@@ -156,12 +162,14 @@ namespace project_4_algemeen
             {
                 if (player1.dead == true)
                 {
+                    endScreen5.UpdateScore(Score);
                     current = endScreen5;
                     endScreen5.GameLose();
                     game1.resetButtons();
                 }
                 else
                 {
+                    endScreen4.UpdateScore(Score);
                     current = endScreen4;
                     endScreen4.GameWon();
                     game1.resetButtons();

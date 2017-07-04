@@ -29,7 +29,7 @@ namespace project_4_algemeen
         public List<button> Buttons = new List<button>();
         public List<textbox> Textboxes = new List<textbox>();
         int Score;
-        string currentscorestring;
+        string currentscorestring = " ";
         public bool levelcleared = false;
         Sound sound;
         bool isplayedvictory = false;
@@ -70,10 +70,14 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            spritebatch.DrawString(this.Font, endscreen, new Vector2((int)screen_width/3, (int)screen_height / 10), Color.White);
-            //spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)screen_width / 4, (int)screen_height / 12), Color.White);
+            spritebatch.DrawString(this.Font, endscreen, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.2)), Color.White);
+            spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.3)), Color.White);
 
             foreach (button BUT in buttons) { BUT.draw(spritebatch); }
+        }
+        public void UpdateScore(int score)
+        {
+            this.Score = this.Score + score;
         }
 
         public void update(game game1)

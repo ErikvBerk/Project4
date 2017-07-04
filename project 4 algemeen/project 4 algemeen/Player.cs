@@ -99,16 +99,10 @@ namespace project_4_algemeen
             direction = new Location(0, 0);
 
         }
-        public int CurrentScore(int Score)
+        public void CurrentScore(int Score)
         {
             currentscore = currentscore + Score;
-            //code to calculate the score
-            /*if (LevelCleared == true)
-            {
-                score = time * Player.HP;
-            }*/
-
-            return currentscore;
+            
         }
         public bool Dead()
         {
