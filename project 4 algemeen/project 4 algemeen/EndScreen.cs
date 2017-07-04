@@ -34,8 +34,9 @@ namespace project_4_algemeen
         Sound sound;
         bool isplayedvictory = false;
         bool isplayedlose = false;
+        string namebutton;
 
-        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound, string namebutton)
         {
             this.PlayerDead = Playerdead;
             this.Font = Font;
@@ -46,8 +47,9 @@ namespace project_4_algemeen
             this.platform = platform;
             this.Score = Score;
             this.sound = sound;
+            this.namebutton = namebutton;
 
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), "Next Level!", Font, relativeSize, Color.Khaki, Color.OliveDrab,
+            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), namebutton, Font, relativeSize, Color.Khaki, Color.OliveDrab,
                (game)=>LevelCleared(), graphics));
         }
 

@@ -35,9 +35,12 @@ namespace project_4_algemeen
         EndScreen endScreen, endScreen2, endScreen3, endScreen4, endScreen5;
         int Score;
         public Sound sound;
-        gameElement current;
+        gameElement current, Origin;
+        float relativeSize;
+        Action<game> exit;
         
-        public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound)
+        
+        public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,float relativeSize, Action<game> exit, platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound, gameElement Origin)
         {
             this.All_images = All_images;
             this.game1 = game1;
@@ -49,6 +52,10 @@ namespace project_4_algemeen
             this.PlayerposX = 0;
             this.PlayerposY = 0;
             this.sound = sound;
+            this.relativeSize = relativeSize;
+            this.exit = exit;
+            this.Origin = Origin;
+            
             
             switch (platform)
             {
@@ -62,15 +69,28 @@ namespace project_4_algemeen
                     break;
             }
 
-            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
-            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
-            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
-            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
-            endScreen5 = new EndScreen(true, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Go back to menu");
+            endScreen5 = new EndScreen(true, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Go back to menu");
             level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
             level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
             level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
             levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+
+
+
+
+            endScreen.levelcleared = false;
+            endScreen2.levelcleared = false;
+            endScreen3.levelcleared = false;
+            endScreen4.levelcleared = false;
+            endScreen5.levelcleared = false;
+            level1.levelcleared = false;
+            level2.levelcleared = false;
+            level3.levelcleared = false;
+            levelBoss.levelcleared = false;
 
             current = level1;
 
@@ -93,9 +113,9 @@ namespace project_4_algemeen
         {
             current.update(game1);
             Score = player1.currentscore;
-            if (current==level1 && level1.levelcleared==true || player1.dead == true) //checks if current is level 1 and if level 1 is cleared and then changes the current to the first 'endscreen'
+            if (current == level1 && level1.levelcleared == true || player1.dead == true) //checks if current is level 1 and if level 1 is cleared and then changes the current to the first 'endscreen'
             {
-                if(player1.dead == true)
+                if (player1.dead == true)
                 {
                     endScreen5.UpdateScore(Score);
                     current = endScreen5;
@@ -108,12 +128,12 @@ namespace project_4_algemeen
                     current = endScreen;
                     game1.resetButtons();
                 }
-                   
+
             }
             else if (current == endScreen && endScreen.levelcleared == true)
             {
-                    current = level2;
-                    game1.resetButtons();
+                current = level2;
+                game1.resetButtons();
             }
             else if (current == level2 && level2.levelcleared == true || player1.dead == true)
             {
@@ -131,12 +151,12 @@ namespace project_4_algemeen
                     game1.resetButtons();
                 }
             }
-            else if (current== endScreen2 && endScreen2.levelcleared == true)
+            else if (current == endScreen2 && endScreen2.levelcleared == true)
             {
-                    current = level3;
-                    game1.resetButtons();
+                current = level3;
+                game1.resetButtons();
             }
-            else if (current == level3&& level3.levelcleared == true || player1.dead == true)
+            else if (current == level3 && level3.levelcleared == true || player1.dead == true)
             {
                 if (player1.dead == true)
                 {
@@ -152,11 +172,11 @@ namespace project_4_algemeen
                     game1.resetButtons();
                 }
             }
-            else if (current == endScreen3 && endScreen3.levelcleared==true)
+            else if (current == endScreen3 && endScreen3.levelcleared == true)
             {
-                    sound.UnicornSound();
-                    current = levelBoss;
-                    game1.resetButtons();
+                sound.UnicornSound();
+                current = levelBoss;
+                game1.resetButtons();
             }
             else if (current == levelBoss && levelBoss.levelcleared == true || player1.dead == true)
             {
@@ -174,8 +194,15 @@ namespace project_4_algemeen
                     endScreen4.GameWon();
                     game1.resetButtons();
                 }
-                
             }
+
+            else if (current == endScreen4 && endScreen4.levelcleared == true)
+            {
+                current = Origin;
+                game1.resetButtons();
+            }
+                
+            
             
         }
         public void draw(SpriteBatch spritebatch)
