@@ -108,7 +108,10 @@ namespace project_4_algemeen
             {
                 enemy.draw(spritebatch);
             }
-            player1.draw(spritebatch);
+            if (player1.dead == false)
+            {
+                player1.draw(spritebatch);
+            }
             if (platform == platform.android)
             {
                 foreach (button b in Buttons)
@@ -120,7 +123,10 @@ namespace project_4_algemeen
 
         public void update(game game1)
         {
-            player1.update(game1);
+            if (player1.dead == false)
+            {
+                player1.update(game1);
+            }
             int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {

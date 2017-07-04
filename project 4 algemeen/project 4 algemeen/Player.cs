@@ -138,7 +138,7 @@ namespace project_4_algemeen
             }
 
         }
-        public void GetHit(List<projectile> enemy_projectiles)
+        public void GetHitProjectile(List<projectile> enemy_projectiles)
         {
             
             foreach (projectile PRO in enemy_projectiles)
@@ -150,6 +150,10 @@ namespace project_4_algemeen
                     this.HP -= PRO.damage;
                 }
             }
+        }
+        public void GetHitMelee(int damage)
+        {
+            this.HP -= damage;
         }
         public virtual void Shoot()
         {

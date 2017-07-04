@@ -128,6 +128,11 @@ namespace project_4_algemeen
 
 
         }
+        public void HitPlayer()
+        {
+            if(this.X > player1.X && this.X<=this.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y) { player1.GetHitMelee(this.DMG); }
+        }
+
         public bool IsDead()
         {
             if (this.HP <= 0)
@@ -158,13 +163,16 @@ namespace project_4_algemeen
         }
         public void update(game game1)
         {
-            //  if (Dead()==false)
-            // {
-            GetHit();
-            shoot();
-            IsDead();
-            MoveToPlayer();
             projectiles = player1.projectiles;
+            if (IsDead() == false)
+            {
+
+                GetHit();
+                shoot();
+                IsDead();
+                MoveToPlayer();
+                
+            }
 
             foreach (projectile PRO in projectiles)
             {
@@ -174,14 +182,9 @@ namespace project_4_algemeen
             {
                     PRO.update(game1);
             }
-            
-            
-            player1.GetHit(enemy_projectiles);
-            //}
 
-
-
-            // X = X  -0;
+            HitPlayer();
+            player1.GetHitProjectile(enemy_projectiles);
         }
         public void draw(SpriteBatch spritebatch)
         {
