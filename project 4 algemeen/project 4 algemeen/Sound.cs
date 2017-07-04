@@ -16,7 +16,7 @@ namespace project_4_algemeen
             this.list = soundeffects;
         }        
 
-        public void GunSound()
+        public void GunSound() //works
         {
             this.list[0].Play();
         }
@@ -24,6 +24,31 @@ namespace project_4_algemeen
         public void ZombieDeadSound()
         {
             this.list[1].Play();
+        }
+
+        public void PlayerDeadSound()
+        {
+            this.list[2].Play();
+        }
+
+        public void UnicornSound()
+        {
+            this.list[3].Play();
+        }
+
+        public void UnicornDeadSound()
+        {
+            this.list[4].Play();
+        }
+
+        public void VictorySound() //implemented but not tested
+        {
+            this.list[5].Play();
+        }
+
+        public void GameOverSound()
+        {
+            this.list[6].Play();
         }
     }
 }

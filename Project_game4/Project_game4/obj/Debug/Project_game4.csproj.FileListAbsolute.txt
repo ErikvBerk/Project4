@@ -196,3 +196,5 @@ C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\Deskto
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\VictorySound.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieDeadSound.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieUnicornDeadSound.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\instructie1.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\instructie2.xnb
