@@ -208,6 +208,7 @@ namespace project_4_algemeen
                     levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
                     player1.currentscore = 0;
 
+
                     game1.current = Origin;
                     game1.resetButtons();
                     current = level1;
