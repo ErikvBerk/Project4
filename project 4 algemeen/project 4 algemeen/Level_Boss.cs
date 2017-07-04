@@ -28,7 +28,7 @@ namespace project_4_algemeen
         Sound sound;
 
         public Level_Boss() { }
-        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles)
+        public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles, Sound sound)
         {
             this.screen_width = screen_width;
             this.screen_height = screen_height;
@@ -37,6 +37,7 @@ namespace project_4_algemeen
             this.player1 = player1;
             this.platform = platform;
             this.projectiles = projectiles;
+            this.sound = sound;
 
             if (platform == platform.android)
             {

@@ -26,6 +26,7 @@ namespace project_4_algemeen
         int size_x ,size_y;
         public bool dead = false;
         Sound sound;
+        bool isplayed = false;
 
         public List<button> buttons
         {
@@ -80,6 +81,7 @@ namespace project_4_algemeen
                 this.name = "Boss";
                 this.HP = 20000;
                 this.DMG = 50;
+                
             }
         }
         public void MoveToPlayer()
@@ -157,8 +159,10 @@ namespace project_4_algemeen
                 if (ID == 4)
                 {
                     player1.CurrentScore(500);
+                    
                 }
                 dead = true;
+                PlayDeadSound();
                 return dead;
             }
             else return dead;
@@ -185,13 +189,25 @@ namespace project_4_algemeen
                     PRO.update(game1);
             }
 
-           // HitPlayer();
+            HitPlayer();
             player1.GetHitProjectile(enemy_projectiles);
         }
 
         public void PlayDeadSound()
         {
-            sound.ZombieDeadSound();
+            if(dead == true && isplayed == false)
+            {
+                if(ID == 4)
+                {
+                    sound.UnicornDeadSound();
+                }
+                else
+                {
+                    sound.ZombieDeadSound();
+                }                
+                isplayed = true;
+            }
+           
         }
 
         public void draw(SpriteBatch spritebatch)

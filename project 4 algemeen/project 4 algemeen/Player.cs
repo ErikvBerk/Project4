@@ -114,6 +114,7 @@ namespace project_4_algemeen
         {
             if (this.HP <= 0)
             {
+                sound.PlayerDeadSound();
                  dead= true;
                 return dead;
             }

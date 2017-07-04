@@ -26,12 +26,6 @@ namespace project_4_algemeen
         game game1;
         string name;
         List<Texture2D> All_images;        
-        
-
-        Level_1 level1;
-        Level_2 level2;
-        Level_3 level3;
-        Level_Boss levelBoss;
         platform platform;
         Sound sound;
         
@@ -60,7 +54,7 @@ namespace project_4_algemeen
             //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level1 = new Level_1("Level1", this.screen_width, this.screen_height,All_images), graphics));
             //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level2 = new Level_2("Level2", this.screen_width, this.screen_height, All_images), graphics));
             //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level3 = new Level_3("Level3", this.screen_width, this.screen_height, All_images), graphics));
-            Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray,  new Switch_level(this.All_images,this.game1,this.screen_width,this.screen_height,this.platform,this.Font,this.graphics, sound), graphics));
+            Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray,  new Switch_level(this.All_images,this.game1,this.screen_width,this.screen_height,this.platform,this.Font,this.graphics, this.sound), graphics));
 
 
             //Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 3), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, new Instructions("Play_instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));

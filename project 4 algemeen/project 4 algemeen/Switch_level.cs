@@ -32,12 +32,11 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         int PlayerposX, PlayerposY;
-        EndScreen endScreen, endScreen2, endScreen3, endScreen4;
+        EndScreen endScreen, endScreen2, endScreen3, endScreen4, endScreen5;
         int Score;
         public Sound sound;
         gameElement current;
-
-        public Switch_level() { }
+        
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound)
         {
             this.All_images = All_images;
@@ -57,20 +56,21 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,10000000,500, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 10000 ,500, sound);
                     break;
                 default:
                     break;
             }
 
-            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
-            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
-            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
-            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, sound);
-            level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles);
-            level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles);
-            level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles);
-            levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles);
+            endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            endScreen5 = new EndScreen(true, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound);
+            level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+            level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+            level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+            levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
 
             current = level1;
 
@@ -93,47 +93,82 @@ namespace project_4_algemeen
         {
             current.update(game1);
             Score = player1.currentscore;
-            if (current==level1 && level1.levelcleared==true) //checks if current is level 1 and if level 1 is cleared and then changes the current to the first 'endscreen'
+            if (current==level1 && level1.levelcleared==true || player1.dead == true) //checks if current is level 1 and if level 1 is cleared and then changes the current to the first 'endscreen'
             {
+                if(player1.dead == true)
+                {
+                    current = endScreen5;
+                    endScreen5.GameLose();
+                    game1.resetButtons();
+                }
+                else
+                {
                     current = endScreen;
                     game1.resetButtons();
+                }
+                   
             }
             else if (current == endScreen && endScreen.levelcleared == true)
             {
                     current = level2;
                     game1.resetButtons();
             }
-            else if (current == level2 && level2.levelcleared == true)
+            else if (current == level2 && level2.levelcleared == true || player1.dead == true)
             {
+                if (player1.dead == true)
+                {
+                    current = endScreen5;
+                    endScreen5.GameLose();
+                    game1.resetButtons();
+                }
+                else
+                {
                     current = endScreen2;
                     game1.resetButtons();
+                }
             }
             else if (current== endScreen2 && endScreen2.levelcleared == true)
             {
                     current = level3;
                     game1.resetButtons();
             }
-            else if (current == level3&& level3.levelcleared == true)
+            else if (current == level3&& level3.levelcleared == true || player1.dead == true)
             {
+                if (player1.dead == true)
+                {
+                    current = endScreen5;
+                    endScreen5.GameLose();
+                    game1.resetButtons();
+                }
+                else
+                {
                     current = endScreen3;
                     game1.resetButtons();
+                }
             }
             else if (current == endScreen3 && endScreen3.levelcleared==true)
             {
+                    sound.UnicornSound();
                     current = levelBoss;
                     game1.resetButtons();
             }
-            else if (current == levelBoss && levelBoss.levelcleared == true)
+            else if (current == levelBoss && levelBoss.levelcleared == true || player1.dead == true)
             {
-                    current = endScreen4;
+                if (player1.dead == true)
+                {
+                    current = endScreen5;
+                    endScreen5.GameLose();
                     game1.resetButtons();
-            }
-            else if (current == endScreen4 && endScreen4.levelcleared == true)
-            {
-                    endScreen4.GameWon();                    
+                }
+                else
+                {
                     current = endScreen4;
+                    endScreen4.GameWon();
                     game1.resetButtons();
+                }
+                
             }
+            
         }
         public void draw(SpriteBatch spritebatch)
         {

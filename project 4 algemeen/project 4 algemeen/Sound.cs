@@ -18,35 +18,36 @@ namespace project_4_algemeen
 
         public void GunSound() //works
         {
-            this.list[0].Play();
+            this.list[0].Play(0.1f, 0.0f, 0.0f);
         }
 
-        public void ZombieDeadSound()
+        public void ZombieDeadSound() //works
         {
             this.list[1].Play();
         }
 
-        public void PlayerDeadSound()
+        public void PlayerDeadSound() //works
         {
             this.list[2].Play();
         }
 
-        public void UnicornSound()
+        public void UnicornSound() //works
         {
             this.list[3].Play();
         }
 
-        public void UnicornDeadSound()
+        public void UnicornDeadSound() //works
         {
             this.list[4].Play();
         }
 
-        public void VictorySound() //implemented but not tested
+        public void VictorySound() //works
         {
-            this.list[5].Play();
+            
+            this.list[5].Play(1.0f, 0.0f, 0.0f);
         }
 
-        public void GameOverSound()
+        public void GameOverSound() //works
         {
             this.list[6].Play();
         }

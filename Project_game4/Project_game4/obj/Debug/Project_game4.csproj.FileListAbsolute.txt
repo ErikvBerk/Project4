@@ -164,9 +164,6 @@ C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\Deskt
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\P0.xnb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.dll
-C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
-C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
-C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\bullet.xnb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\bullet.xnb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\GameOverSound.ogg
@@ -198,3 +195,6 @@ C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\Deskto
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\ZombieUnicornDeadSound.xnb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\instructie1.xnb
 C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\instructie2.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\fullife.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\halflife.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\nolife.xnb

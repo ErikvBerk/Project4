@@ -32,6 +32,8 @@ namespace project_4_algemeen
         string currentscorestring;
         public bool levelcleared = false;
         Sound sound;
+        bool isplayedvictory = false;
+        bool isplayedlose = false;
 
         public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound)
         {
@@ -78,17 +80,30 @@ namespace project_4_algemeen
         {
             foreach(button BUT in buttons) { BUT.update(game1); }
             CurrentScoreString();
+           
         }
 
         public void GameWon() //if player beats boss level
         {
             endscreen = "Congratulations, you beat the game! Yes, Yes indeed. That was a zombie unicorn you just killed";
-            sound.VictorySound();
+            if (isplayedvictory == false)
+            {
+                // throw new Exception();
+                sound.VictorySound();
+                isplayedvictory = true;
+            }
+
+
         }
 
         public void GameLose() //everytime player dies
         {
             endscreen = "Game Over!";
+            if (isplayedlose == false)
+            {
+                sound.GameOverSound();
+                isplayedlose = true;
+            }
         }
 
         public void LevelCleared()

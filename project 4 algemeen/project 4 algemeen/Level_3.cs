@@ -30,7 +30,7 @@ namespace project_4_algemeen
         public bool levelcleared = false;
         Sound sound;
 
-        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles)
+        public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles, Sound sound)
         {
 
             this.screen_width = screen_width;
@@ -44,6 +44,7 @@ namespace project_4_algemeen
             this.projectiles = projectiles;
             this.PlayerposX = PlayerposX;
             this.PlayerposY = PlayerposY;
+            this.sound = sound;
 
 
             if (platform == platform.android)

@@ -31,7 +31,7 @@ namespace project_4_algemeen
 
         int PlayerposX, PlayerposY;
 
-        public Level_2(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles)
+        public Level_2(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles, Sound sound)
         {
 
             this.screen_width = screen_width;
@@ -43,6 +43,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.player1 = player1;
             this.projectiles = projectiles;
+            this.sound = sound;
 
 
             if (platform == platform.android)
