@@ -28,7 +28,7 @@ namespace Project_game4
         List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
         List<Texture2D> All_images = new List<Texture2D>();
         public List<SoundEffect> soundeffects;
-        public Sound sound;
+        Sound sound;
         
 
         public double screen_width;
@@ -101,6 +101,9 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
             this.All_images.Add(Content.Load<Texture2D>("instructie1")); //7
             this.All_images.Add(Content.Load<Texture2D>("instructie2")); //8
+            this.All_images.Add(Content.Load<Texture2D>("fullife")); //9
+            this.All_images.Add(Content.Load<Texture2D>("halflife")); //10
+            this.All_images.Add(Content.Load<Texture2D>("nolife")); //11
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
@@ -109,7 +112,7 @@ namespace Project_game4
             soundeffects.Add(Content.Load<SoundEffect>("ZombieUnicornDeadSound")); //4
             soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
             soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
-
+            soundeffects.Add(Content.Load<SoundEffect>("background_music")); //7
             sound = new Sound(soundeffects);
 
 
@@ -205,7 +208,7 @@ namespace Project_game4
             GraphicsDevice.Clear(Color.DarkOliveGreen);
 
             spriteBatch.Begin();
-
+            
             //if (screen_name == "Menu")  //checks what the "screen_name"  is to determine which draw function to call
             //{
             //    foreach (button BUT in menu.list_buttons_menu) { BUT.draw(spriteBatch); }

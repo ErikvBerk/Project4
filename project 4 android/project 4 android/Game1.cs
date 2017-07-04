@@ -76,6 +76,9 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
             this.All_images.Add(Content.Load<Texture2D>("instructie1")); //7
             this.All_images.Add(Content.Load<Texture2D>("instructie2")); //8
+            this.All_images.Add(Content.Load<Texture2D>("fullife")); //9
+            this.All_images.Add(Content.Load<Texture2D>("halflife")); //10
+            this.All_images.Add(Content.Load<Texture2D>("nolife")); //11
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
@@ -84,6 +87,7 @@ namespace project_4_android
             soundeffects.Add(Content.Load<SoundEffect>("ZombieUnicornDeadSound")); //4
             soundeffects.Add(Content.Load<SoundEffect>("VictorySound")); //5
             soundeffects.Add(Content.Load<SoundEffect>("GameOverSound")); //6
+            soundeffects.Add(Content.Load<SoundEffect>("background_music")); //7
 
             sound = new Sound(soundeffects);
 

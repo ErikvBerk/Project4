@@ -51,5 +51,10 @@ namespace project_4_algemeen
         {
             this.list[6].Play();
         }
+
+        public void background_music()
+        {
+            this.list[7].Play();
+        }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/enemy3.png</SourceFile>
-  <SourceTime>2017-06-29T11:31:17.3308191+02:00</SourceTime>
-  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/enemy3.xnb</DestFile>
-  <DestTime>2017-07-04T11:42:51.3250443+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/enemy3.png</SourceFile>
+  <SourceTime>2017-06-27T12:47:30.3708566+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/bin/DesktopGL/enemy3.xnb</DestFile>
+  <DestTime>2017-07-04T11:01:42.5573823+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

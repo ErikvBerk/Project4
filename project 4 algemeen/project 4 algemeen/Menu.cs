@@ -56,6 +56,7 @@ namespace project_4_algemeen
             this.All_images = All_images;
             this.platform = platform;
             this.sound = sound;
+            this.sound.background_music();
 
             Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.18), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images, platform, sound), graphics));
             Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height * 0.33), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Highscores!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Highscores(screen_width, screen_height, relativeSize, Font, graphics, game1, this, platform, sound), graphics));

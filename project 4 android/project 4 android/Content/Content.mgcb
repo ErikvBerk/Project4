@@ -213,3 +213,9 @@
 /processorParam:TextureFormat=Color
 /build:nolife.png
 
+#begin background_music.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:background_music.wav
+
