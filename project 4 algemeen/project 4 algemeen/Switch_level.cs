@@ -98,37 +98,37 @@ namespace project_4_algemeen
                     current = endScreen;
                     game1.resetButtons();
             }
-            else if (current.GetType() == endScreen.GetType() && endScreen3.levelcleared == true)
+            else if (current == endScreen && endScreen.levelcleared == true)
             {
                     current = level2;
-                    endscreenCleared = true;
                     game1.resetButtons();
             }
-            else if (current.GetType() == level2.GetType() && level2.levelcleared == true)
-            {                    current = endScreen2;
+            else if (current == level2 && level2.levelcleared == true)
+            {
+                    current = endScreen2;
                     game1.resetButtons();
             }
-            else if (current.GetType() == endScreen2.GetType() && endScreen2.levelcleared == true)
+            else if (current== endScreen2 && endScreen2.levelcleared == true)
             {
                     current = level3;
                     game1.resetButtons();
             }
-            else if (current.GetType() == level3.GetType() && level3.levelcleared == true)
+            else if (current == level3&& level3.levelcleared == true)
             {
                     current = endScreen3;
                     game1.resetButtons();
             }
-            else if (current.GetType() == endScreen3.GetType() && endScreen3.levelcleared==true)
+            else if (current == endScreen3 && endScreen3.levelcleared==true)
             {
                     current = levelBoss;
                     game1.resetButtons();
             }
-            else if (current.GetType() == levelBoss.GetType() && levelBoss.levelcleared == true)
+            else if (current == levelBoss && levelBoss.levelcleared == true)
             {
                     current = endScreen4;
                     game1.resetButtons();
             }
-            else if (current.GetType() == endScreen4.GetType() && endScreen4.levelcleared == true)
+            else if (current == endScreen4 && endScreen4.levelcleared == true)
             {
                     current = endScreen4;
                     game1.resetButtons();
