@@ -61,20 +61,20 @@ namespace project_4_algemeen
             {
                 this.name = "Enemy1";
                 this.HP = 100;
-                this.DMG = 5;
+                this.DMG = 100;
             }
             else if (ID==2)
             {
                 this.name = "Enemy2";
                 this.HP = 200;
-                this.DMG = 10;
+                this.DMG = 100;
 
             }
             if(ID==3)
             {
                 this.name = "Enemy3";
                 this.HP = 300;
-                this.DMG = 5;
+                this.DMG = 100;
             }
             if(ID==4)
             {
@@ -84,7 +84,7 @@ namespace project_4_algemeen
                 this.Y = (int)(screen_height * 0.2);
                 this.name = "Boss";
                 this.HP = 20000;
-                this.DMG = 5;
+                this.DMG = 50;
                 
             }
         }
@@ -138,11 +138,15 @@ namespace project_4_algemeen
         }
         public void HitPlayer()
         {
-            if(this.X > player1.X && this.X<=this.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y) { player1.GetHitMelee(this.DMG); }
+            if(this.X > player1.X && this.X<=player1.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y)
+            {
+                player1.GetHitMelee(this.DMG);
+            }
         }
 
         public bool IsDead()
         {
+            
             if (this.HP <= 0)
             {
                 if (ID == 1)
@@ -173,6 +177,7 @@ namespace project_4_algemeen
         }
         public void update(game game1)
         {
+            
             projectiles = player1.projectiles;
             if (IsDead() == false)
             {
@@ -181,7 +186,8 @@ namespace project_4_algemeen
                 shoot();
                 IsDead();
                 MoveToPlayer();
-                
+                HitPlayer();
+
             }
 
             foreach (projectile PRO in projectiles)
@@ -193,7 +199,7 @@ namespace project_4_algemeen
                     PRO.update(game1);
             }
 
-            HitPlayer();
+            
             player1.GetHitProjectile(enemy_projectiles);
         }
 

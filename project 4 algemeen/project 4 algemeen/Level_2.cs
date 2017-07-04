@@ -28,7 +28,7 @@ namespace project_4_algemeen
         Player player1;
         public bool levelcleared = false;
         Sound sound;
-        Random rand;
+
         int PlayerposX, PlayerposY;
 
         public Level_2(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles, Sound sound)
@@ -71,7 +71,7 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightDown(game), graphics, 0.3f));
             }
 
-            rand = new Random();
+            Random rand = new Random();
 
             Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
             Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
@@ -129,21 +129,6 @@ namespace project_4_algemeen
             {
                 player1.update(game1);
             }
-
-            int chance = rand.Next(0, 100000);
-            if (chance >= 0 && chance < 50)
-            {
-                Enemies.Add(EnemyFactory.create(1, screen_width, screen_height, All_images, player1, rand, sound));
-            }
-            else if (chance >= 50 && chance < 60)
-            {
-                Enemies.Add(EnemyFactory.create(2, screen_width, screen_height, All_images, player1, rand, sound));
-            }
-            else if (chance >= 60 && chance < 65)
-            {
-                Enemies.Add(EnemyFactory.create(3, screen_width, screen_height, All_images, player1, rand, sound));
-            }
-
             int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {
