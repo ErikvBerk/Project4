@@ -28,6 +28,7 @@ namespace project_4_algemeen
         Player player1;
         int PlayerposX, PlayerposY;
         public bool levelcleared = false;
+        Sound sound;
 
         public Level_3(string name, double screen_width, double screen_height, List<Texture2D> All_images, game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1,List<projectile> projectiles)
         {
@@ -72,9 +73,9 @@ namespace project_4_algemeen
 
             Random rand = new Random();
 
-            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand));
-            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand));
-            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand));
+            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
 
         }
         public int GetPlayerposX()

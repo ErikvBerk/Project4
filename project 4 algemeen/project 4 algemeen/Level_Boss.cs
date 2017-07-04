@@ -25,6 +25,7 @@ namespace project_4_algemeen
         platform platform;
         gameElement switchLevel;
         public bool levelcleared = false;
+        Sound sound;
 
         public Level_Boss() { }
         public Level_Boss(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics, Player player1, List<projectile>projectiles)
@@ -64,7 +65,7 @@ namespace project_4_algemeen
 
             Random rand = new Random();
 
-            Enemies.Add(EnemyFactory.create(4, this.screen_width, this.screen_height, All_images, this.player1, rand));
+            Enemies.Add(EnemyFactory.create(4, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
         }
         public List<button> buttons
         {

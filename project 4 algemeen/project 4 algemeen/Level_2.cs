@@ -27,6 +27,7 @@ namespace project_4_algemeen
         GraphicsDeviceManager graphics;
         Player player1;
         public bool levelcleared = false;
+        Sound sound;
 
         int PlayerposX, PlayerposY;
 
@@ -71,9 +72,9 @@ namespace project_4_algemeen
 
             Random rand = new Random();
 
-            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand));
-            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand));
-            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images,  this.player1, rand));
+            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images,  this.player1, rand, sound));
 
         }
         

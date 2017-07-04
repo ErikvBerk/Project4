@@ -34,7 +34,7 @@ namespace project_4_algemeen
         int PlayerposX, PlayerposY;
         EndScreen endScreen, endScreen2, endScreen3, endScreen4;
         int Score;
-        Sound sound;
+        public Sound sound;
         gameElement current;
 
         public Switch_level() { }
@@ -57,7 +57,7 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,1000,50, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform,10000000,500, sound);
                     break;
                 default:
                     break;
@@ -130,6 +130,7 @@ namespace project_4_algemeen
             }
             else if (current == endScreen4 && endScreen4.levelcleared == true)
             {
+                    endScreen4.GameWon();                    
                     current = endScreen4;
                     game1.resetButtons();
             }

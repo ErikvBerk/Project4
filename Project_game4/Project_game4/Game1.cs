@@ -28,7 +28,7 @@ namespace Project_game4
         List<project_4_algemeen.button> list_buttons_menu = new List<project_4_algemeen.button>();
         List<Texture2D> All_images = new List<Texture2D>();
         public List<SoundEffect> soundeffects;
-        Sound sound;
+        public Sound sound;
         
 
         public double screen_width;
