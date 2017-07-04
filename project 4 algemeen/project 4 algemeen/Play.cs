@@ -46,9 +46,25 @@ namespace project_4_algemeen
 
 
 
-           
+            //this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
+            //Color[] data = new Color[(int)(100) * (int)(100)];
+            //for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
+            //this.texture.SetData(data);
+
+            //All level instances 
+
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level1 = new Level_1("Level1", this.screen_width, this.screen_height,All_images), graphics));
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level2 = new Level_2("Level2", this.screen_width, this.screen_height, All_images), graphics));
+            //Buttons.Add(new button((int)(screen_width - (this.screen_width / 6)), (int)(this.screen_height - this.screen_height / 6), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray, level3 = new Level_3("Level3", this.screen_width, this.screen_height, All_images), graphics));
             Buttons.Add(new button((int)(screen_width * 0.4), (int)(this.screen_height*0.5), (int)this.screen_width / 8, (int)this.screen_height / 8, "Start!", this.Font, this.relativeSize, Color.White, Color.LightGray,  new Switch_level(this.All_images,this.game1,this.screen_width,this.screen_height, this.relativeSize, this.exit, this.platform,this.Font,this.graphics, this.sound, this.Origin), graphics));
-            
+
+
+            //Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 3), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, new Instructions("Play_instructions", this.screen_width, this.screen_height, this.relativeSize, this.Font, this.graphics, this.game1), graphics));
+
+
+            //CurrentScore();
+            //CurrentScoreString();
+
         }
 
         public void update(game game1)

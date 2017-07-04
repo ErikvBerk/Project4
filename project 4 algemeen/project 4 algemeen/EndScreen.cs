@@ -79,7 +79,7 @@ namespace project_4_algemeen
         }
         public void UpdateScore(int score)
         {
-            this.Score =  score;
+            this.Score = this.Score + score;
         }
 
         public void update(game game1)

@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Level_1 : gameElement 
+    public class Level_1 : gameElement
     {
         // thins that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();
@@ -28,7 +28,7 @@ namespace project_4_algemeen
         Player player1;
         public bool levelcleared = false;
         Sound sound;
-        
+        Random rand;
         
 
 
@@ -74,7 +74,7 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightDown(game), graphics, 0.3f));
             }
 
-            Random rand = new Random();
+            rand = new Random();
 
             Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
             Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
@@ -96,9 +96,6 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-
-       
-
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);
@@ -127,6 +124,16 @@ namespace project_4_algemeen
                 player1.update(game1);
             }
 
+            int chance = rand.Next(0, 10000);
+            if (chance >= 0 && chance < 5)
+            {
+                Enemies.Add(EnemyFactory.create(1, screen_width, screen_height, All_images, player1, rand, sound));
+            }
+            else if (chance == 5)
+            {
+                Enemies.Add(EnemyFactory.create(2, screen_width, screen_height, All_images, player1, rand, sound));
+            }
+            
             int dead_count = 0;
             foreach (Enemy enemy in Enemies)
             {
