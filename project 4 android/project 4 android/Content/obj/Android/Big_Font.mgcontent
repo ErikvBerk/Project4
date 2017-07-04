@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/Big_Font.spritefont</SourceFile>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/Big_Font.spritefont</SourceFile>
   <SourceTime>2017-06-29T13:50:09.3177766+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/bin/Android/Big_Font.xnb</DestFile>
-  <DestTime>2017-07-04T10:28:58.6040603+02:00</DestTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bin/Android/Big_Font.xnb</DestFile>
+  <DestTime>2017-07-04T10:57:48.7074461+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
