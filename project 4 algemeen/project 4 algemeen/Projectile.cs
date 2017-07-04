@@ -57,8 +57,8 @@ namespace project_4_algemeen
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + (int)(DirectionX*speedX);
-            position.Y = position.Y + (int)(DirectionY*speedY);
+            position.X = position.X + (int)(DirectionX*0.02);
+            position.Y = position.Y + (int)(DirectionY*0.02);
 
         }
         public int Hits()
@@ -74,22 +74,22 @@ namespace project_4_algemeen
         {
             ShootToTarget();
         }
-        public int X1()
-        {
-            return (int)position.X;
-        }
-        public int X2()
-        {
-            return (int)position.X + size_x;
-        }
-        public int Y1()
-        {
-            return (int)position.Y;
-        }
-        public int Y2()
-        {
-            return (int)position.Y + size_y;
-        }
+        //public int X1()
+        //{
+        //    return (int)position.X;
+        //}
+        //public int X2()
+        //{
+        //    return (int)position.X + size_x;
+        //}
+        //public int Y1()
+        //{
+        //    return (int)position.Y;
+        //}
+        //public int Y2()
+        //{
+        //    return (int)position.Y + size_y;
+        //}
         public void draw(SpriteBatch spritebatch)
         {
             if (this.projectile_HP > 0)

@@ -27,6 +27,7 @@ namespace project_4_algemeen
         public bool dead = false;
         Sound sound;
         bool isplayed = false;
+        public int projectilesPS, projectileCNTMAX, projectileCNT;
 
         public List<button> buttons
         {
@@ -56,6 +57,9 @@ namespace project_4_algemeen
             this.size_x = (int)(screen_width / 10);
             this.size_y = (int)(screen_height / 10);
             this.sound = sound;
+            this.projectilesPS = 3;
+            this.projectileCNTMAX = 60 / projectilesPS;
+            this.projectileCNT = 0;
 
             if (ID == 1)
             {
@@ -111,10 +115,22 @@ namespace project_4_algemeen
         {
 
 
-            if (ID == 3)
-            {
-                enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
 
+            if (ID == 3 || ID==4)
+            {
+                if (projectileCNT < projectileCNTMAX)
+                {
+                    projectileCNT++;
+                }
+
+                else if (projectileCNT >= projectileCNTMAX)
+                {
+                    enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
+                    projectileCNT = 0;
+                }
+                    
+
+                
             }
         }
         public void GetHit()
