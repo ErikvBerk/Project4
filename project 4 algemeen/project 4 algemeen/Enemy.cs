@@ -138,7 +138,7 @@ namespace project_4_algemeen
         }
         public void HitPlayer()
         {
-            if(this.X > player1.X && this.X<=this.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y) { player1.GetHitMelee(this.DMG); }
+            if(this.X > player1.X && this.X<=player1.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y) { player1.GetHitMelee(this.DMG); }
         }
 
         public bool IsDead()
