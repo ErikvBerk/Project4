@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/P0.png</SourceFile>
-  <SourceTime>2017-06-29T13:50:09.3288031+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/bin/Android/P0.xnb</DestFile>
-  <DestTime>2017-07-04T10:28:59.0262431+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/fullife.png</SourceFile>
+  <SourceTime>2017-07-04T10:27:58.1655204+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/project 4 android/project 4 android/Content/bin/Android/fullife.xnb</DestFile>
+  <DestTime>2017-07-04T10:29:02.6334568+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
