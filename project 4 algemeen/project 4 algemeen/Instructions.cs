@@ -23,6 +23,7 @@ namespace project_4_algemeen
         Sound sound;
         List<Texture2D> All_images = new List<Texture2D>();
         Texture2D Texture;
+        platform platform;
 
         public Instructions(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, Sound sound, Action<game> Exit, List<Texture2D> All_images, platform platform, gameElement origin)
         {
@@ -35,6 +36,7 @@ namespace project_4_algemeen
             this.sound = sound;
             this.All_images = All_images;
             this.Texture = this.All_images[7];
+            this.platform = platform;
 
             Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, (game)=>Next(game), graphics));
             Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, (game) => Previous(game), graphics));
@@ -57,7 +59,15 @@ namespace project_4_algemeen
 
         public void draw(SpriteBatch spritebatch)
         {
-            Rectangle rectangle = new Rectangle((int)(screen_width / 6), (int)((screen_height / 2) - (Texture.Height / 2)), Texture.Width * 2, Texture.Height * 2);
+            Rectangle rectangle;
+            if (platform == platform.android)
+            {
+                rectangle = new Rectangle((int)(screen_width / 24), (int)((screen_height / 4) - (Texture.Height / 4)), Texture.Width * 2, Texture.Height * 2);
+            }
+            else
+            {
+                rectangle = new Rectangle((int)(screen_width / 6), (int)((screen_height / 2) - (Texture.Height / 2)), Texture.Width, Texture.Height);
+            }
             spritebatch.Draw(Texture, rectangle, Color.White);
             foreach (button b in Buttons)
             {
