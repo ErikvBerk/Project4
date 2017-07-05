@@ -207,3 +207,10 @@ C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\Deskto
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\p1gun.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\switchlevel.xnb
 C:\Users\sibre\Documents\studie\project 4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\winscreen.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\lostscreen.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\menu.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\p1gun.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\switchlevel.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Content\winscreen.xnb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
+C:\Users\Jessica\Documents\GitHub\Project4\Project_game4\Project_game4\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml

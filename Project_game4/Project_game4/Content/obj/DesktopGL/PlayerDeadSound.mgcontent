@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/PlayerDeadSound.wav</SourceFile>
-  <SourceTime>2017-07-03T09:20:24.8480707+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/Project_game4/Project_game4/Content/bin/DesktopGL/PlayerDeadSound.xnb</DestFile>
-  <DestTime>2017-07-05T12:14:55.6371581+02:00</DestTime>
+  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/PlayerDeadSound.wav</SourceFile>
+  <SourceTime>2017-07-03T09:49:28.2002472+02:00</SourceTime>
+  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/PlayerDeadSound.xnb</DestFile>
+  <DestTime>2017-07-05T13:01:51.6902676+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

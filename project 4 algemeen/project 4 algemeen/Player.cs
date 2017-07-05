@@ -443,7 +443,7 @@ namespace project_4_algemeen
                 spritebatch.Draw(healthBar[i], healthLocation[i], Color.White);
             }
         }
-        public void GetHitProjectile(List<projectile> enemy_projectiles)
+        /*public void GetHitProjectile(List<projectile> enemy_projectiles)
         {
             
             foreach (projectile PRO in enemy_projectiles)
@@ -455,8 +455,9 @@ namespace project_4_algemeen
                     this.HP -= PRO.damage;
                 }
             }
-        }
-        public void GetHitMelee(int damage)
+        }*/
+
+        public void GetHit(int damage)
         {
             this.HP -= damage;
         }

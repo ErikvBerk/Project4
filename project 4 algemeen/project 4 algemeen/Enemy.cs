@@ -114,8 +114,6 @@ namespace project_4_algemeen
         public void shoot()
         {
 
-
-
             if (ID == 3 || ID==4)
             {
                 if (projectileCNT < projectileCNTMAX)
@@ -127,6 +125,12 @@ namespace project_4_algemeen
                 {
                     enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
                     projectileCNT = 0;
+
+                    foreach (projectile PRO in enemy_projectiles)
+                    {
+                        if (PRO.position.X >= player1.X && PRO.position.X <= player1.X + player1.size_x && PRO.position.Y >= player1.Y && PRO.position.Y < player1.Y + size_y)
+                        { player1.GetHit(PRO.damage); }
+                    }
                 }
                     
 
