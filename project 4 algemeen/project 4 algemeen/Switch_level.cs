@@ -63,7 +63,7 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 1000, 25, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 1000, 500, sound);
                     break;
                 default:
                     break;
@@ -217,6 +217,32 @@ namespace project_4_algemeen
 
 
             }
+
+            
+
+            else if (current == endScreen5)
+            {
+                if (endScreen5.levelcleared == true)
+                {
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 1000, 500, sound);
+                    endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+                    endScreen2 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+                    endScreen3 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level");
+                    endScreen4 = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Go back to menu");
+                    endScreen5 = new EndScreen(true, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Go back to menu");
+                    level1 = new Level_1("Level 1", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+                    level2 = new Level_2("Level 2", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+                    level3 = new Level_3("Level 3", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+                    levelBoss = new Level_Boss("Level Boss", this.screen_width, this.screen_height, this.All_images, this.game1, this.platform, this.Font, this.graphics, this.player1, projectiles, sound);
+                    player1.currentscore = 0;
+                    
+
+                    game1.current = Origin;
+                    game1.resetButtons();
+                    current = level1;
+                }
+            }
+            
 
 
 
