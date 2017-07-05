@@ -179,5 +179,3 @@ C:\Users\erikv\Desktop\Proj4\sprint3\Project4-niet-master2\project 4 algemeen\pr
 C:\Users\erikv\Desktop\Proj4\sprint3\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\project 4 android.pdb
 C:\Users\erikv\Desktop\Proj4\sprint3\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Project_game4.pdb
 C:\Users\erikv\Desktop\Proj4\sprint3\Project4-niet-master2\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.csprojResolveAssemblyReference.cache
-C:\Users\Jessica\Documents\GitHub\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
-C:\Users\Jessica\Documents\GitHub\Project4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml

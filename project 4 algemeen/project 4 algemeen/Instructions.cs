@@ -38,10 +38,9 @@ namespace project_4_algemeen
             this.Texture = this.All_images[7];
             this.platform = platform;
 
-            Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, (game)=>Next(game), graphics));
-            Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, (game) => Previous(game), graphics));
-            Buttons.Add(new button((int)(screen_width - (screen_width / 6)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "exit", font, relativeSize, Color.White, Color.LightGray, Exit, graphics));
-            Buttons.Add(new button((int)(screen_width - (screen_width / 3)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "back", font, relativeSize, Color.White, Color.LightGray, origin, graphics));
+            Buttons.Add(new button(All_images[21], (int)(screen_width - (screen_width / 6)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "next", font, relativeSize, Color.White, Color.LightGray, (game)=>Next(game), graphics));
+            Buttons.Add(new button(All_images[22], (int)(screen_width - (screen_width / 3)), (int)(screen_height - screen_height / 6), (int)screen_width / 8, (int)screen_height / 8, "previous", font, relativeSize, Color.White, Color.LightGray, (game) => Previous(game), graphics));            
+            Buttons.Add(new button(All_images[20], (int)(screen_width - (screen_width / 3)), (int)(screen_height / 20), (int)screen_width / 8, (int)screen_height / 8, "back", font, relativeSize, Color.White, Color.LightGray, origin, graphics));
             Buttons[1].visible = false;
         }
 
@@ -67,11 +66,11 @@ namespace project_4_algemeen
             Buttons[2].heigth = (int)height / 8;
             Buttons[2].createTexture(graphics);
 
-            Buttons[3].X = (int)(screen_width - (screen_width / 3));
-            Buttons[3].Y = (int)(screen_height / 20);
-            Buttons[3].width = (int)width / 8;
-            Buttons[3].heigth = (int)height / 8;
-            Buttons[3].createTexture(graphics);
+            //Buttons[3].X = (int)(screen_width - (screen_width / 3));
+            //Buttons[3].Y = (int)(screen_height / 20);
+            //Buttons[3].width = (int)width / 8;
+            //Buttons[3].heigth = (int)height / 8;
+            //Buttons[3].createTexture(graphics);
         }
         public void update(game game1)
         {

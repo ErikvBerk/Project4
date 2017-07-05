@@ -87,7 +87,9 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("playbutton")); //17
             this.All_images.Add(Content.Load<Texture2D>("instructbutton")); //18
             this.All_images.Add(Content.Load<Texture2D>("exitbutton2")); //19
-
+            this.All_images.Add(Content.Load<Texture2D>("menubutton")); //20
+            this.All_images.Add(Content.Load<Texture2D>("nextbutton")); //21
+            this.All_images.Add(Content.Load<Texture2D>("previousbutton")); //22
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1

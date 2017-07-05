@@ -99,7 +99,7 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);
-            spritebatch.Draw(All_images[0], destinationRectangle, Color.White);
+            spritebatch.Draw(All_images[16], destinationRectangle, Color.White);
             foreach (Enemy enemy in Enemies)
             {
                 enemy.draw(spritebatch);
