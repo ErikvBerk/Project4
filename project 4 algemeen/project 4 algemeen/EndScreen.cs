@@ -35,8 +35,9 @@ namespace project_4_algemeen
         bool isplayedvictory = false;
         bool isplayedlose = false;
         string namebutton;
+        Texture2D background;
 
-        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound, string namebutton)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound, string namebutton, Texture2D background)
         {
             this.PlayerDead = Playerdead;
             this.Font = Font;
@@ -48,6 +49,7 @@ namespace project_4_algemeen
             this.Score = Score;
             this.sound = sound;
             this.namebutton = namebutton;
+            this.background = background;
 
             Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), namebutton, Font, relativeSize, Color.Khaki, Color.OliveDrab,
                (game)=>LevelCleared(), graphics));
@@ -72,9 +74,10 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
+            Rectangle destinationRectangle = new Rectangle(0, 0, (int)screen_width, (int)screen_height);
             spritebatch.DrawString(this.Font, endscreen, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.2)), Color.White);
             spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.3)), Color.White);
-
+            spritebatch.Draw(background, destinationRectangle, Color.White);
             foreach (button BUT in buttons) { BUT.draw(spritebatch); }
         }
         public void UpdateScore(int score)
