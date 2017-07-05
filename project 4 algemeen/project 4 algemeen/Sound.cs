@@ -56,5 +56,9 @@ namespace project_4_algemeen
         {
             this.list[7].Play();
         }
+        public void background_quit()
+        {
+            this.list[7].Dispose();
+        }
     }
 }
