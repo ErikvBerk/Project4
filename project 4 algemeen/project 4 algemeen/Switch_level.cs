@@ -39,7 +39,7 @@ namespace project_4_algemeen
         float relativeSize;
         Action<game> exit;
         
-        
+        public Switch_level() { }
         public Switch_level(List<Texture2D> All_images,game game1,double screen_width,double screen_height,float relativeSize, Action<game> exit, platform platform,SpriteFont font, GraphicsDeviceManager graphics, Sound sound, gameElement Origin)
         {
             this.All_images = All_images;
@@ -63,7 +63,7 @@ namespace project_4_algemeen
                     player1 = new AndroidPlayer(All_images, game1, screen_width, screen_height, font, graphics, platform,1000,25, sound);
                     break;
                 case platform.windows:
-                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 10000000 ,500, sound);
+                    player1 = new Player(this.All_images, this.game1, this.screen_width, this.screen_height, platform, 1000, 25, sound);
                     break;
                 default:
                     break;

@@ -78,7 +78,7 @@ namespace project_4_algemeen
             {
                 this.name = "Enemy3";
                 this.HP = 300;
-                this.DMG = 5;
+                this.DMG = 20;
             }
             if(ID==4)
             {
@@ -88,7 +88,7 @@ namespace project_4_algemeen
                 this.Y = (int)(screen_height * 0.2);
                 this.name = "Boss";
                 this.HP = 20000;
-                this.DMG = 5;
+                this.DMG = 20;
                 
             }
         }
