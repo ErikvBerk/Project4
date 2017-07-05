@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/background_music.wav</SourceFile>
-  <SourceTime>2017-07-04T12:08:56.5494598+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bin/Android/background_music.xnb</DestFile>
-  <DestTime>2017-07-05T12:12:43.7660006+02:00</DestTime>
+  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/background_music.wav</SourceFile>
+  <SourceTime>2017-07-04T14:25:19.7438367+02:00</SourceTime>
+  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/bin/Android/background_music.xnb</DestFile>
+  <DestTime>2017-07-05T13:25:53.9062838+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

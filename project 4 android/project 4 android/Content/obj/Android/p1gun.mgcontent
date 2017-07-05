@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/p1gun.png</SourceFile>
-  <SourceTime>2017-07-05T11:57:22.1032176+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bin/Android/p1gun.xnb</DestFile>
-  <DestTime>2017-07-05T12:12:43.940595+02:00</DestTime>
+  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/p1gun.png</SourceFile>
+  <SourceTime>2017-07-05T10:42:15.6355614+02:00</SourceTime>
+  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/bin/Android/p1gun.xnb</DestFile>
+  <DestTime>2017-07-05T13:25:54.1894844+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

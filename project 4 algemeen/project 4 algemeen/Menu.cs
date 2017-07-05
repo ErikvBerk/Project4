@@ -105,14 +105,18 @@ namespace project_4_algemeen
         }
         public void draw(SpriteBatch spritebatch)
         {
-            foreach(button b in Buttons)
+            Rectangle destinationRectangle = new Rectangle(0, 0, (int)screen_width, (int)screen_height);
+            spritebatch.Draw(All_images[13], destinationRectangle, Color.White);
+
+            foreach (button b in Buttons)
             {
                 b.draw(spritebatch);
             }
             foreach(textbox t in Textboxes)
             {
                 t.draw(spritebatch);
-            }
+            }          
+
         }
 
 

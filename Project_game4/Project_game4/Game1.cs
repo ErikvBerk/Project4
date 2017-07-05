@@ -108,8 +108,12 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("menu")); //13
             this.All_images.Add(Content.Load<Texture2D>("switchlevel")); //14
             this.All_images.Add(Content.Load<Texture2D>("winscreen")); //15
+            this.All_images.Add(Content.Load<Texture2D>("bosslevel")); //16
+            this.All_images.Add(Content.Load<Texture2D>("playbutton")); //17
+            this.All_images.Add(Content.Load<Texture2D>("instructbutton")); //18
+            this.All_images.Add(Content.Load<Texture2D>("exitbutton2")); //19
 
-                        soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
+            soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
             soundeffects.Add(Content.Load<SoundEffect>("PlayerDeadSound")); //2
             soundeffects.Add(Content.Load<SoundEffect>("UnicornSound")); //3

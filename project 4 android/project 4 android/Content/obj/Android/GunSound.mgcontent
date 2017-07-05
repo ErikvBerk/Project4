@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/GunSound.wav</SourceFile>
-  <SourceTime>2017-06-30T11:27:59.3344637+02:00</SourceTime>
-  <DestFile>C:/Users/sibre/Documents/studie/project 4/project 4 android/project 4 android/Content/bin/Android/GunSound.xnb</DestFile>
-  <DestTime>2017-07-05T12:12:39.8789928+02:00</DestTime>
+  <SourceFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/GunSound.wav</SourceFile>
+  <SourceTime>2017-06-30T09:48:02.3159399+02:00</SourceTime>
+  <DestFile>C:/Users/Jessica/Documents/GitHub/Project4/project 4 android/project 4 android/Content/bin/Android/GunSound.xnb</DestFile>
+  <DestTime>2017-07-05T13:25:49.9457567+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
