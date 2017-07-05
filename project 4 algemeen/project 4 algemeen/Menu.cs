@@ -66,31 +66,26 @@ namespace project_4_algemeen
         }
         public void updateScreenSize(int width, int height)
         {
-            //this.screen_width = 1000;
-            //this.screen_height = 1000;
-            //Buttons[0].X = (int)(screen_width * 0.4);
-            //Buttons[0].Y = (int)(screen_height * 0.18);
-            //Buttons[0].width = (int)(screen_width * 0.2);
-            //Buttons[0].heigth = (int)(screen_height * 0.1);
-            //// Buttons[0].createTexture(graphics);
+            this.screen_width = width;
+            this.screen_height = height;
 
-            //Buttons[1].X = (int)(screen_width * 0.4);
-            //Buttons[1].Y = (int)(this.screen_height * 0.33);
-            //Buttons[1].width = (int)(screen_width * 0.2);
-            //Buttons[1].heigth = (int)(screen_height * 0.1);
-            ////  Buttons[1].createTexture(graphics);
+            Buttons[0].X = (int)(screen_width * 0.4);
+            Buttons[0].Y = (int)(this.screen_height * 0.33);
+            Buttons[0].width = (int)(screen_width * 0.2);
+            Buttons[0].heigth = (int)(screen_height * 0.1);
+            //  Buttons[0].createTexture(graphics);
 
-            //Buttons[2].X = (int)(screen_width * 0.4);
-            //Buttons[2].Y = (int)(this.screen_height * 0.48);
-            //Buttons[2].width = (int)(screen_width * 0.2);
-            //Buttons[2].heigth = (int)(screen_height * 0.1);
-            //// Buttons[2].createTexture(graphics);
+            Buttons[1].X = (int)(screen_width * 0.4);
+            Buttons[1].Y = (int)(this.screen_height * 0.48);
+            Buttons[1].width = (int)(screen_width * 0.2);
+            Buttons[1].heigth = (int)(screen_height * 0.1);
+            // Buttons[1].createTexture(graphics);
 
-            /*Buttons[3].X = (int)(screen_width * 0.4);
-            Buttons[3].Y = (int)(this.screen_height * 0.63);
-            Buttons[3].width = (int)(screen_width * 0.2);
-            Buttons[3].heigth = (int)(screen_height * 0.1);
-            Buttons[3].createTexture(graphics);*/
+            Buttons[2].X = (int)(screen_width * 0.4);
+            Buttons[2].Y = (int)(this.screen_height * 0.63);
+            Buttons[2].width = (int)(screen_width * 0.2);
+            Buttons[2].heigth = (int)(screen_height * 0.1);
+            //Buttons[2].createTexture(graphics);
         }
         public void update(game game1)
         {

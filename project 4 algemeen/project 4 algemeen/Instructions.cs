@@ -48,6 +48,7 @@ namespace project_4_algemeen
         {
             this.screen_width = width;
             this.screen_height = height;
+
             Buttons[0].X = (int)(screen_width - (screen_width / 6));
             Buttons[0].Y = (int)(screen_height - screen_height / 6);
             Buttons[0].width = (int)width / 8;
