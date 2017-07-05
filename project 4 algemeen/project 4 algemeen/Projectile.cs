@@ -13,7 +13,7 @@ namespace project_4_algemeen
 {
     public class projectile : gameElement
     {
-        
+
         int PlayerposX, PlayerposY;
         public int mouseX, mouseY;
         public int DirectionX, DirectionY;
@@ -21,11 +21,11 @@ namespace project_4_algemeen
         public Vector2 position;
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
-        double speedX,speedY;
-        public int damage=5;
-        public int projectile_HP=1;
+        double speedX, speedY;
+        public int damage = 5;
+        public int projectile_HP = 1;
         int size_x, size_y;
-        public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
+        public projectile(int damage, int PlayerposX, int PlayerposY, int mouseX, int mouseY, double screen_width, double screen_height, List<Texture2D> All_images, gameElement character)
         {
             this.damage = damage;
             this.mouseX = mouseX;
@@ -41,9 +41,9 @@ namespace project_4_algemeen
             this.character = character;
             this.projectile_HP = damage;
             this.size_x = (int)(screen_width / 80);
-            this.size_y=(int)(screen_height/80);
+            this.size_y = (int)(screen_height / 80);
 
-            
+
 
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
             //if (this.PlayerposY == 0) { this.PlayerposY += 1; }
@@ -64,8 +64,8 @@ namespace project_4_algemeen
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + (int)(DirectionX*0.02);
-            position.Y = position.Y + (int)(DirectionY*0.02);
+            position.X = position.X + (int)(DirectionX * 0.01);
+            position.Y = position.Y + (int)(DirectionY * 0.01);
 
         }
         public int Hits()
@@ -122,7 +122,7 @@ namespace project_4_algemeen
     }
     public class androidProjectile : projectile
     {
-        public androidProjectile(int damage,int PlayerposX,int PlayerposY,int mouseX,int mouseY,double screen_width,double screen_height,List<Texture2D>All_images,gameElement character) : base(damage, PlayerposX, PlayerposY, mouseX, mouseY, screen_width, screen_height, All_images, character)
+        public androidProjectile(int damage, int PlayerposX, int PlayerposY, int mouseX, int mouseY, double screen_width, double screen_height, List<Texture2D> All_images, gameElement character) : base(damage, PlayerposX, PlayerposY, mouseX, mouseY, screen_width, screen_height, All_images, character)
         {
 
         }
@@ -133,4 +133,3 @@ namespace project_4_algemeen
         }
     }
 }
-        

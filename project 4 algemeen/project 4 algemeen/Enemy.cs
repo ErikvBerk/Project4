@@ -123,7 +123,7 @@ namespace project_4_algemeen
 
                 else if (projectileCNT >= projectileCNTMAX)
                 {
-                    enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX(), this.player1.GetPositionY(), this.screen_width, this.screen_height, this.All_images, this));
+                    enemy_projectiles.Add(new projectile(this.DMG, this.X, this.Y, this.player1.GetPositionX()+(player1.size_x/2), this.player1.GetPositionY()+(this.player1.size_y/2), this.screen_width, this.screen_height, this.All_images, this));
                     projectileCNT = 0;
 
                     foreach (projectile PRO in enemy_projectiles)

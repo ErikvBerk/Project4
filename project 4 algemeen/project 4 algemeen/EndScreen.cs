@@ -35,9 +35,9 @@ namespace project_4_algemeen
         bool isplayedvictory = false;
         bool isplayedlose = false;
         string namebutton;
-        Texture2D background;
+        Texture2D background, buttontexture;
 
-        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound, string namebutton, Texture2D background)
+        public EndScreen(bool Playerdead, SpriteFont Font, double screen_width, double screen_height, GraphicsDeviceManager graphics, game game1, platform platform, int Score, Sound sound, string namebutton, Texture2D background,Texture2D buttontexture)
         {
             this.PlayerDead = Playerdead;
             this.Font = Font;
@@ -50,8 +50,9 @@ namespace project_4_algemeen
             this.sound = sound;
             this.namebutton = namebutton;
             this.background = background;
+            this.buttontexture = buttontexture;
 
-            Buttons.Add(new button((int)(screen_width * 0.8), (int)(this.screen_height * 0.26), (int)(screen_width * 0.4), (int)(screen_width * 0.1), namebutton, Font, relativeSize, Color.Khaki, Color.OliveDrab,
+            Buttons.Add(new button(buttontexture,(int)(screen_width * 0.7), (int)(this.screen_height * 0.7), (int)(screen_width * 0.4), (int)(screen_width * 0.1), namebutton, Font, relativeSize, Color.Khaki, Color.OliveDrab,
                (game)=>LevelCleared(), graphics));
         }
 
@@ -61,8 +62,8 @@ namespace project_4_algemeen
         {
             this.screen_width = width;
             this.screen_height = height;
-            Buttons[0].X = (int)(width * 0.8);
-            Buttons[0].Y = (int)(height * 0.26);
+            Buttons[0].X = (int)(width * 0.6);
+            Buttons[0].Y = (int)(height * 0.8);
             Buttons[0].width = (int)(width * 0.4);
             Buttons[0].heigth = (int)(width * 0.1);
         }

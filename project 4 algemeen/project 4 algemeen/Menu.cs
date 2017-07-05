@@ -59,7 +59,7 @@ namespace project_4_algemeen
             this.sound = sound;
             this.sound.background_music();
 
-            Buttons.Add(new button(All_images[17], (int)(this.screen_width * 0.4), (int)(this.screen_height * 0.18), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images, platform, sound, this), graphics));
+            Buttons.Add(new button(All_images[17], (int)(this.screen_width * 0.4), (int)(this.screen_height * 0.33), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Play!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Play(screen_width, screen_height, relativeSize, Font, graphics, game1, All_images, platform, sound, this), graphics));
             Buttons.Add(new button(All_images[18], (int)(this.screen_width * 0.4), (int)(this.screen_height * 0.48), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Instructions!", Font, relativeSize, Color.Khaki, Color.OliveDrab, new Instructions(screen_width, screen_height, relativeSize, Font, graphics, game1, sound, exit, All_images, platform, this), graphics));
             Buttons.Add(new button(All_images[19], (int)(this.screen_width * 0.4), (int)(this.screen_height * 0.63), (int)(screen_width * 0.2), (int)(screen_height * 0.1), "Exit!", Font, relativeSize, Color.Maroon, Color.Red, exit, graphics));
             

@@ -52,19 +52,19 @@ namespace project_4_algemeen
             Buttons[0].Y = (int)(screen_height - screen_height / 6);
             Buttons[0].width = (int)width / 8;
             Buttons[0].heigth = (int)height / 8;
-            Buttons[0].createTexture(graphics);
+            //Buttons[0].createTexture(graphics);
 
             Buttons[1].X = (int)(screen_width - (screen_width / 3));
             Buttons[1].Y = (int)(screen_height - screen_height / 6);
             Buttons[1].width = (int)width / 8;
             Buttons[1].heigth = (int)height / 8;
-            Buttons[1].createTexture(graphics);
+            //Buttons[1].createTexture(graphics);
 
             Buttons[2].X = (int)(screen_width - (screen_width / 6));
             Buttons[2].Y = (int)(screen_height / 20);
             Buttons[2].width = (int)width / 8;
             Buttons[2].heigth = (int)height / 8;
-            Buttons[2].createTexture(graphics);
+            //Buttons[2].createTexture(graphics);
 
             //Buttons[3].X = (int)(screen_width - (screen_width / 3));
             //Buttons[3].Y = (int)(screen_height / 20);
