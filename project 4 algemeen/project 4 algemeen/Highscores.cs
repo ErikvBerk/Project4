@@ -47,6 +47,11 @@ namespace project_4_algemeen
             this.texture.SetData(data);
             //
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+        }
         public List<button> buttons
         {
             get

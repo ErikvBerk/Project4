@@ -66,6 +66,16 @@ namespace project_4_algemeen
             //CurrentScoreString();
 
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            Buttons[0].X = (int)(width * 0.4);
+            Buttons[0].Y = (int)(height * 0.5);
+            Buttons[0].width = (int)width / 8;
+            Buttons[0].heigth = (int)height / 8;
+            Buttons[0].createTexture(graphics);
+        }
 
         public void update(game game1)
         {

@@ -133,6 +133,20 @@ namespace project_4_algemeen
                 
             }
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            this.size_x = (int)(width / 10);
+            this.size_y = (int)(height / 10);
+            if (ID == 4)
+            {
+                this.size_x = this.size_x * 5;
+                this.size_y = this.size_y * 5;
+                this.X = (int)(screen_width * 0.60);
+                this.Y = (int)(screen_height * 0.2);
+            }
+        }
         public void GetHit()
         {
             //foreach (projectile PRO in projectiles)
@@ -149,13 +163,13 @@ namespace project_4_algemeen
                     
                 }
             }
-
-
         }
         public void HitPlayer()
         {
-            if(this.X >= player1.X && this.X<=player1.X+player1.size_x && this.Y >= player1.Y && this.Y < player1.Y+size_y)
-            { player1.GetHitMelee(this.DMG); }
+            if (this.X >= player1.X && this.X <= player1.X + player1.size_x && this.Y >= player1.Y && this.Y < player1.Y + size_y)
+            {
+                player1.GetHitMelee(this.DMG);
+            }
         }
 
         public bool IsDead()

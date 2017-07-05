@@ -80,6 +80,16 @@ namespace project_4_algemeen
             Enemies.Add(EnemyFactory.create(3, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
 
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            player1.updateScreenSize(width, height);
+            foreach (Enemy e in Enemies)
+            {
+                e.updateScreenSize(width, height);
+            }
+        }
         public int GetPlayerposX()
         {
             return PlayerposX;

@@ -97,7 +97,7 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("enemy4b")); //2
             this.All_images.Add(Content.Load<Texture2D>("enemy3")); //3
             this.All_images.Add(Content.Load<Texture2D>("endboss")); //4
-            this.All_images.Add(Content.Load<Texture2D>("p1gun")); //5
+            this.All_images.Add(Content.Load<Texture2D>("p1gun")); //5	    
             this.All_images.Add(Content.Load<Texture2D>("bullet")); //6
             this.All_images.Add(Content.Load<Texture2D>("instructie1")); //7
             this.All_images.Add(Content.Load<Texture2D>("instructie2")); //8
@@ -109,8 +109,7 @@ namespace Project_game4
             this.All_images.Add(Content.Load<Texture2D>("switchlevel")); //14
             this.All_images.Add(Content.Load<Texture2D>("winscreen")); //15
 
-
-            soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
+                        soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
             soundeffects.Add(Content.Load<SoundEffect>("PlayerDeadSound")); //2
             soundeffects.Add(Content.Load<SoundEffect>("UnicornSound")); //3
@@ -175,17 +174,22 @@ namespace Project_game4
                         graphics.IsFullScreen = false;
                         graphics.PreferredBackBufferWidth = (int)(GraphicsDevice.DisplayMode.Width * 0.9f);
                         graphics.PreferredBackBufferHeight = (int)(GraphicsDevice.DisplayMode.Height * 0.9f);
+                        screen_width = (int)(GraphicsDevice.DisplayMode.Width * 0.9f);
+                        screen_height = (int)(GraphicsDevice.DisplayMode.Height * 0.9f);
                     }
                     else
                     {
                         graphics.IsFullScreen = true;
                         graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
                         graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+                        screen_width = GraphicsDevice.DisplayMode.Width ;
+                        screen_height = GraphicsDevice.DisplayMode.Height;
                     }
                     graphics.ApplyChanges();
                     f11pressed = false;
                 }
             }
+            Current.updateScreenSize((int)screen_width, (int)screen_height);
             Current.update(this);
             
             

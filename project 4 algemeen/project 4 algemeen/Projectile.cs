@@ -52,6 +52,13 @@ namespace project_4_algemeen
             this.speedY = 0.25;
 
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            this.size_x = (int)(screen_width / 80);
+            this.size_y = (int)(screen_height / 80);
+        }
         public void ShootToTarget()
         {
             DirectionX = (mouseX - PlayerposX);

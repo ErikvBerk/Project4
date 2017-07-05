@@ -57,6 +57,15 @@ namespace project_4_algemeen
 
 
 
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            Buttons[0].X = (int)(width * 0.8);
+            Buttons[0].Y = (int)(height * 0.26);
+            Buttons[0].width = (int)(width * 0.4);
+            Buttons[0].heigth = (int)(width * 0.1);
+        }
 
         public List<button> buttons
         {
@@ -75,9 +84,11 @@ namespace project_4_algemeen
         public void draw(SpriteBatch spritebatch)
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)screen_width, (int)screen_height);
+
             spritebatch.DrawString(this.Font, endscreen, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.2)), Color.White);
             spritebatch.DrawString(this.Font, currentscorestring, new Vector2((int)(screen_width * 0.4), (int)(screen_height * 0.3)), Color.White);
             spritebatch.Draw(background, destinationRectangle, Color.White);
+
             foreach (button BUT in buttons) { BUT.draw(spritebatch); }
         }
         public void UpdateScore(int score)

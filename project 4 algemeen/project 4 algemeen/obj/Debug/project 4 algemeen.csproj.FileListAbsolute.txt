@@ -81,7 +81,6 @@ C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.dll
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.pdb
 C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\Mono.Android.xml
-C:\Users\sibre\Documents\studie\project 4\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\inputFields.pdb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.exe
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\obj\Debug\project 4 algemeen.pdb
 C:\Users\erikv\Desktop\Proj4\sprint2\Project4-niet-master2\project 4 algemeen\project 4 algemeen\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll

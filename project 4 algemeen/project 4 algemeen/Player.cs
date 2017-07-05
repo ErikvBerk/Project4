@@ -90,6 +90,13 @@ namespace project_4_algemeen
                 healthLocation.Add(new Rectangle(40 * i, 0, 40, 40));
             }
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            this.size_x = (int)(width / 10);
+            this.size_y = (int)(height / 10);
+        }
         public virtual void update(game game1)
         {
             Dead();
