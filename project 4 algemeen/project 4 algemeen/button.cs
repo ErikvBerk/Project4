@@ -62,7 +62,7 @@ namespace project_4_algemeen
     }
     public class button
     {
-        public int X, Y, width, heigth;
+        public int X, Y, width=100, heigth=100;
         Texture2D texture;
         Color Color, hoverColor, CurrentColor;
         public Action<game> action;
@@ -76,6 +76,7 @@ namespace project_4_algemeen
 
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics, float transparancy = 1)
         {
+            createTexture(graphics);
             this.X = x;
             this.Y = y;
             this.width = width;
@@ -95,6 +96,7 @@ namespace project_4_algemeen
         }
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics, float transparancy = 1)
         {
+            
             this.X = x;
             this.Y = y;
             this.width = width;
@@ -108,13 +110,14 @@ namespace project_4_algemeen
             this.action = action;
             this.graphics = graphics;
             this.transparancy = transparancy;
-            
 
             createTexture(graphics);
+
         }
 
         public button(Texture2D buttonbackground, int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics, float transparancy = 1)
         {
+            
             this.X = x;
             this.Y = y;
             this.width = width;
@@ -130,12 +133,13 @@ namespace project_4_algemeen
             this.transparancy = transparancy;
             this.texture = buttonbackground;
 
-           // throw new Exception();
+            
 
             
         }
         public button(Texture2D buttonbackground, int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, Action<game> action, GraphicsDeviceManager graphics, float transparancy = 1)
         {
+            
             this.X = x;
             this.Y = y;
             this.width = width;
