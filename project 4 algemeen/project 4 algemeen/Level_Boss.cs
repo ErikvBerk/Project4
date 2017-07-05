@@ -118,7 +118,7 @@ namespace project_4_algemeen
             player1.update(game1);
             int dead_count = 0;
 
-            int chance = rand.Next(0, 100000);
+            int chance = rand.Next(0, 50000);
             if (chance >= 0 && chance < 50)
             {
                 Enemies.Add(EnemyFactory.create(1, screen_width, screen_height, All_images, player1, rand, sound));

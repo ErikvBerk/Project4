@@ -172,7 +172,7 @@ namespace project_4_algemeen
         {
             if (this.X >= player1.X && this.X <= player1.X + player1.size_x && this.Y >= player1.Y && this.Y < player1.Y + size_y)
             {
-                player1.GetHitMelee(this.DMG);
+                player1.GetHit(this.DMG);
             }
         }
 
@@ -229,7 +229,6 @@ namespace project_4_algemeen
             }
 
             HitPlayer();
-            player1.GetHitProjectile(enemy_projectiles);
         }
 
         public void PlayDeadSound()
