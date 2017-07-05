@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/erikv/Desktop/Proj4/sprint3/Project4-niet-master2/Project_game4/Project_game4/Content/nolife.png</SourceFile>
-  <SourceTime>2017-07-05T06:25:02+02:00</SourceTime>
-  <DestFile>C:/Users/erikv/Desktop/Proj4/sprint3/Project4-niet-master2/Project_game4/Project_game4/Content/bin/DesktopGL/nolife.xnb</DestFile>
-  <DestTime>2017-07-05T17:12:30.7737256+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/nolife.png</SourceFile>
+  <SourceTime>2017-07-04T11:09:26.7036192+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/nolife.xnb</DestFile>
+  <DestTime>2017-07-05T20:37:04.1009579+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

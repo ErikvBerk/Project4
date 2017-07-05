@@ -273,12 +273,6 @@
 /processorParam:TextureFormat=Color
 /build:winscreen.png
 
-#begin background_music.mp3
-/importer:Mp3Importer
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:background_music.mp3
-
 #begin menubutton.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -326,4 +320,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:switchlevelbutton.png
+
+#begin background_music.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:background_music.wav
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/erikv/Desktop/Proj4/sprint3/Project4-niet-master2/Project_game4/Project_game4/Content/UnicornSound.wav</SourceFile>
-  <SourceTime>2017-07-05T06:25:02+02:00</SourceTime>
-  <DestFile>C:/Users/erikv/Desktop/Proj4/sprint3/Project4-niet-master2/Project_game4/Project_game4/Content/bin/DesktopGL/UnicornSound.xnb</DestFile>
-  <DestTime>2017-07-05T17:12:29.5985582+02:00</DestTime>
+  <SourceFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/UnicornSound.wav</SourceFile>
+  <SourceTime>2017-07-03T09:20:24.8520802+02:00</SourceTime>
+  <DestFile>C:/Users/sibre/Documents/studie/project 4/github/Project4/Project_game4/Project_game4/Content/bin/DesktopGL/UnicornSound.xnb</DestFile>
+  <DestTime>2017-07-05T20:37:03.0327205+02:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

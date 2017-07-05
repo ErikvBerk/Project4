@@ -72,6 +72,7 @@ namespace project_4_algemeen
         public gameElement Current_class;
         GraphicsDeviceManager graphics;
         float transparancy;
+        bool hasImage;
         
 
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics, float transparancy = 1)
@@ -90,7 +91,8 @@ namespace project_4_algemeen
             this.Font = font;
             this.graphics = graphics;
             this.transparancy = transparancy;
-            
+            this.hasImage = false;
+
 
             createTexture(graphics);
         }
@@ -110,6 +112,7 @@ namespace project_4_algemeen
             this.action = action;
             this.graphics = graphics;
             this.transparancy = transparancy;
+            this.hasImage = false;
 
             createTexture(graphics);
 
@@ -132,6 +135,7 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.transparancy = transparancy;
             this.texture = buttonbackground;
+            this.hasImage = true;
 
             
 
@@ -154,8 +158,9 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.transparancy = transparancy;
             this.texture = buttonbackground;
+            this.hasImage = true;
 
-            
+
         }
 
         public void createTexture(GraphicsDeviceManager graphics)
@@ -203,7 +208,15 @@ namespace project_4_algemeen
                 //spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);
                 Rectangle destinationRectangle = new Rectangle(this.X, this.Y, (int)this.width, (int)this.heigth);
                 //Console.WriteLine(texture.Bounds);
-                spritebatch.Draw(texture, destinationRectangle, Color.White);
+                if (this.hasImage)
+                {
+                    spritebatch.Draw(texture, destinationRectangle, Color.White);
+                }
+                else
+                {
+                    spritebatch.Draw(texture, destinationRectangle, Color.White * transparancy);
+                    spritebatch.DrawString(Font, Text, new Vector2(X + width / 2, Y + heigth / 2), Color.Black);
+                }
             }
         }
     }
