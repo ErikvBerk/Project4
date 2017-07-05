@@ -79,6 +79,10 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("fullife")); //9
             this.All_images.Add(Content.Load<Texture2D>("halflife")); //10
             this.All_images.Add(Content.Load<Texture2D>("nolife")); //11
+            this.All_images.Add(Content.Load<Texture2D>("lostscreen")); //12
+            this.All_images.Add(Content.Load<Texture2D>("menu")); //13
+            this.All_images.Add(Content.Load<Texture2D>("switchlevel")); //14
+            this.All_images.Add(Content.Load<Texture2D>("winscreen")); //15
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
