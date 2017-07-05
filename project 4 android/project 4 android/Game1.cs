@@ -91,6 +91,7 @@ namespace project_4_android
             this.All_images.Add(Content.Load<Texture2D>("nextbutton")); //21
             this.All_images.Add(Content.Load<Texture2D>("previousbutton")); //22
             this.All_images.Add(Content.Load<Texture2D>("switchlevelbutton")); //23
+            this.All_images.Add(Content.Load<Texture2D>("disablemusic")); //24
 
             soundeffects.Add(Content.Load<SoundEffect>("GunSound")); //0
             soundeffects.Add(Content.Load<SoundEffect>("ZombieDeadSound")); //1
