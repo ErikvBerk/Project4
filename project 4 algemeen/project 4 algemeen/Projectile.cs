@@ -13,7 +13,7 @@ namespace project_4_algemeen
 {
     public class projectile : gameElement
     {
-        
+
         int PlayerposX, PlayerposY;
         public int mouseX, mouseY;
         public int DirectionX, DirectionY;
@@ -21,11 +21,11 @@ namespace project_4_algemeen
         public Vector2 position;
         List<Texture2D> All_images = new List<Texture2D>();
         double screen_width, screen_height;
-        double speedX,speedY;
-        public int damage=500;
-        public int projectile_HP;
-
-        public projectile(int damage,int PlayerposX,int PlayerposY,int mouseX , int mouseY , double screen_width,double screen_height,List<Texture2D> All_images,gameElement character)
+        double speedX, speedY;
+        public int damage = 5;
+        public int projectile_HP = 1;
+        int size_x, size_y;
+        public projectile(int damage, int PlayerposX, int PlayerposY, int mouseX, int mouseY, double screen_width, double screen_height, List<Texture2D> All_images, gameElement character)
         {
             this.damage = damage;
             this.mouseX = mouseX;
@@ -35,13 +35,15 @@ namespace project_4_algemeen
             this.screen_width = screen_width;
             this.screen_height = screen_height;
             this.character = character;
-            this.position.X = 1+this.PlayerposX;
-            this.position.Y = 1+this.PlayerposY;
+            this.position.X = this.PlayerposX;
+            this.position.Y = this.PlayerposY;
             this.All_images = All_images;
             this.character = character;
             this.projectile_HP = damage;
+            this.size_x = (int)(screen_width / 80);
+            this.size_y = (int)(screen_height / 80);
 
-            
+
 
             //if (this.PlayerposX == 0) { this.PlayerposX += 1; }
             //if (this.PlayerposY == 0) { this.PlayerposY += 1; }
@@ -50,45 +52,56 @@ namespace project_4_algemeen
             this.speedY = 0.25;
 
         }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
+            this.size_x = (int)(screen_width / 80);
+            this.size_y = (int)(screen_height / 80);
+        }
         public void ShootToTarget()
         {
             DirectionX = (mouseX - PlayerposX);
             DirectionY = (mouseY - PlayerposY);
 
-            position.X = position.X + (int)(DirectionX*speedX);
-            position.Y = position.Y + (int)(DirectionY*speedY);
+            position.X = position.X + (int)(DirectionX * 0.01);
+            position.Y = position.Y + (int)(DirectionY * 0.01);
 
         }
         public int Hits()
         {
-            projectile_HP -= damage;
-            return this.damage;
+            if (projectile_HP > 0)
+            {
+                projectile_HP -= damage;
+                return this.damage;
+            }
+            else return 0;
         }
         public virtual void update(game game1)
         {
             ShootToTarget();
         }
-        public int X1()
-        {
-            return (int)position.X;
-        }
-        public int X2()
-        {
-            return (int)position.X + 30;
-        }
-        public int Y1()
-        {
-            return (int)position.Y;
-        }
-        public int Y2()
-        {
-            return (int)position.Y + 30;
-        }
+        //public int X1()
+        //{
+        //    return (int)position.X;
+        //}
+        //public int X2()
+        //{
+        //    return (int)position.X + size_x;
+        //}
+        //public int Y1()
+        //{
+        //    return (int)position.Y;
+        //}
+        //public int Y2()
+        //{
+        //    return (int)position.Y + size_y;
+        //}
         public void draw(SpriteBatch spritebatch)
         {
             if (this.projectile_HP > 0)
             {
-                Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 30, 30);
+                Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, size_x, size_y);
                 spritebatch.Draw(All_images[6], destinationRectangle, Color.White);
             }
         }
@@ -109,7 +122,7 @@ namespace project_4_algemeen
     }
     public class androidProjectile : projectile
     {
-        public androidProjectile(int damage,int PlayerposX,int PlayerposY,int mouseX,int mouseY,double screen_width,double screen_height,List<Texture2D>All_images,gameElement character) : base(damage, PlayerposX, PlayerposY, mouseX, mouseY, screen_width, screen_height, All_images, character)
+        public androidProjectile(int damage, int PlayerposX, int PlayerposY, int mouseX, int mouseY, double screen_width, double screen_height, List<Texture2D> All_images, gameElement character) : base(damage, PlayerposX, PlayerposY, mouseX, mouseY, screen_width, screen_height, All_images, character)
         {
 
         }
@@ -120,4 +133,3 @@ namespace project_4_algemeen
         }
     }
 }
-        

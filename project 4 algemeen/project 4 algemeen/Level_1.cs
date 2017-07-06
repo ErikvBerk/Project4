@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Level_1 : gameElement
+    public class Level_1 : gameElement  //contains all enemy and enemies of the first level
     {
         // thins that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();
@@ -26,10 +26,14 @@ namespace project_4_algemeen
         SpriteFont Font;
         GraphicsDeviceManager graphics;
         Player player1;
-       
+        public bool levelcleared = false;
+        Sound sound;
+        Random rand;
         
 
-        public Level_1(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1,List<projectile>projectiles)
+
+
+        public Level_1(string name, double screen_width, double screen_height, List<Texture2D> All_images,game game1, platform platform, SpriteFont font, GraphicsDeviceManager graphics,Player player1,List<projectile>projectiles, Sound sound)
         {
 
             this.screen_width = screen_width;
@@ -41,10 +45,11 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.player1 = player1;
             this.projectiles = projectiles;
+            this.sound = sound;
 
 
 
-            if (platform == platform.android)
+            if (platform == platform.android) // if the playform is android , then it will draw buttons to control the player
             {
                 Color buttonColor = new Color(255, 255, 255, 127);
 
@@ -58,7 +63,7 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(0 + (screen_width / 9)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, "down", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => down(game), graphics, 0.3f));
                 buttons.Add(new button((int)(0 + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => rightDown(game), graphics, 0.3f));
 
-                //shotbuttons
+                //shootbuttons
                 buttons.Add(new button((int)(screen_width-(screen_width/3)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n left \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootLeftUp(game), graphics, 0.3f));
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + (screen_width / 9)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootUp(game), graphics, 0.3f));
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n up ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightUp(game), graphics, 0.3f));
@@ -69,27 +74,23 @@ namespace project_4_algemeen
                 buttons.Add(new button((int)(screen_width - (screen_width / 3) + ((screen_width / 9) * 2)), (int)(screen_height - (screen_width / 3) + ((screen_width / 9) * 2)), (int)screen_width / 9, (int)screen_width / 9, " shoot \n right \n down ", font, (float)screen_height / 720, buttonColor, buttonColor, (game) => shootRightDown(game), graphics, 0.3f));
             }
 
-<<<<<<< HEAD
-            Enemies.Add(new Enemy(1, 800, 200, this.screen_width, this.screen_height, All_images,  this.player1));
-            Enemies.Add(new Enemy(2, 800, 400, this.screen_width, this.screen_height, All_images,  this.player1));
-            Enemies.Add(new Enemy(1, 800, 600, this.screen_width, this.screen_height, All_images,  this.player1));
-=======
-            Enemies.Add(new Enemy(1, 800, 200, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
-            Enemies.Add(new Enemy(2, 800, 400, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
-            Enemies.Add(new Enemy(1, 800, 600, this.screen_width, this.screen_height, All_images, projectiles, this.player1));
->>>>>>> niet-master2
+            rand = new Random();
+
+            Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(2, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
+            Enemies.Add(EnemyFactory.create(1, this.screen_width, this.screen_height, All_images, this.player1, rand, sound));
             
         }
-        public bool LevelCleared()
+
+        public void updateScreenSize(int width, int height) // updates screensize if the screensize changes
         {
-            
-            bool levelcleared = false;
-            foreach(Enemy enemy in Enemies)
+            this.screen_width = width;
+            this.screen_height = height;
+            player1.updateScreenSize(width, height);
+            foreach(Enemy e in Enemies)
             {
-                levelcleared = !levelcleared && enemy.Dead();
-                
+                e.updateScreenSize(width, height);
             }
-            return (levelcleared);
         }
         public List<button> buttons
         {
@@ -113,7 +114,11 @@ namespace project_4_algemeen
             {
                 enemy.draw(spritebatch);
             }
-            player1.draw(spritebatch);
+            if (player1.dead == false)
+            {
+                player1.draw(spritebatch);
+            }
+            
             if (platform == platform.android)
             {
                 foreach (button b in Buttons)
@@ -122,14 +127,44 @@ namespace project_4_algemeen
                 }
             }
         }
-        public void update(game game1)
+        public void update(game game1) // updates levels
         {
-            player1.update(game1);
-            foreach (Enemy enemy in Enemies)
+            if (player1.dead == false)
             {
-                enemy.update(game1);
+                player1.update(game1);
+            }
+
+            int chance = rand.Next(0, 10000);
+            if (chance >= 0 && chance < 5)
+            {
+                Enemies.Add(EnemyFactory.create(1, screen_width, screen_height, All_images, player1, rand, sound));
+            }
+            else if (chance == 5)
+            {
+                Enemies.Add(EnemyFactory.create(2, screen_width, screen_height, All_images, player1, rand, sound));
+            }
+            
+            int dead_count = 0;
+            foreach (Enemy enemy in Enemies) //updates the enmies in this level
+            {
+                
+                if (enemy.dead == true)
+                {
+                    dead_count = dead_count+1;
+                }
+                else enemy.update(game1);
+
+                if (dead_count == Enemies.Count())
+                {
+                    levelcleared = true;
+                }
             }
         }
+
+
+
+
+
         public void leftUp(game game1)
         {
             Keys[] keys = new Keys[2] { Keys.Left, Keys.Up };

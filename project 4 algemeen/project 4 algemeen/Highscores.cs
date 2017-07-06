@@ -27,8 +27,9 @@ namespace project_4_algemeen
         game game1;
         List<button> Buttons = new List<button>();
         List<textbox> Textboxes = new List<textbox>();
+        Sound sound;
         
-        public Highscores(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, gameElement origin, platform platform)
+        public Highscores(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, gameElement origin, platform platform, Sound sound)
         {
             this.graphics = graphics;
             this.Font = font;
@@ -37,6 +38,7 @@ namespace project_4_algemeen
             this.relativeSize = relativeSize;
             this.game1 = game1;
             this.name = name;
+            this.sound = sound;
         
             //not important creates a texture
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(100), (int)(100));
@@ -44,6 +46,11 @@ namespace project_4_algemeen
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
             //
+        }
+        public void updateScreenSize(int width, int height)
+        {
+            this.screen_width = width;
+            this.screen_height = height;
         }
         public List<button> buttons
         {
