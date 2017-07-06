@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 
 namespace project_4_algemeen
 {
-    public class Switch_level : gameElement
+    public class Switch_level : gameElement  //contains all elements to switch between game levels and endscreens
     {
         List<Texture2D> All_images = new List<Texture2D>();
         List<button> Buttons = new List<button>();
@@ -83,7 +83,7 @@ namespace project_4_algemeen
 
 
         }
-        public void updateScreenSize(int width, int height)
+        public void updateScreenSize(int width, int height) // updates to current screensize
         {
             this.screen_width = width;
             this.screen_height = height;
@@ -103,7 +103,7 @@ namespace project_4_algemeen
                 return current.textboxes;
             }
         }
-        public void update(game game1)
+        public void update(game game1) // updates the score and all other game elements
         {
 
             Score = player1.currentscore;
@@ -194,7 +194,7 @@ namespace project_4_algemeen
 
             else if (current == endScreen4)
             {
-                if (endScreen4.levelcleared == true)
+                if (endScreen4.levelcleared == true) //resets the instantiations (gamewon)
                 {
 
                     endScreen = new EndScreen(false, Font, screen_width, screen_height, graphics, game1, platform, Score, this.sound, "Next level", All_images[14], All_images[23]);
@@ -217,7 +217,7 @@ namespace project_4_algemeen
 
 
             }
-            else if (current == endScreen5)
+            else if (current == endScreen5) //resets all instantiations (player lost)
             {
                 if (endScreen5.levelcleared == true)
                 {
@@ -244,7 +244,7 @@ namespace project_4_algemeen
 
 
         }
-        public void draw(SpriteBatch spritebatch)
+        public void draw(SpriteBatch spritebatch) //updates the current game or endscreen level
         {
             current.draw(spritebatch);
         }

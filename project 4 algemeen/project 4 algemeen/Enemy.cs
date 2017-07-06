@@ -11,7 +11,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Enemy : gameElement
+    public class Enemy : gameElement //creates different enemies
     {
         int ID;
         int HP, DMG;
@@ -46,7 +46,7 @@ namespace project_4_algemeen
         }
 
         public Enemy(int ID,int X,int Y,double screen_width,double screen_height,List<Texture2D>All_images,Player player1, Sound sound)
-        {
+        {                                                       //different IDs will decide which enemy will be spawned
             this.ID = ID;
             this.X = X;
             this.Y = Y;
@@ -92,7 +92,7 @@ namespace project_4_algemeen
                 
             }
         }
-        public void MoveToPlayer()
+        public void MoveToPlayer()     //decides where the player is , then moves sto player with a given speed
         {
             PlayerposX = player1.GetPositionX();
             PlayerposY = player1.GetPositionY();
@@ -111,7 +111,7 @@ namespace project_4_algemeen
                 if (PlayerposY < this.Y) { this.Y = this.Y - 2; }
             }
         }
-        public void shoot()
+        public void shoot() //decides where player is , then shoots at the target if the projectile count is > 20 , so it shoots 3 times per second
         {
 
             if (ID == 3 || ID==4)
@@ -151,7 +151,7 @@ namespace project_4_algemeen
                 this.Y = (int)(screen_height * 0.2);
             }
         }
-        public void GetHit()
+        public void GetHit() // checks if enemy is hit by a projectile from player
         {
             //foreach (projectile PRO in projectiles)
             //{
@@ -168,7 +168,7 @@ namespace project_4_algemeen
                 }
             }
         }
-        public void HitPlayer()
+        public void HitPlayer() // checks if hitboxes collide , and then gives dmg to player
         {
             if (this.X >= player1.X && this.X <= player1.X + player1.size_x && this.Y >= player1.Y && this.Y < player1.Y + size_y)
             {
@@ -176,7 +176,7 @@ namespace project_4_algemeen
             }
         }
 
-        public bool IsDead()
+        public bool IsDead() // checks if zombie is dead
         {
             if (this.HP <= 0)
             {
@@ -231,7 +231,7 @@ namespace project_4_algemeen
             HitPlayer();
         }
 
-        public void PlayDeadSound()
+        public void PlayDeadSound() //plays dead sound
         {
             if(dead == true && isplayed == false)
             {

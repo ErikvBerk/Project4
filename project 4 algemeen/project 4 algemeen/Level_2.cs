@@ -11,8 +11,8 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Level_2 : gameElement
-    {
+    public class Level_2 : gameElement   //contains all elements of the 2nd game level
+    {  
         // things that this class will receive : Player , enemies , list of images 
         List<Enemy> Enemies = new List<Enemy>();
         List<Texture2D> All_images = new List<Texture2D>();
@@ -46,7 +46,7 @@ namespace project_4_algemeen
             this.sound = sound;
 
 
-            if (platform == platform.android)
+            if (platform == platform.android) // draws the android buttons
             {
                 Color buttonColor = new Color(255, 255, 255, 127);
 
@@ -112,7 +112,7 @@ namespace project_4_algemeen
             }
         }
 
-        public void draw(SpriteBatch spritebatch)
+        public void draw(SpriteBatch spritebatch) // draws all elements of this level
         {
             Rectangle destinationRectangle = new Rectangle(0, 0, (int)this.screen_width, (int)this.screen_height);
             spritebatch.Draw(All_images[0], destinationRectangle, Color.White);
@@ -133,7 +133,7 @@ namespace project_4_algemeen
             }
         }
 
-        public void update(game game1)
+        public void update(game game1) // updates all elements of this level
         {
             if (player1.dead == false)
             {
@@ -170,7 +170,7 @@ namespace project_4_algemeen
                 }
             }
         }
-        public void leftUp(game game1)
+        public void leftUp(game game1) //all android button functions
         {
             Keys[] keys = new Keys[2] { Keys.Left, Keys.Up };
             player1.Move(keys);

@@ -9,7 +9,7 @@ using project_4_algemeen;
 
 namespace project_4_algemeen
 {
-    public class Instructions : gameElement
+    public class Instructions : gameElement //shows the images with th instrtuctions needed to play the game
     {
         GraphicsDeviceManager graphics;
         
@@ -26,7 +26,7 @@ namespace project_4_algemeen
         platform platform;
 
         public Instructions(double screen_width, double screen_height, float relativeSize, SpriteFont font, GraphicsDeviceManager graphics, game game1, Sound sound, Action<game> Exit, List<Texture2D> All_images, platform platform, gameElement origin)
-        {
+        {  
             this.graphics = graphics;
             this.Font = font;
             this.screen_width = screen_width;
@@ -48,7 +48,6 @@ namespace project_4_algemeen
         {
             this.screen_width = width;
             this.screen_height = height;
-
             Buttons[0].X = (int)(screen_width - (screen_width / 6));
             Buttons[0].Y = (int)(screen_height - screen_height / 6);
             Buttons[0].width = (int)width / 8;
@@ -120,13 +119,13 @@ namespace project_4_algemeen
                 return Textboxes;
             }
         }
-        private void Next(game game1)
+        private void Next(game game1) // goes to next immage 
         {
             Texture = All_images[8];
             buttons[0].visible = false;
             buttons[1].visible = true;
         }
-        private void Previous(game game1)
+        private void Previous(game game1) // goes to previous image
         {
             Texture = All_images[7];
             buttons[0].visible = true;

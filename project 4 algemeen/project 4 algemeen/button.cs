@@ -60,6 +60,8 @@ namespace project_4_algemeen
             }
         }
     }
+
+    //this button has 4 constructors for our specific button needs , will run an action or instantiate a class on button click.
     public class button
     {
         public int X, Y, width=100, heigth=100;
@@ -72,7 +74,6 @@ namespace project_4_algemeen
         public gameElement Current_class;
         GraphicsDeviceManager graphics;
         float transparancy;
-        bool hasImage;
         
 
         public button(int x, int y, int width, int heigth, String text, SpriteFont font, float textsize, Color color, Color hovercolor, gameElement current_class, GraphicsDeviceManager graphics, float transparancy = 1)
@@ -91,8 +92,7 @@ namespace project_4_algemeen
             this.Font = font;
             this.graphics = graphics;
             this.transparancy = transparancy;
-            this.hasImage = false;
-
+            
 
             createTexture(graphics);
         }
@@ -112,7 +112,6 @@ namespace project_4_algemeen
             this.action = action;
             this.graphics = graphics;
             this.transparancy = transparancy;
-            this.hasImage = false;
 
             createTexture(graphics);
 
@@ -135,7 +134,6 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.transparancy = transparancy;
             this.texture = buttonbackground;
-            this.hasImage = true;
 
             
 
@@ -158,19 +156,18 @@ namespace project_4_algemeen
             this.graphics = graphics;
             this.transparancy = transparancy;
             this.texture = buttonbackground;
-            this.hasImage = true;
 
-
+            
         }
 
-        public void createTexture(GraphicsDeviceManager graphics)
+        public void createTexture(GraphicsDeviceManager graphics) //creates a texture for button if button doesnt get a texture
         {
             this.texture = new Texture2D(graphics.GraphicsDevice, (int)(this.width), (int)(this.heigth));
             Color[] data = new Color[(int)(this.width) * (int)(this.heigth)];
             for (int i = 0; i < data.Length; ++i) data[i] = Color.White;
             this.texture.SetData(data);
         }
-        public void onclick(game game1)
+        public void onclick(game game1) //runs the action when button is clicked
         {
             if (Current_class != null)
             {
@@ -200,7 +197,7 @@ namespace project_4_algemeen
                 this.CurrentColor = this.Color;
             }
         }
-        public void draw(SpriteBatch spritebatch)
+        public void draw(SpriteBatch spritebatch) //draws the button
         {
            if (visible)
             {
@@ -208,15 +205,7 @@ namespace project_4_algemeen
                 //spritebatch.DrawString(Font, Text, new Vector2(this.X, this.Y), Color.Black);
                 Rectangle destinationRectangle = new Rectangle(this.X, this.Y, (int)this.width, (int)this.heigth);
                 //Console.WriteLine(texture.Bounds);
-                if (this.hasImage)
-                {
-                    spritebatch.Draw(texture, destinationRectangle, Color.White);
-                }
-                else
-                {
-                    spritebatch.Draw(texture, destinationRectangle, Color.White * transparancy);
-                    spritebatch.DrawString(Font, Text, new Vector2(X + width / 2, Y + heigth / 2), Color.Black);
-                }
+                spritebatch.Draw(texture, destinationRectangle, Color.White);
             }
         }
     }

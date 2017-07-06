@@ -54,11 +54,7 @@ namespace project_4_algemeen
 
         public void background_music()
         {
-            this.list[7].Play();
-        }
-        public void background_quit()
-        {
-            this.list[7].Dispose();
+            //this.list[7].Play();
         }
     }
 }

@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace project_4_algemeen
 {
-    class EndScreen : gameElement
+    class EndScreen : gameElement  // used for all our switching screens , and win and loss screens , shows your current points and contains a button to continue to the next level or back to menu
     {
         bool PlayerDead = false;
         string endscreen = "Switching levels";
@@ -58,7 +58,7 @@ namespace project_4_algemeen
 
 
 
-        public void updateScreenSize(int width, int height)
+        public void updateScreenSize(int width, int height) // updates the sizes when the screen size is altered (full screen)
         {
             this.screen_width = width;
             this.screen_height = height;
@@ -92,7 +92,7 @@ namespace project_4_algemeen
 
             foreach (button BUT in buttons) { BUT.draw(spritebatch); }
         }
-        public void UpdateScore(int score)
+        public void UpdateScore(int score) //updates score in the endscreen
         {
             this.Score = score;
         }
@@ -127,12 +127,12 @@ namespace project_4_algemeen
             }
         }
 
-        public void LevelCleared()
+        public void LevelCleared() // decides if the endscreen is "cleared"  so it switches to the next screen in switch_levels
         {
             levelcleared = true;
         }
 
-        public void CurrentScoreString()
+        public void CurrentScoreString() // draws the score on the endscreen
         {
             currentscorestring = String.Format("Current score: {0}", Score);
         }
